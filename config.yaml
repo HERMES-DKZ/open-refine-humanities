@@ -67,7 +67,14 @@ contact: 'julia.tolksdorf@hs-mainz.de' # FIXME
 
 # Order of episodes in your lesson
 episodes: 
-- introduction.md
+- 01-introduction.md
+- 02-import-data.md
+- 03-exploring-data.md
+- 04-custom-facets-and-grel.md
+- 05-transformation.md 
+- 06-reconciling-data.md
+- 07-exporting-data-and-cleaning-steps.md
+- 08-resources-for-self-study.md
 
 # Information for Learners
 learners: 
