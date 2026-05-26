@@ -187,12 +187,19 @@
                   <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         Summary and Schedule
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#learning-objectives">Learning objectives</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -200,7 +207,70 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
+        <a href="01-introduction.html">1. Introduction to OpenRefine</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="02-import-data.html">2. Importing Data and Getting to Know the OpenRefine User Interface</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="03-exploring-data.html">3. Exploring Data</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="04-custom-facets-and-grel.html">4. Custom Facets and GREL</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="05-transformation.html">5. Transforming Data</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="06-reconciling-data.html">6. Reconciling Data with External Data Sources</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="07-exporting-data-and-cleaning-steps.html">7. Exporting and Importing Data and Workflows</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush9">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading9">
+        <a href="08-resources-for-self-study.html">8. Resources for Future Self-study</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -248,35 +318,144 @@
         <!-- START: inst/pkgdown/templates/content-syllabus.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link float-end" href="../instructor/introduction.html" rel="next">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/01-introduction.html" rel="next">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link float-end" href="../instructor/introduction.html" rel="next">Next: Using Markdown... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/01-introduction.html" rel="next">Next: Introduction to... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
     </nav><main id="main-content" class="main-content"><h1 class="schedule-heading">Summary and Schedule</h1>
       
 
-<p>This is a new lesson built with <a href="https://carpentries.github.io/sandpaper-docs" class="external-link">The Carpentries
-Workbench</a>.</p>
-<!--
+<p>OpenRefine is a powerful free, open source tool for working with
+messy data: cleaning it; transforming it from one format into another;
+and extending it with web services and external data. This lesson was
+especially developed for researchers in the humanities who want to learn
+how to improve the quality of their research data. It is designed for
+participants with no pevious experience.</p>
+<p>In scientific research, data is rarely perfect. Information is often
+collected from many different sources, such as archives, museums, or
+fieldwork, and combined into a single dataset. This can lead to a
+variety of problems: names spelled in different ways, missing or
+inconsistent values, dates in different formats, or duplicate entries.
+Sometimes data is entered manually, which can introduce typos or errors.
+Other times, data comes from automated exports or digitization projects,
+which may not follow a consistent structure. As a result, researchers
+often face the challenge of working with data that is not ready for
+analysis.</p>
+<p>Before you can draw meaningful conclusions from your data, it is
+essential to clean and organize it. This process helps ensure that your
+analysis is accurate and reliable. OpenRefine is designed to make this
+step easier, even for those with no technical background. With
+OpenRefine, you can quickly identify and fix errors, standardize
+formats, and prepare your data for further research.</p>
+<section><h2 class="section-heading" id="learning-objectives">Learning objectives<a class="anchor" aria-label="anchor" href="#learning-objectives"></a></h2>
+<hr class="half-width"><p>By the end of this lesson, you will be able to:</p>
+<ul><li>start a new OpenRefine project and import data</li>
+<li>work with a subset of your data with the help of facets and
+filters</li>
+<li>correct errors and reduce variations in your data through facets and
+clustering</li>
+<li>transform your data for future analysis</li>
+<li>use undo and redo actions of your cleaning steps</li>
+<li>enrich your data with the help of reconciliation service</li>
+<li>save and export cleaned data as well as data cleaning steps</li>
+</ul><!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- -->
-
-
-      <section id="schedule"><table class="table table schedule table-striped" role="presentation"><tbody><tr><td></td><td><a href="#setup">Setup Instructions</a></td><td> Download files required for the lesson</td>
+ --></section><section id="schedule"><table class="table table schedule table-striped" role="presentation"><tbody><tr><td></td><td><a href="#setup">Setup Instructions</a></td><td> Download files required for the lesson</td>
           </tr><tr><td>
 <span class="visually-hidden">Duration: </span>00h 00m
 </td>
 <td>
- 1. <a href="introduction.html">Using Markdown</a>
+ 1. <a href="01-introduction.html">Introduction to OpenRefine</a>
 </td>
 <td>
-How do you write a lesson using Markdown and <a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?
+What is OpenRefine and how can it help with messy data?<br>What kinds
+of tasks and analyses can you perform with OpenRefine?
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>00h 12m
+<span class="visually-hidden">Duration: </span>00h 15m
+</td>
+<td>
+ 2. <a href="02-import-data.html">Importing Data and Getting to Know the
+OpenRefine User Interface</a>
+</td>
+<td>
+How do I start a new project in OpenRefine?<br>How do I import a CSV
+file?<br>What options and settings are available during import?<br>How
+is the user interface structured?
+</td>
+</tr><tr><td>
+<span class="visually-hidden">Duration: </span>00h 35m
+</td>
+<td>
+ 3. <a href="03-exploring-data.html">Exploring Data</a>
+</td>
+<td>
+What options does OpenRefine offer for data exploration?<br>What is a
+facet and how does it help me explore data?<br>How do facets differ
+from filters?<br>What data types exist in OpenRefine?
+</td>
+</tr><tr><td>
+<span class="visually-hidden">Duration: </span>01h 15m
+</td>
+<td>
+ 4. <a href="04-custom-facets-and-grel.html">Custom Facets and GREL</a>
+</td>
+<td>
+When do we need a custom facet instead of a built-in one?<br>How can
+GREL help us filter or transform data more flexibly?
+</td>
+</tr><tr><td>
+<span class="visually-hidden">Duration: </span>01h 50m
+</td>
+<td>
+ 5. <a href="05-transformation.html">Transforming Data</a>
+</td>
+<td>
+How can we clean and standardize the <code>Artist Display Bio</code>
+values in OpenRefine?<br>What is the difference between
+<em>finding</em> issues (facets) and <em>fixing</em> them
+(transformations &amp; clustering)?<br>What is clustering and when to
+use it?
+</td>
+</tr><tr><td>
+<span class="visually-hidden">Duration: </span>02h 30m
+</td>
+<td>
+ 6. <a href="06-reconciling-data.html">Reconciling Data with External
+Data Sources</a>
+</td>
+<td>
+What does it mean to reconcile data?<br>Why is reconciliation useful in
+humanities research?<br>How can we use OpenRefine to enrich our dataset
+with identifiers and structured information?
+</td>
+</tr><tr><td>
+<span class="visually-hidden">Duration: </span>03h 05m
+</td>
+<td>
+ 7. <a href="07-exporting-data-and-cleaning-steps.html">Exporting and
+Importing Data and Workflows</a>
+</td>
+<td>
+How can we go back to an earlier step if we realize we made a
+mistake?<br>How can we save our cleaning process to repeat it later or
+share it with colleagues?<br>How can we export the cleaned data.
+</td>
+</tr><tr><td>
+<span class="visually-hidden">Duration: </span>03h 15m
+</td>
+<td>
+ 8. <a href="08-resources-for-self-study.html">Resources for Future
+Self-study</a>
+</td>
+<td>
+TODO
+</td>
+</tr><tr><td>
+<span class="visually-hidden">Duration: </span>03h 15m
 </td>
 <td>
 Finish
@@ -289,87 +468,143 @@ any links that you are not going to use.
  --></tbody></table><p>
       The actual schedule may vary slightly depending on the topics and exercises chosen by the instructor.
       </p>
-      </section><section id="setup"><p>FIXME: Setup instructions live in this document. Please specify the
-tools and the data sets the Learner needs to have installed.</p>
-<section><h2 class="section-heading" id="data-sets">Data Sets<a class="anchor" aria-label="anchor" href="#data-sets"></a></h2>
-<hr class="half-width"><!--
-FIXME: place any data you want learners to use in `episodes/data` and then use
-       a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
-       link to it, replacing the example.com link.
---><p>Download the <a href="https://example.com/FIXME" class="external-link">data zip file</a>
-and unzip it to your Desktop</p>
-</section><section><h2 class="section-heading" id="software-setup">Software Setup<a class="anchor" aria-label="anchor" href="#software-setup"></a></h2>
-<hr class="half-width"><div id="details" class="callout discussion">
+      </section><section id="setup"><section><h2 class="section-heading" id="getting-started">Getting started<a class="anchor" aria-label="anchor" href="#getting-started"></a></h2>
+<hr class="half-width"><p>To follow this lesson, you must have OpenRefine installed on your
+computer and download a data file.</p>
+<div id="dataset" class="callout prereq">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="check"></i>
 </div>
-<span class="callout-header">Discussion</span>
-<div id="details" class="callout-inner">
-<h3 class="callout-title">Details</h3>
+<span class="callout-header">Prerequisite</span>
+<div id="dataset" class="callout-inner">
+<h3 class="callout-title">Dataset</h3>
 <div class="callout-content">
-<p>Setup for different systems can be presented in dropdown menus via a
-<code>spoiler</code> tag. They will join to this discussion block, so
-you can give a general overview of the software used in this lesson here
-and fill out the individual operating systems (and potentially add more,
-e.g. online setup) in the solutions blocks.</p>
+<p>The dataset used in this lesson is a subset of the <a href="https://github.com/MuseumofModernArt/collection" class="external-link">Museum of Modern
+Art Collection</a> dataset. It has been reduced in the number of columns
+and intentionally ‘messed up’ a little bit.</p>
+<p>Download the csv <a href="../data/met_dataset_oa.csv">data file</a>) to
+your Computer.</p>
 </div>
 </div>
 </div>
-<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
-  <h3 class="accordion-header" id="headingSpoiler1">
-  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+<div id="software-setup" class="callout prereq">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check"></i>
+</div>
+<span class="callout-header">Prerequisite</span>
+<div id="software-setup" class="callout-inner">
+<h3 class="callout-title">Software Setup</h3>
+<div class="callout-content">
+<p>For this lesson you will need OpenRefine and a web browser. Note:
+OpenRefine is a Java program that runs on your machine (not in the
+cloud). It runs inside your browser, but no web connection is
+needed.</p>
+<ol style="list-style-type: decimal"><li>Check that you have Firefox, Edge, Opera, Chrome, Chromium or Safari
+installed and set as your default browser. OpenRefine only runs in your
+default browser. It will not run correctly in Internet Explorer.
+Sometimes it even has some issues with Firefox.</li>
+<li>Download the software from <a href="https://openrefine.org/download" class="external-link">openrefine.org/download</a> and
+check below for further instructions depending on your operating
+system.</li>
+</ol><div class="tabs">
+<nav><div id="nav-tab-1" class="nav nav-tabs" role="tablist">
+<button class="nav-link active" id="nav-tab-1-1" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-1" type="button" role="tab" aria-controls="nav-tabpanel-1-1" aria-selected="true">
+  <h3 class="tab-header" id="nav-tab-heading-1-1">
   Windows
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
-<div class="accordion-body">
-<p>Use PuTTY</p>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
-  <h3 class="accordion-header" id="headingSpoiler2">
-  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+<button class="nav-link" id="nav-tab-1-2" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-2" type="button" role="tab" aria-controls="nav-tabpanel-1-2" aria-selected="false">
+  <h3 class="tab-header" id="nav-tab-heading-1-2">
   MacOS
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
-<div class="accordion-body">
-<p>Use Terminal.app</p>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
-  <h3 class="accordion-header" id="headingSpoiler3">
-  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
+<button class="nav-link" id="nav-tab-1-3" data-bs-toggle="tab" data-bs-target="#nav-tabpanel-1-3" type="button" role="tab" aria-controls="nav-tabpanel-1-3" aria-selected="false">
+  <h3 class="tab-header" id="nav-tab-heading-1-3">
   Linux
   </h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
-<div class="accordion-body">
-<p>Use Terminal</p>
+</div>
+</nav><div id="nav-tabContent-1" class="tab-content">
+<div id="nav-tabpanel-1-1" class="tab-pane show active" aria-labelledby="nav-tab-1-1" role="tabpanel">
+<ol style="list-style-type: decimal"><li>Unzip the downloaded file into a directory by right-clicking and
+selecting “Extract…”. Name that directory something like
+OpenRefine.</li>
+<li>Go to your newly created OpenRefine directory.</li>
+<li>Launch OpenRefine by double clicking on <code>openrefine.exe</code>
+(this will launch a black command prompt window first; ignore this
+window, and wait for OpenRefine to launch in the web browser, which is
+where you will interact with the program).</li>
+</ol><ul><li>If Windows displays a blue notification titled
+<code>Microsoft Defender SmartScreen prevented an unrecognized app from starting</code>,
+click on <code>More info</code> and then click on
+<code>Run anyway</code>.</li>
+</ul><ol start="4" style="list-style-type: decimal"><li>If you are using a different browser, or OpenRefine does not
+automatically open for you, point your browser at <a href="https://127.0.0.1:3333/" class="external-link">http://127.0.0.1:3333/</a> or <a href="https://localhost:3333" class="external-link">http://localhost:3333</a> to launch the
+program.</li>
+</ol></div>
+<div id="nav-tabpanel-1-2" class="tab-pane" aria-labelledby="nav-tab-1-2" role="tabpanel">
+<ol style="list-style-type: decimal"><li>Unzip the downloaded file into a directory by double-clicking it.
+Name that directory something like OpenRefine.</li>
+<li>Go to your newly created OpenRefine directory.</li>
+<li>Drag the OpenRefine icon into Applications folder, and
+<code>Ctrl-click/Open…</code> it.</li>
+</ol><ul><li>If Mac shows a notification when you try to run the program that it
+cannot verify the developer, click <code>Cancel</code>. Then,
+<code>Right-click</code> or <code>Ctrl-click</code> the icon and select
+<code>Open</code>. The notification will now have an <code>Open</code>
+button. If it does not allow to open the program, repeat the process and
+there will be an <code>Open</code> button the second time. For
+additional details, consult the <a href="https://docs.openrefine.org/manual/installing#install-or-upgrade-openrefine" class="external-link">OpenRefine
+installation guide</a>.</li>
+</ul><ol start="4" style="list-style-type: decimal"><li>If you are using a different browser, or OpenRefine does not
+automatically open for you, point your browser at <a href="https://127.0.0.1:3333/" class="external-link">http://127.0.0.1:3333/</a> or <a href="https://localhost:3333" class="external-link">http://localhost:3333</a> to launch the
+program</li>
+</ol></div>
+<div id="nav-tabpanel-1-3" class="tab-pane" aria-labelledby="nav-tab-1-3" role="tabpanel">
+<ol style="list-style-type: decimal"><li>Unzip the downloaded file into a directory. Name that directory
+something like OpenRefine.</li>
+<li>Navigate to your newly created OpenRefine directory using the
+command line.</li>
+<li>Type <code>./refine</code> into the terminal within the OpenRefine
+directory</li>
+<li>If you are using a different browser, or OpenRefine does not
+automatically open for you, point your browser at <a href="https://127.0.0.1:3333/" class="external-link">http://127.0.0.1:3333/</a> or <a href="https://localhost:3333" class="external-link">http://localhost:3333</a> to launch the
+program.</li>
+</ol></div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="getting-help">Getting help<a class="anchor" aria-label="anchor" href="#getting-help"></a></h3>
+<p>If you encounter problems installing or running OpenRefine, a good
+source of support is the <a href="https://forum.openrefine.org" class="external-link">OpenRefine mailing list and user
+forum</a>. Include your operating system when searching to find the most
+relevant answers for your issue, such as threads related to <a href="https://forum.openrefine.org/search?q=windows" class="external-link">Windows</a>, <a href="https://forum.openrefine.org/search?q=macOS" class="external-link">macOS</a>, or <a href="https://forum.openrefine.org/search?q=linux" class="external-link">Linux</a>.</p>
+<p>You may also want to check the <a href="https://stackoverflow.com/questions/tagged/openrefine" class="external-link">Stack
+Overflow OpenRefine tag</a>.</p>
+<p>If you want to know more details about installation, upgrades and
+configuration the <a href="https://openrefine.org/docs/manual/installing" class="external-link">installing manual
+of OpenRefine</a> is a good resource.</p>
 </div>
 </div>
 </div>
 </div>
+<div class="section level3">
+<h3 id="exiting-openrefine">Exiting OpenRefine<a class="anchor" aria-label="anchor" href="#exiting-openrefine"></a></h3>
+<p>To exit OpenRefine, close all the browser tabs or windows, then
+navigate to the command line window. To close this window and ensure
+OpenRefine exits properly, hold down [control] and press [c] on your
+keyboard. This will save all changes to your projects.</p>
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link float-end" href="../instructor/introduction.html" rel="next">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/01-introduction.html" rel="next">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link float-end" href="../instructor/introduction.html" rel="next">Next: Using Markdown... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="../instructor/01-introduction.html" rel="next">Next: Introduction to... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
     </nav></div>
 <!-- END  : inst/pkgdown/templates/content-syllabus.html -->

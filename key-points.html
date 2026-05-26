@@ -236,7 +236,91 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
+        <a href="01-introduction.html">1. Introduction to OpenRefine</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="02-import-data.html">2. Importing Data and Getting to Know the OpenRefine User Interface</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="03-exploring-data.html">3. Exploring Data</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="04-custom-facets-and-grel.html">4. Custom Facets and GREL</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="05-transformation.html">5. Transforming Data</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="06-reconciling-data.html">6. Reconciling Data with External Data Sources</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="07-exporting-data-and-cleaning-steps.html">7. Exporting and Importing Data and Workflows</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush9">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading9">
+        <a href="08-resources-for-self-study.html">8. Resources for Future Self-study</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -299,18 +383,88 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Key Points</h1>
         
-<section id="introduction"><h2 class="section-heading"><a href="introduction.html">Using Markdown</a></h2>
+<section id="01-introduction"><h2 class="section-heading"><a href="01-introduction.html">Introduction to OpenRefine</a></h2>
 <hr class="half-width">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
-</ul></section>
+<li>OpenRefine is a free, open-source tool for cleaning, organizing, and
+exploring messy data.</li>
+<li>You can easily import, filter, sort, and analyze your data, even
+without technical experience.</li>
+<li>OpenRefine supports many data formats and can be extended with
+add-ons and custom scripts for even more possibilities.</li>
+<li>Using OpenRefine helps you prepare your data for analysis,
+supporting transparent and reproducible research practices.</li>
+</ul></section><section id="02-import-data"><h2 class="section-heading"><a href="02-import-data.html">Importing Data and Getting to Know the OpenRefine User Interface</a></h2>
+<hr class="half-width">
+<ul>
+<li>OpenRefine organizes your work in projects</li>
+<li>You can import data from different sources and in different formats
+into OpenRefine</li>
+<li>Adjust import settings to ensure your data is read correctly and
+preview the results before starting</li>
+<li>The main components of the user interface are the grid, the grid
+header, the project bar, and <code>Facet/Filter</code> as well as
+<code>Undo/Redo</code> tab</li>
+</ul></section><section id="03-exploring-data"><h2 class="section-heading"><a href="03-exploring-data.html">Exploring Data</a></h2>
+<hr class="half-width">
+<ul>
+<li>Facets provide an interactive overview of the values in a column and
+help you explore your data.</li>
+<li>Multi-valued cells must be split before accurate faceting is
+possible.</li>
+<li>Numeric and Timeline facets require converting text values into
+numbers or dates first.</li>
+</ul></section><section id="04-custom-facets-and-grel"><h2 class="section-heading"><a href="04-custom-facets-and-grel.html">Custom Facets and GREL</a></h2>
+<hr class="half-width">
+<ul>
+<li>Custom facets group data using <strong>computed results</strong>
+from a GREL expression, not only the original cell values.<br>
+</li>
+<li>GREL is a lightweight language that allows you to <strong>inspect,
+transform, and classify</strong> data inside OpenRefine.<br>
+</li>
+<li>Custom facets let you ask flexible questions about your data, such
+as identifying multiple creators or unusually long titles.<br>
+</li>
+<li>With conditional expressions like <code>if()</code>, you can define
+<strong>new categories</strong> that support deeper exploration and
+data-quality checks.</li>
+</ul></section><section id="05-transformation"><h2 class="section-heading"><a href="05-transformation.html">Transforming Data</a></h2>
+<hr class="half-width">
+<ul>
+<li>Transformations modify the <em>content</em> of cells, while column
+operations reshape the <em>structure</em> of the dataset.</li>
+<li>Literal GREL replacements help remove unwanted characters and
+prepare text for further processing.</li>
+<li>Splitting columns separates different types of information, making
+the data easier to analyze and clean.</li>
+<li>Clustering identifies similar but inconsistently written values and
+supports manual standardization.</li>
+</ul></section><section id="06-reconciling-data"><h2 class="section-heading"><a href="06-reconciling-data.html">Reconciling Data with External Data Sources</a></h2>
+<hr class="half-width">
+<ul>
+<li>Reconciliation links text strings to unique identifiers in external
+databases.</li>
+<li>This makes your dataset more precise, reusable, and comparable
+across projects.</li>
+<li>OpenRefine suggests matches, but users should always review and
+confirm them.</li>
+<li>Identifier columns preserve these links when exporting the
+dataset.</li>
+</ul></section><section id="07-exporting-data-and-cleaning-steps"><h2 class="section-heading"><a href="07-exporting-data-and-cleaning-steps.html">Exporting and Importing Data and Workflows</a></h2>
+<hr class="half-width">
+<ul>
+<li>OpenRefine records every transformation you make.<br>
+</li>
+<li>The <strong>Undo/Redo</strong> tab lets you move backward and
+forward through your cleaning process.<br>
+</li>
+<li>Workflows can be exported as JSON and reapplied to other projects,
+ensuring transparency and reproducibility.</li>
+</ul></section><section id="08-resources-for-self-study"><h2 class="section-heading"><a href="08-resources-for-self-study.html">Resources for Future Self-study</a></h2>
+<hr class="half-width">
+<ul><li>
+</li></ul></section>
 </div>
     </main>
 </div>
