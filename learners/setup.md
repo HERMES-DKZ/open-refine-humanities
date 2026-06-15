@@ -14,7 +14,7 @@ To follow this lesson, you must have OpenRefine installed on your computer and d
 The dataset used in this lesson is a subset of the [Museum of Modern Art Collection](https://github.com/MuseumofModernArt/collection) dataset.
 It has been reduced in the number of columns and intentionally 'messed up' a little bit.
 
-Download the csv [data file](data/met_dataset_oa.csv)) to your Computer.
+Download the csv [data file](../episodes/data/met_dataset_oa.csv) to your Computer.
 
 ::::::::::::::::::::
 
