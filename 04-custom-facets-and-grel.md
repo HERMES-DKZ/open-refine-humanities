@@ -143,17 +143,14 @@ value.split("|").length()
 In this expression, we chain two operations together. First, `split()` creates a list of names. Then `.length()` counts how many elements are in that list. In the window where you enter your GREL function, you can see the result it produces as you type.
 
 ::::::::::instructor
-
  Go to the window and type `value.split("|")`. Show the group that this creates an array with a varying number of elements. Then add `.length()` to it and demonstrate that this now displays the number of elements in the array.
-
- ::::::::::::
+ :::::::::
 
 Working with GREL always starts with a question about the data.
 That’s why we’re going to take a look at the most common GREL functions and what they do.
 
 
 ::::::::::::::::::::::::::::::::::::: callout
-
 ### Callout: GREL-Functions
 
 Good places to look up your problem and the corresponding GREL function are:
@@ -172,8 +169,6 @@ Some useful functions include:
 * `value.replace(/\s+/," ")` – regex replace (collapse multiple spaces).
 * `value.split(";")` – split into an array on `;`.
 * `array.join("|")` – join array back to a string.
-
-
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
