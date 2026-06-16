@@ -565,7 +565,7 @@ analysis?<br>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li>Missing data are sometimes represented by blank cells, N/A or
@@ -870,7 +870,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-03-exploring-data"><p>Content from <a href="03-exploring-data.html">Exploring Data</a></p>
 <hr>
-<p>Last updated on 2026-05-26 |
+<p>Last updated on 2026-06-16 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/03-exploring-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -979,7 +979,7 @@ and can you fix them?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>4 / 389 / 321 different values.</li>
@@ -1034,7 +1034,7 @@ of the facet?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>First, you use a text facet on the column <code>Departments</code>
 and filter for the department “Drawings and Prints” via include. Then
@@ -1056,7 +1056,7 @@ and type “print”. There are 665 prints in the department.</p>
 contains only a single value. In real-world data, however, that is often
 not the case. In the Met dataset, the <code>Artist Display Name</code>
 column sometimes contains two or more names, separated by a
-<code>;</code> like <code>Horace Harral; Joseph Wolf</code>. This is
+<code>|</code> like <code>Horace Harral|Joseph Wolf</code>. This is
 problematic for faceting. If we want to find out which artist appears
 most frequently in the dataset, this structure makes it difficult.
 That’s because if we apply a text facet to the
@@ -1079,7 +1079,7 @@ grid, choose “Show as: Records”). This makes it easier to see what
 happens after the split.</li>
 <li>Open the column menu for <code>Artist Display Name</code>, choose
 <code>Edit cells → Split multi-valued cells…</code>. Enter the separator
-<code>;</code> in the box, and click <code>OK</code>.</li>
+<code>|</code> in the box, and click <code>OK</code>.</li>
 <li>Create a text facet on <code>Artist Display Name</code> again. This
 time you will see the names of individual artists listed separately.
 Each can now be counted and selected on its own.</li>
@@ -1109,7 +1109,7 @@ cells. Split the cells for this column and create a text facet.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <ul>
 <li><p>When splitting the cells, you should use “,” as the
@@ -1215,7 +1215,7 @@ artworks? Why are there non-numeric values? Can you spot the error?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>In the 1940s. There are X non-numeric values. You can take a look at
 them by ticking Non-numeric. It looks like someone wrote an “O” instead
@@ -1253,7 +1253,7 @@ all columns, we only get the data records that are complete.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>First apply <code>Facet by blank</code> to <code>Culture</code> and
 select “false”. Then apply <code>Facet by blank</code> to
@@ -1288,7 +1288,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-04-custom-facets-and-grel"><p>Content from <a href="04-custom-facets-and-grel.html">Custom Facets and GREL</a></p>
 <hr>
-<p>Last updated on 2026-05-26 |
+<p>Last updated on 2026-06-16 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/04-custom-facets-and-grel.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1304,7 +1304,7 @@ any links that you are not going to use.
 <ul>
 <li>When do we need a custom facet instead of a built-in one?<br>
 </li>
-<li>How can GREL help us filter or transform data more flexibly?</li>
+<li>How can GREL help us explore and classify data more flexibly?</li>
 </ul>
 </div>
 </div>
@@ -1317,11 +1317,11 @@ any links that you are not going to use.
 <li>Understand what a custom facet is and how it differs from standard
 facets.<br>
 </li>
-<li>Learn to write simple GREL expressions for filtering and
-transformation.<br>
+<li>Learn to write simple GREL expressions for filtering and classifying
+data.<br>
 </li>
-<li>Apply a custom facet on the <code>Artist Display Name</code> column
-to distinguish between single and multiple creators.</li>
+<li>Create custom facets using GREL expressions to group and analyse
+data in new ways.</li>
 </ul>
 </div>
 </div>
@@ -1331,18 +1331,19 @@ to distinguish between single and multiple creators.</li>
 <section><h2 class="section-heading" id="creating-a-custom-facet-with-grel">Creating a Custom Facet with GREL<a class="anchor" aria-label="anchor" href="#creating-a-custom-facet-with-grel"></a>
 </h2>
 <hr class="half-width">
-<div id="how-could-we-filter-the-column-artist-display-name-to-find-out-whether-one-or-more-people-were-involved-in-creating-a-work-of-art" class="callout discussion">
+<div id="how-can-we-tell-whether-a-cell-contains-one-artist-or-several-artists" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <span class="callout-header">Discussion</span>
-<div id="how-could-we-filter-the-column-artist-display-name-to-find-out-whether-one-or-more-people-were-involved-in-creating-a-work-of-art" class="callout-inner">
-<h3 class="callout-title">How could we filter the column
-<code>Artist Display Name</code> to find out whether one or more people
-were involved in creating a work of art?</h3>
+<div id="how-can-we-tell-whether-a-cell-contains-one-artist-or-several-artists" class="callout-inner">
+<h3 class="callout-title">How can we tell whether a cell contains one
+artist or several artists?</h3>
 <div class="callout-content">
-<p>Look at the column <code>Artist Display Name</code> again. What
-pattern indicates that an artwork has multiple creators?</p>
+<p>How can we check the column <code>Artist Display Name</code> to find
+out whether one or more people were involved in creating a artwork
+without splitting it? Look carefully at a few cells. What character
+consistently separates multiple names?</p>
 </div>
 </div>
 </div>
@@ -1351,42 +1352,45 @@ through the menu—text, numeric, and timeline facets. These are powerful,
 but sometimes our exploration or cleaning task needs a rule that isn’t
 built in. In those cases, OpenRefine lets us define our own facets using
 small expressions written in GREL. Don’t worry if these terms are new.
-We will demonstrate them with an example:</p>
+We will introduce them through a practical example based on the dataset
+you already explored in the previous episode.</p>
 <ol style="list-style-type: decimal">
 <li><p>Open the column menu for
 <code>Artist Display Name</code>.</p></li>
 <li><p>Choose <code>Facet → Custom text facet…</code></p></li>
 <li>
 <p>Enter the following expression:</p>
-<pre class="grel"><code><span><span class="fu">value.contains</span><span class="op">(</span><span class="st">";"</span><span class="op">)</span></span></code></pre>
-<p>This expression asks, “Does the cell contain a semicolon?” For each
-row, OpenRefine evaluates the expression and returns either
-<code>true</code> or <code>false</code>.</p>
+<pre class="grel"><code><span><span class="fu">value.contains</span><span class="op">(</span><span class="st">"|"</span><span class="op">)</span></span></code></pre>
+<p>This expression asks, “Does the cell contain a pipe?” For each row,
+OpenRefine evaluates the expression and returns either <code>true</code>
+or <code>false</code>.</p>
 </li>
 <li><p>Click <code>OK</code>. In the left panel, you now see a facet
 with two categories: <code>true</code> and <code>false</code>.</p></li>
 </ol>
 <p>This small expression creates a logic-based facet that is not
-available as a built-in facet.</p>
+available as a built-in facet. It does not modify the data. It simply
+checks whether the condition is true or false for each row.</p>
 <p><strong>Why this works:</strong> A Custom facet runs your expression
 on every row, groups the results, and lets you filter by the outcome.
 You can write tests that return booleans
 (<code>true</code>/<code>false</code>), strings (e.g., normalized
-categories), or even numbers—OpenRefine will facet whatever the
+categories), or even numbers — OpenRefine will facet whatever the
 expression returns.</p>
-<div id="challenge-finding-titles-that-contain-a-quotation-marks" class="callout challenge">
+<div id="challenge-finding-titles-with-quotation-marks" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-finding-titles-that-contain-a-quotation-marks" class="callout-inner">
-<h3 class="callout-title">Challenge: Finding titles that contain a
-quotation marks</h3>
+<div id="challenge-finding-titles-with-quotation-marks" class="callout-inner">
+<h3 class="callout-title">Challenge: Finding Titles with Quotation
+Marks</h3>
 <div class="callout-content">
-<p>Create a custom text facet on the column <code>Title</code> and find
-out how many of the titles contain quotation marks (““).</p>
-<p>Tip: You need to escape the quatation mark in the expression using a
-backslash (<code>\</code>).</p>
+<p>Create a custom text facet on the <code>Title</code> column and
+determine how many titles contain quotation marks. Then inspect a few
+examples and discuss why quotation marks might have been used.</p>
+<p>Tip: You need to escape the quotation mark with a backslash
+(<code>\</code>).</p>
 </div>
 </div>
 </div>
@@ -1395,12 +1399,15 @@ backslash (<code>\</code>).</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The expression is:</p>
 <pre class="grel"><code><span><span class="fu">value.contains</span><span class="op">(</span><span class="st">"\""</span><span class="op">)</span></span></code></pre>
-<p>It returns 79 rows with the value “true”, meaning that 79 titles
-contain quotation marks.</p>
+<p>It returns 79 rows with the value <code>true</code>, meaning that 79
+titles contain quotation marks. Looking at several examples suggests
+that quotation marks are often used when the title refers to a component
+of a larger work, such as an illustration in a book. This information
+could be important for a later analysis.</p>
 </div>
 </div>
 </div>
@@ -1424,10 +1431,11 @@ It is a small, specialized language used inside OpenRefine to:</p>
 <p>GREL looks like code, but many useful expressions are short and
 readable. You can think of them as tiny instructions that tell
 OpenRefine how to interpret or transform the value currently in a cell
-(that value is referred to as <code>value</code> inside GREL). Every
-function we already used could be written in GREL as well, but to make
-things easier the most common functions are already built in. The menu
-simply provides shortcuts for the most common actions.</p>
+(that value is referred to as <code>value</code> inside GREL). Many of
+the actions we have already performed can also be expressed directly in
+GREL, but to make things easier the most common functions are already
+built in. The menu simply provides shortcuts for the most common
+actions.</p>
 <div id="challenge-detecting-unusually-long-titles" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1438,7 +1446,8 @@ simply provides shortcuts for the most common actions.</p>
 titles</h3>
 <div class="callout-content">
 <p>Very long artwork titles may indicate data issues, such as multiple
-titles stored in one cell or comments included in the title field.</p>
+titles stored in one cell or comments included in the title field, but
+they can also reflect descriptive cataloguing practices.</p>
 <p>Create a custom text facet on the column <code>Title</code> using the
 following GREL expression:</p>
 <pre class="grel"><code>if(value.length() &gt; 40, "long title", "short title")</code></pre>
@@ -1454,18 +1463,19 @@ following GREL expression:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>The expression works as follows:</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Inspect the cell</strong> with
-<code>value.length()</code> and calculates how many characters the title
-contains.</p></li>
-<li><p>The if() function checks whether the title has more than 40
-characters (<code>value.length() &gt; 40</code>).</p></li>
+<code>value.length()</code>, which calculates the number of characters
+in the title.</p></li>
+<li><p>The <code>if()</code> function checks whether the title has more
+than 40 characters (<code>value.length() &gt; 40</code>).</p></li>
 <li><p><strong>Produce a new output</strong>. If the condition is true,
 the expression returns “long title”, otherwise it returns “short title”.
-It then groups rows according to these two values.</p></li>
+OpenRefine then groups rows according to these generated
+values.</p></li>
 </ol>
 <p>This means the facet does not group by the original cell content, but
 by values that are generated by the expression.</p>
@@ -1477,78 +1487,20 @@ title.</p>
 </div>
 </div>
 
-<div id="callout-grel-functions" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div id="callout-grel-functions" class="callout-inner">
-<h3 class="callout-title">Callout: GREL-Functions</h3>
-<div class="callout-content">
-<p>Good places to look up your problem and the corresponding GREL
-function are:</p>
-<ul>
-<li><a href="https://github.com/OpenRefine/OpenRefine/wiki/Recipes" class="external-link">OpenRefine’s
-GitHub wiki</a></li>
-<li><a href="https://openrefine.org/docs/manual/grelfunctions" class="external-link">OpenRefine
-Documentation</a></li>
-</ul>
-<p>Some useful functions include:</p>
-<ul>
-<li>
-<code>value.toLowercase()</code> – lowercase the text.</li>
-<li>
-<code>value.trim()</code> – remove spaces at start/end.</li>
-<li>
-<code>value.length()</code> – number of characters.</li>
-<li>
-<code>value.contains("text")</code> – <code>true</code> if “text”
-occurs.</li>
-<li>
-<code>value.startsWith("A")</code>, <code>value.endsWith(".")</code>
-– prefix/suffix checks.</li>
-<li>
-<code>value.replace("old","new")</code> – literal replace.</li>
-<li>
-<code>value.replace(/\s+/," ")</code> – regex replace (collapse
-multiple spaces).</li>
-<li>
-<code>value.split(";")</code> – split into an array on
-<code>;</code>.</li>
-<li>
-<code>array.join("|")</code> – join array back to a string.</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="keypoints1" class="callout keypoints">
-<div class="callout-square">
-<i class="callout-icon" data-feather="key"></i>
-</div>
-<span class="callout-header">Key Points</span>
-<div class="callout-inner">
-<div class="callout-content">
-<ul>
-<li>Custom facets group data using <strong>computed results</strong>
-from a GREL expression, not only the original cell values.<br>
-</li>
-<li>GREL is a lightweight language that allows you to <strong>inspect,
-transform, and classify</strong> data inside OpenRefine.<br>
-</li>
-<li>Custom facets let you ask flexible questions about your data, such
-as identifying multiple creators or unusually long titles.<br>
-</li>
-<li>With conditional expressions like <code>if()</code>, you can define
-<strong>new categories</strong> that support deeper exploration and
-data-quality checks.</li>
-</ul>
-</div>
-</div>
-</div>
-<!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- -->
+<p>Coming back to our column <code>Artist Display Name</code>, you can
+also ask a more complex question: How many artists contributed to each
+artwork? This question cannot easily be answered using the menu
+interface alone. Instead of simply asking whether a pipe exists, we can
+count how many artist names are stored in a cell. To do this, we first
+split the text into a list and then count how many elements the list
+contains.</p>
+<pre class="grel"><code>value.split("|").length()</code></pre>
+<p>In this expression, we chain two operations together. First,
+<code>split()</code> creates a list of names. Then
+<code>.length()</code> counts how many elements are in that list. In the
+window where you enter your GREL function, you can see the result it
+produces as you type.</p>
+
 </section></section><section id="aio-05-transformation"><p>Content from <a href="05-transformation.html">Transforming Data</a></p>
 <hr>
 <p>Last updated on 2026-05-26 |
