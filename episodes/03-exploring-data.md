@@ -94,8 +94,8 @@ To filter for all prints in the department, you can use a text filter and type "
 
 ### Rows, Records, and Multi-Valued Cells
 
-Up to this point, we have assumed that every cell in a column contains only a single value. In real-world data, however, that is often not the case. In the Met dataset, the `Artist Display Name` column sometimes contains two or more names, separated by a `;` like
-`Horace Harral; Joseph Wolf`.
+Up to this point, we have assumed that every cell in a column contains only a single value. In real-world data, however, that is often not the case. In the Met dataset, the `Artist Display Name` column sometimes contains two or more names, separated by a `|` like
+`Horace Harral|Joseph Wolf`.
 This is problematic for faceting. If we want to find out which artist appears most frequently in the dataset, this structure makes it difficult. That's because if we apply a text facet to the `Artist Display Name` column as it stands, OpenRefine will treat the entire string as one value. The facet will then list the artists as if it were a single artist, which is clearly not what we want. What we need instead is to treat every artist as separate values: `Horace Harral` and `Joseph Wolf`.
 
 To understand what happens when we correct this, it helps to know about the distinction between **Rows** and **Records** in OpenRefine. By default, data is displayed as rows, one after the other. But OpenRefine can also treat a group of rows as belonging to the same record. When we split a cell that contains multiple values, OpenRefine creates additional rows within the same record. That means the number of rows goes up, but the number of records stays the same.
@@ -103,7 +103,7 @@ To understand what happens when we correct this, it helps to know about the dist
 
 
 1. Switch to **Records view** (at the top left of the grid, choose “Show as: Records”). This makes it easier to see what happens after the split.
-2. Open the column menu for `Artist Display Name`, choose `Edit cells → Split multi-valued cells…`. Enter the separator `;` in the box, and click `OK`.
+2. Open the column menu for `Artist Display Name`, choose `Edit cells → Split multi-valued cells…`. Enter the separator `|` in the box, and click `OK`.
 3. Create a text facet on `Artist Display Name` again. This time you will see the names of individual artists listed separately. Each can now be counted and selected on its own.
 
 If you now switch back to the `rows` view you will see that the number of rows rose to 4,644.
