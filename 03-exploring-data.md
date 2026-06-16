@@ -126,7 +126,7 @@ Split the cells for this column and create a text facet.
 
 ### Solution
 
-* When splitting the cells, you should use "," as the separator.
+* When splitting the cells, you should use "|" as the separator.
 
 * After splitting the values and creating a text facet, the most frequent tag in the dataset is "Men".
 

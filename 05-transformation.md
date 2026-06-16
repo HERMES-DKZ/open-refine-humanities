@@ -8,7 +8,7 @@ exercises: 20
 
 - How can we clean and standardize the `Artist Display Bio` values in OpenRefine?
 - What is the difference between *finding* issues (facets) and *fixing* them (transformations & clustering)?
-- What is clustering and when to use it?
+- What is clustering and how can it help identify inconsistent values?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -21,101 +21,74 @@ exercises: 20
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-In the previous episodes we used build in and custom facets to explore the dataset, identify potential issues and correcting small errors. In this episode we move to the next stage of the workflow: cleaning and restructuring the data.  
-We will use transformations, column operations, and clustering to make the information easier to analyse.
-Without explicitly stating it, you have already used transformations in previous episodes: splitting multi-valued cells, rejoining them, transforming a string to a number. 
+## From Exploring Data to Cleaning Data
+In the previous episodes, we used built-in and custom facets to explore our dataset and identify potential issues. Facets help us find patterns and problems, but they do not change the data itself. For further analysis of the dataset it helps to alter and reorganize the data.
 
-
-In the Met dataset, the column `Artist Display Bio` stores information on nationality and biographaphy of artists. Typical examples look like:
-
-```
-British, Ipswich 1817–1905 Hastings|German, Moers 1820–1899 London
-Italian, active 16th century|Italian, active Venice 1530–1573
-```
-So multiple pieces of information are packed into a single field, sometimes with inconsistent separators or formatting and as mentioned before some cell contain information about multiple artists, so we must ensure the rows are split correctly before working with this column.
+In this episode, we move from exploration to cleaning, which is helpful for a later analysis. We will use transformations, column operations, and clustering to modify and standardize our data.
 
 ::::::::::::: discussion
 
-### Discussion: By which separator can we split the `Artist Display Bio` column?
+### Discussion: What information is stored in `Artist Display Bio`?
 
+Look at several values in the column.
 
+- What different kinds of information are stored together?
+- What problems could this cause for later analysis?
+- How could we separate these different pieces of information?
 
+::::::::instructor
 
-::::::::::::::::: solution
+Guide learners toward recognizing:
 
-### Solution
+- nationality
+- place names
+- dates
+- informations on multiple artists
 
+Emphasize that the column currently contains several different types of information. In the documentation of the dataset it states that `artistDisplayBio` contains information about "Nationality and life dates of an artist, also includes birth and death city when known".
 
-
-::::::::::::::::::::::::::
+:::
 
 :::::::::::::::::::
+## Splitting Multi-Valued Cells
 
-Next, we will simplify the text, then split nationality from the remaining details, and finally use clustering to review and standardize the results.
+The pipe character separates information about multiple artists.
 
-## Transformation with GREL
+To separate these artists into individual rows:
 
-We start with a literal replacement to remove parentheses. This is a very common first step in cleaning, because parentheses, brackets, or punctuation often only serve visual use, not analytical use.
+1. Open the column menu for `artistDisplayBio`. 
+2. Choose `Edit cells → Split multi-valued cells...`
+3. Enter: `|`
+4. Confirm with `OK`.
 
-1. Open the column menu for `Artist Display Bio`.
-2. Choose `Edit cells → Transform…`.
-3. Enter:
 
+
+## Creating a New Column
+Now that each row contains information about a single artist, we can begin extracting specific pieces of information. We would like to create a column that contains only the nationality. Instead of modifying the existing column, **we will create a new one**.
+
+1. Open the column menu for `artistDisplayBio` 
+
+2. Choose `Edit column->Add column based on this column...`
+
+3. A new window appears.
+
+:::instructor
+![Screenshot of the Add column based on column ... ... ](fig/04_openrefine_grelfunction.png)
+
+::::
+
+4. Name the new column `Nationality`.
+5. Enter the GREL expression: 
 ```grel
-value.replace("(", "").replace(")", "")
-```
-4. Click `OK`.
-
-The expression consists of two chained `replace()` calls. Each `replace(old, new)` looks for a specific character or substring and replaces it with something else. Because the second argument is an empty string, the character is completely removed.
-
-OpenRefine processes the expression for **each cell**:
-
-- `(` becomes nothing  
-- `)` becomes nothing  
-- everything else stays as-is  
-
-This kind of literal replacement is safe because parentheses are *not* meaningful content—they only frame the information.
-
-
-
-
-
-## Edit Columns  
-
-So far, we have transformed the *content* of a cell. But sometimes the data is best cleaned by **restructuring** it, splitting one column into multiple columns.
-
-The current pattern is:
-
-```
-<Nationality>, <rest>
+value.split(",")
 ```
 
-To isolate the nationality, we split at the comma. This is good practice: each column ideally contains one type of information (a principle often called “tidy data”).
-
-1. Open the column menu: ArtistBio → `Edit column → Split into several columns…`
-2. Separator: `,`
-3. Split into: *leave the default*
-4. Confirm with `OK`
-
-Afterward you get:
-
-- **ArtistBio 1** → nationality (“American”, “French”, “Ivorian”, …)
-- **ArtistBio 2** → biographical details (“born 1936”, “1857–1927”, …)
-
-If a cell contains more than one comma, OpenRefine will generate more columns (ArtistBio 3, ArtistBio 4, …). This shows how splitting is both powerful and potentially revealing—sometimes extra commas indicate noise or irregular formatting.
-
-:::::::::::::::::::::::::::::::::::::::::::: challenge
-
-## 
-
-
-::::::::::::::::::: solution
-
-### Solution
-
-:::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::
+and check what happens in the `Preview` tab below. The cell content is transformed from `American (born Germany), Frankfurt-am-Main 1863–1962 Staten Island, New York`
+ to `[ "American (born Germany)", " Frankfurt-am-Main 1863–1962 Staten Island", " New York" ]`, a array with three elements in it. An array is simply a list of values stored in a specific order. We want the nationality of the artist so only the first part is intresting for us. 
+ 6. Add `[0]` to the GREL funtion
+ 7. Click `OK`.
+ 
+ 
 
 
 ## Clustering
