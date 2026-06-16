@@ -429,12 +429,23 @@ its also possible to create a text facet and then search for
 <h3 id="04-custom-facets-and-grel-headingInstructor1">
 <a href="04-custom-facets-and-grel.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#04-custom-facets-and-grel-headingInstructor1"></a>
 </h3>
+<figure><img src="../fig/03_openrefine_grelfunction.png" alt="Screenshot of the Custom facet on column …" class="figure mx-auto d-block"><div class="figcaption">Screenshot of the Custom facet on column …</div>
+</figure><p>A new window appears. You will see a text field where you can enter
+the GREL function. At the bottom, there is a <code>Preview</code>
+section where you can see the value (i.e. the value in the table) and,
+to the right of that, the new value produced by the function. Under the
+<code>History</code> tab, you can view the commands that have been used,
+and under <code>Help</code> you will find a detailed explanation.</p>
+<hr>
+<br><h3 id="04-custom-facets-and-grel-headingInstructor2">
+<a href="04-custom-facets-and-grel.html#headingInstructor2">Instructor Note</a><a class="anchor" aria-label="anchor" href="#04-custom-facets-and-grel-headingInstructor2"></a>
+</h3>
 <p>This challenge illustrates an important idea about custom facets.
 They do not have to group by the original cell content; they can group
 by <strong>computed values</strong> that you define using GREL.</p>
 <hr>
-<br><h3 id="04-custom-facets-and-grel-headingInstructor2">
-<a href="04-custom-facets-and-grel.html#headingInstructor2">Instructor Note</a><a class="anchor" aria-label="anchor" href="#04-custom-facets-and-grel-headingInstructor2"></a>
+<br><h3 id="04-custom-facets-and-grel-headingInstructor3">
+<a href="04-custom-facets-and-grel.html#headingInstructor3">Instructor Note</a><a class="anchor" aria-label="anchor" href="#04-custom-facets-and-grel-headingInstructor3"></a>
 </h3>
 <p>Go to the window and type <code>value.split("|")</code>. Show the
 group that this creates an array with a varying number of elements. Then
@@ -514,7 +525,30 @@ questions about your data.</li>
 </div>
 <hr>
 <br></section><section id="05-transformation"><h2 class="section-heading"><a href="05-transformation.html">Transforming Data</a></h2>
-<hr class="half-width"></section><section id="06-reconciling-data"><h2 class="section-heading"><a href="06-reconciling-data.html">Reconciling Data with External Data Sources</a></h2>
+<hr class="half-width">
+<h3 id="05-transformation-headingInstructor1">
+<a href="05-transformation.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#05-transformation-headingInstructor1"></a>
+</h3>
+<p>Guide learners toward recognizing:</p>
+<ul>
+<li>nationality</li>
+<li>place names</li>
+<li>dates</li>
+<li>informations on multiple artists</li>
+</ul>
+<p>Emphasize that the column currently contains several different types
+of information. In the documentation of the dataset it states that
+<code>artistDisplayBio</code> contains information about “Nationality
+and life dates of an artist, also includes birth and death city when
+known”.</p>
+<hr>
+<br><h3 id="05-transformation-headingInstructor2">
+<a href="05-transformation.html#headingInstructor2">Instructor Note</a><a class="anchor" aria-label="anchor" href="#05-transformation-headingInstructor2"></a>
+</h3>
+<figure><img src="../fig/04_openrefine_grelfunction.png" alt="Screenshot of the Add column based on column … …" class="figure mx-auto d-block"><div class="figcaption">Screenshot of the Add column based on column …
+…</div>
+</figure><hr>
+<br></section><section id="06-reconciling-data"><h2 class="section-heading"><a href="06-reconciling-data.html">Reconciling Data with External Data Sources</a></h2>
 <hr class="half-width"></section><section id="07-exporting-data-and-cleaning-steps"><h2 class="section-heading"><a href="07-exporting-data-and-cleaning-steps.html">Exporting and Importing Data and Workflows</a></h2>
 <hr class="half-width"></section><section id="08-resources-for-self-study"><h2 class="section-heading"><a href="08-resources-for-self-study.html">Resources for Future Self-study</a></h2>
 <hr class="half-width"></section></section>

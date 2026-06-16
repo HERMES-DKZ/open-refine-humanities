@@ -568,7 +568,7 @@ analysis?<br>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ul>
 <li>Missing data are sometimes represented by blank cells, N/A or
@@ -1149,7 +1149,7 @@ cells. Split the cells for this column and create a text facet.</p>
 <div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <ul>
-<li><p>When splitting the cells, you should use “,” as the
+<li><p>When splitting the cells, you should use “|” as the
 separator.</p></li>
 <li><p>After splitting the values and creating a text facet, the most
 frequent tag in the dataset is “Men”.</p></li>
@@ -1409,6 +1409,26 @@ you already explored in the previous episode.</p>
 <li><p>Open the column menu for
 <code>Artist Display Name</code>.</p></li>
 <li><p>Choose <code>Facet → Custom text facet…</code></p></li>
+</ol>
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div class="accordion-body">
+<figure><img src="../fig/03_openrefine_grelfunction.png" alt="Screenshot of the Custom facet on column …" class="figure mx-auto d-block"><div class="figcaption">Screenshot of the Custom facet on column …</div>
+</figure><p>A new window appears. You will see a text field where you can enter
+the GREL function. At the bottom, there is a <code>Preview</code>
+section where you can see the value (i.e. the value in the table) and,
+to the right of that, the new value produced by the function. Under the
+<code>History</code> tab, you can view the commands that have been used,
+and under <code>Help</code> you will find a detailed explanation.</p>
+</div>
+</div>
+</div>
+</div>
+<ol start="3" style="list-style-type: decimal">
 <li>
 <p>Enter the following expression:</p>
 <pre class="grel"><code><span><span class="fu">value.contains</span><span class="op">(</span><span class="st">"|"</span><span class="op">)</span></span></code></pre>
@@ -1537,12 +1557,12 @@ title.</p>
 </div>
 </div>
 </div>
-<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div id="accordionInstructor2" class="accordion instructor-note accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
-  <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
+  <h3 class="accordion-header" id="headingInstructor2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
 <div class="accordion-body">
 <p>This challenge illustrates an important idea about custom facets.
 They do not have to group by the original cell content; they can group
@@ -1564,12 +1584,12 @@ contains.</p>
 <code>.length()</code> counts how many elements are in that list. In the
 window where you enter your GREL function, you can see the result it
 produces as you type.</p>
-<div id="accordionInstructor2" class="accordion instructor-note accordion-flush">
+<div id="accordionInstructor3" class="accordion instructor-note accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
-  <h3 class="accordion-header" id="headingInstructor2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor3" aria-expanded="false" aria-controls="collapseInstructor3">
+  <h3 class="accordion-header" id="headingInstructor3">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
+<div id="collapseInstructor3" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor3" aria-labelledby="headingInstructor3">
 <div class="accordion-body">
 <p>Go to the window and type <code>value.split("|")</code>. Show the
 group that this creates an array with a varying number of elements. Then
@@ -1657,7 +1677,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-05-transformation"><p>Content from <a href="05-transformation.html">Transforming Data</a></p>
 <hr>
-<p>Last updated on 2026-05-26 |
+<p>Last updated on 2026-06-16 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/05-transformation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 40 minutes</p>
@@ -1676,7 +1696,8 @@ any links that you are not going to use.
 values in OpenRefine?</li>
 <li>What is the difference between <em>finding</em> issues (facets) and
 <em>fixing</em> them (transformations &amp; clustering)?</li>
-<li>What is clustering and when to use it?</li>
+<li>What is clustering and how can it help identify inconsistent
+values?</li>
 </ul>
 </div>
 </div>
@@ -1696,41 +1717,51 @@ life-dates.</li>
 </div>
 </div>
 </div>
-<p>In the previous episodes we used build in and custom facets to
-explore the dataset, identify potential issues and correcting small
-errors. In this episode we move to the next stage of the workflow:
-cleaning and restructuring the data.<br>
-We will use transformations, column operations, and clustering to make
-the information easier to analyse. Without explicitly stating it, you
-have already used transformations in previous episodes: splitting
-multi-valued cells, rejoining them, transforming a string to a
-number.</p>
-<p>In the Met dataset, the column <code>Artist Display Bio</code> stores
-information on nationality and biographaphy of artists. Typical examples
-look like:</p>
-<pre><code>British, Ipswich 1817–1905 Hastings|German, Moers 1820–1899 London
-Italian, active 16th century|Italian, active Venice 1530–1573</code></pre>
-<p>So multiple pieces of information are packed into a single field,
-sometimes with inconsistent separators or formatting and as mentioned
-before some cell contain information about multiple artists, so we must
-ensure the rows are split correctly before working with this column.</p>
-<div id="discussion-by-which-separator-can-we-split-the-artist-display-bio-column" class="callout discussion">
+<section><h2 class="section-heading" id="from-exploring-data-to-cleaning-data">From Exploring Data to Cleaning Data<a class="anchor" aria-label="anchor" href="#from-exploring-data-to-cleaning-data"></a>
+</h2>
+<hr class="half-width">
+<p>In the previous episodes, we used built-in and custom facets to
+explore our dataset and identify potential issues. Facets help us find
+patterns and problems, but they do not change the data itself. For
+further analysis of the dataset it helps to alter and reorganize the
+data.</p>
+<p>In this episode, we move from exploration to cleaning, which is
+helpful for a later analysis. We will use transformations, column
+operations, and clustering to modify and standardize our data.</p>
+<div id="discussion-what-information-is-stored-in-artist-display-bio" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <span class="callout-header">Discussion</span>
-<div id="discussion-by-which-separator-can-we-split-the-artist-display-bio-column" class="callout-inner">
-<h3 class="callout-title">Discussion: By which separator can we split
-the <code>Artist Display Bio</code> column?</h3>
+<div id="discussion-what-information-is-stored-in-artist-display-bio" class="callout-inner">
+<h3 class="callout-title">Discussion: What information is stored in
+<code>Artist Display Bio</code>?</h3>
 <div class="callout-content">
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<p>Look at several values in the column.</p>
+<ul>
+<li>What different kinds of information are stored together?</li>
+<li>What problems could this cause for later analysis?</li>
+<li>How could we separate these different pieces of information?</li>
+</ul>
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
-
+<p>Guide learners toward recognizing:</p>
+<ul>
+<li>nationality</li>
+<li>place names</li>
+<li>dates</li>
+<li>informations on multiple artists</li>
+</ul>
+<p>Emphasize that the column currently contains several different types
+of information. In the documentation of the dataset it states that
+<code>artistDisplayBio</code> contains information about “Nationality
+and life dates of an artist, also includes birth and death city when
+known”.</p>
 </div>
 </div>
 </div>
@@ -1738,100 +1769,59 @@ the <code>Artist Display Bio</code> column?</h3>
 </div>
 </div>
 </div>
-<p>Next, we will simplify the text, then split nationality from the
-remaining details, and finally use clustering to review and standardize
-the results.</p>
-<section><h2 class="section-heading" id="transformation-with-grel">Transformation with GREL<a class="anchor" aria-label="anchor" href="#transformation-with-grel"></a>
+</section><section><h2 class="section-heading" id="splitting-multi-valued-cells">Splitting Multi-Valued Cells<a class="anchor" aria-label="anchor" href="#splitting-multi-valued-cells"></a>
 </h2>
 <hr class="half-width">
-<p>We start with a literal replacement to remove parentheses. This is a
-very common first step in cleaning, because parentheses, brackets, or
-punctuation often only serve visual use, not analytical use.</p>
+<p>The pipe character separates information about multiple artists.</p>
+<p>To separate these artists into individual rows:</p>
 <ol style="list-style-type: decimal">
-<li>Open the column menu for <code>Artist Display Bio</code>.</li>
-<li>Choose <code>Edit cells → Transform…</code>.</li>
-<li>Enter:</li>
+<li>Open the column menu for <code>artistDisplayBio</code>.</li>
+<li>Choose <code>Edit cells → Split multi-valued cells...</code>
+</li>
+<li>Enter: <code>|</code>
+</li>
+<li>Confirm with <code>OK</code>.</li>
+</ol></section><section><h2 class="section-heading" id="creating-a-new-column">Creating a New Column<a class="anchor" aria-label="anchor" href="#creating-a-new-column"></a>
+</h2>
+<hr class="half-width">
+<p>Now that each row contains information about a single artist, we can
+begin extracting specific pieces of information. We would like to create
+a column that contains only the nationality. Instead of modifying the
+existing column, <strong>we will create a new one</strong>.</p>
+<ol style="list-style-type: decimal">
+<li><p>Open the column menu for <code>artistDisplayBio</code></p></li>
+<li><p>Choose
+<code>Edit column-&gt;Add column based on this column...</code></p></li>
+<li><p>A new window appears.</p></li>
 </ol>
-<pre class="grel"><code>value.replace("(", "").replace(")", "")</code></pre>
+<div id="accordionInstructor2" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
+  <h3 class="accordion-header" id="headingInstructor2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
+</button>
+<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
+<div class="accordion-body">
+<figure><img src="../fig/04_openrefine_grelfunction.png" alt="Screenshot of the Add column based on column … …" class="figure mx-auto d-block"><div class="figcaption">Screenshot of the Add column based on column …
+…</div>
+</figure>
+</div>
+</div>
+</div>
+</div>
 <ol start="4" style="list-style-type: decimal">
-<li>Click <code>OK</code>.</li>
+<li>Name the new column <code>Nationality</code>.</li>
+<li>Enter the GREL expression:</li>
 </ol>
-<p>The expression consists of two chained <code>replace()</code> calls.
-Each <code>replace(old, new)</code> looks for a specific character or
-substring and replaces it with something else. Because the second
-argument is an empty string, the character is completely removed.</p>
-<p>OpenRefine processes the expression for <strong>each
-cell</strong>:</p>
-<ul>
-<li>
-<code>(</code> becomes nothing<br>
-</li>
-<li>
-<code>)</code> becomes nothing<br>
-</li>
-<li>everything else stays as-is</li>
-</ul>
-<p>This kind of literal replacement is safe because parentheses are
-<em>not</em> meaningful content—they only frame the information.</p>
-</section><section><h2 class="section-heading" id="edit-columns">Edit Columns<a class="anchor" aria-label="anchor" href="#edit-columns"></a>
-</h2>
-<hr class="half-width">
-<p>So far, we have transformed the <em>content</em> of a cell. But
-sometimes the data is best cleaned by <strong>restructuring</strong> it,
-splitting one column into multiple columns.</p>
-<p>The current pattern is:</p>
-<pre><code>&lt;Nationality&gt;, &lt;rest&gt;</code></pre>
-<p>To isolate the nationality, we split at the comma. This is good
-practice: each column ideally contains one type of information (a
-principle often called “tidy data”).</p>
-<ol style="list-style-type: decimal">
-<li>Open the column menu: ArtistBio →
-<code>Edit column → Split into several columns…</code>
-</li>
-<li>Separator: <code>,</code>
-</li>
-<li>Split into: <em>leave the default</em>
-</li>
-<li>Confirm with <code>OK</code>
-</li>
-</ol>
-<p>Afterward you get:</p>
-<ul>
-<li>
-<strong>ArtistBio 1</strong> → nationality (“American”, “French”,
-“Ivorian”, …)</li>
-<li>
-<strong>ArtistBio 2</strong> → biographical details (“born 1936”,
-“1857–1927”, …)</li>
-</ul>
-<p>If a cell contains more than one comma, OpenRefine will generate more
-columns (ArtistBio 3, ArtistBio 4, …). This shows how splitting is both
-powerful and potentially revealing—sometimes extra commas indicate noise
-or irregular formatting.</p>
-<div id="section" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="section" class="callout-inner">
-<h3 class="callout-title"></h3>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
-<div class="accordion-body">
-
-</div>
-</div>
-</div>
-</div>
+<pre class="grel"><code><span><span class="fu">value.split</span><span class="op">(</span><span class="st">","</span><span class="op">)</span></span></code></pre>
+<p>and check what happens in the <code>Preview</code> tab below. The
+cell content is transformed from
+<code>American (born Germany), Frankfurt-am-Main 1863–1962 Staten Island, New York</code>
+to
+<code>[ "American (born Germany)", " Frankfurt-am-Main 1863–1962 Staten Island", " New York" ]</code>,
+a array with three elements in it. An array is simply a list of values
+stored in a specific order. We want the nationality of the artist so
+only the first part is intresting for us. 6. Add <code>[0]</code> to the
+GREL funtion 7. Click <code>OK</code>.</p>
 </section><section><h2 class="section-heading" id="clustering">Clustering<a class="anchor" aria-label="anchor" href="#clustering"></a>
 </h2>
 <hr class="half-width">
@@ -1897,20 +1887,20 @@ otherwise miss.</p>
 <p>This makes clustering extremely effective for cleaning humanities
 datasets, where controlled vocabulary is uncommon and metadata comes
 from diverse sources.</p>
-<div id="section-1" class="callout discussion">
+<div id="section" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <span class="callout-header">Discussion</span>
-<div id="section-1" class="callout-inner">
+<div id="section" class="callout-inner">
 <h3 class="callout-title"></h3>
 <div class="callout-content">
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 
 </div>
