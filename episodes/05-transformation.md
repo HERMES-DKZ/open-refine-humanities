@@ -148,6 +148,7 @@ if(value.contains(/[0-9]/), "", value)
 value.replace("(?)", "")
 
 :::::::::
+
 :::::::::
 
 :::::: challenge
@@ -157,6 +158,7 @@ value.replace("(?)", "")
 ::::: solution
 
 :::::::::
+
 :::::::::
 
 
@@ -171,7 +173,10 @@ Clustering identifies values that may represent the same concept, even when they
 
 3. A new window appears. Click `Cluster`.
 
+::: instructor
 ![Screenshot of the Cluster and edit column ... ](fig/05_openrefine_clustering.png)
+
+::::
 
 The clustering window displays one suggested cluster per row. For each cluster the variations of a similar value with the count of rows they appear are shown on the left; a field on the right allows you to select or edit a preferred value.
 
