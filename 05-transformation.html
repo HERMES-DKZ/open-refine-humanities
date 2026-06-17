@@ -246,8 +246,6 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#from-exploring-data-to-cleaning-data">From Exploring Data to Cleaning Data</a></li>
-<li><a href="#splitting-multi-valued-cells">Splitting Multi-Valued Cells</a></li>
-<li><a href="#creating-a-new-column">Creating a New Column</a></li>
 <li><a href="#clustering">Clustering</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -340,7 +338,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Transforming Data</h1>
-        <p>Last updated on 2026-06-16 |
+        <p>Last updated on 2026-06-17 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/05-transformation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -359,12 +357,11 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>How can we clean and standardize the <code>Artist Display Bio</code>
-values in OpenRefine?</li>
-<li>What is the difference between <em>finding</em> issues (facets) and
-<em>fixing</em> them (transformations &amp; clustering)?</li>
-<li>What is clustering and how can it help identify inconsistent
-values?</li>
+<ul><li>How can GREL be used to extract information?</li>
+<li>What is the difference between modifying existing values and
+creating new columns?</li>
+<li>How can clustering help identify inconsistent values in a
+dataset?</li>
 </ul></div>
 </div>
 </div>
@@ -372,10 +369,10 @@ values?</li>
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>Remove literal characters with GREL replacements.</li>
-<li>Split <code>Artist Display Bio</code> into nationality and
-life-dates.</li>
-<li>Inspect and normalize a column.</li>
+<ul><li>Apply GREL transformations to extract information.</li>
+<li>Create new columns based on existing data.</li>
+<li>Use arrays and indexing to select specific parts of a value.</li>
+<li>Use clustering to identify and review inconsistent values.</li>
 </ul></div>
 </div>
 </div>
@@ -385,11 +382,11 @@ life-dates.</li>
 <hr class="half-width"><p>In the previous episodes, we used built-in and custom facets to
 explore our dataset and identify potential issues. Facets help us find
 patterns and problems, but they do not change the data itself. For
-further analysis of the dataset it helps to alter and reorganize the
+further analysis, it is often useful to reorganize and standardize the
 data.</p>
-<p>In this episode, we move from exploration to cleaning, which is
-helpful for a later analysis. We will use transformations, column
-operations, and clustering to modify and standardize our data.</p>
+<p>In this episode, we move from exploration to cleaning. We will use
+transformations, column operations, and clustering to modify and
+standardize our data.</p>
 <div id="discussion-what-information-is-stored-in-artist-display-bio" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -406,105 +403,187 @@ operations, and clustering to modify and standardize our data.</p>
 </ul></div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="splitting-multi-valued-cells">Splitting Multi-Valued Cells<a class="anchor" aria-label="anchor" href="#splitting-multi-valued-cells"></a></h2>
-<hr class="half-width"><p>The pipe character separates information about multiple artists.</p>
+<div class="section level3">
+<h3 id="splitting-multi-valued-cells">Splitting Multi-Valued Cells<a class="anchor" aria-label="anchor" href="#splitting-multi-valued-cells"></a></h3>
+<p>The first step is to separate information about individual artists.
+As you learned in previous episodes, the pipe character (<code>|</code>)
+is used to separate information about multiple artists within a single
+cell.</p>
 <p>To separate these artists into individual rows:</p>
-<ol style="list-style-type: decimal"><li>Open the column menu for <code>artistDisplayBio</code>.</li>
-<li>Choose <code>Edit cells → Split multi-valued cells...</code>
-</li>
-<li>Enter: <code>|</code>
-</li>
-<li>Confirm with <code>OK</code>.</li>
-</ol></section><section><h2 class="section-heading" id="creating-a-new-column">Creating a New Column<a class="anchor" aria-label="anchor" href="#creating-a-new-column"></a></h2>
-<hr class="half-width"><p>Now that each row contains information about a single artist, we can
-begin extracting specific pieces of information. We would like to create
-a column that contains only the nationality. Instead of modifying the
-existing column, <strong>we will create a new one</strong>.</p>
-<ol style="list-style-type: decimal"><li><p>Open the column menu for <code>artistDisplayBio</code></p></li>
+<ol style="list-style-type: decimal"><li><p>Open the column menu for <code>ArtistDisplayBio</code>.</p></li>
 <li><p>Choose
-<code>Edit column-&gt;Add column based on this column...</code></p></li>
-<li><p>A new window appears.</p></li>
-</ol><ol start="4" style="list-style-type: decimal"><li>Name the new column <code>Nationality</code>.</li>
-<li>Enter the GREL expression:</li>
-</ol><pre class="grel"><code><span><span class="fu">value.split</span><span class="op">(</span><span class="st">","</span><span class="op">)</span></span></code></pre>
-<p>and check what happens in the <code>Preview</code> tab below. The
-cell content is transformed from
-<code>American (born Germany), Frankfurt-am-Main 1863–1962 Staten Island, New York</code>
-to
-<code>[ "American (born Germany)", " Frankfurt-am-Main 1863–1962 Staten Island", " New York" ]</code>,
-a array with three elements in it. An array is simply a list of values
-stored in a specific order. We want the nationality of the artist so
-only the first part is intresting for us. 6. Add <code>[0]</code> to the
-GREL funtion 7. Click <code>OK</code>.</p>
-</section><section><h2 class="section-heading" id="clustering">Clustering<a class="anchor" aria-label="anchor" href="#clustering"></a></h2>
-<hr class="half-width"><p>These inconsistencies make it hard to analyze the data reliably.</p>
-<p>Clustering is one of OpenRefine’s most powerful tools for identifying
-and normalizing such variations — especially when the inconsistencies
-appear similar but not identical.</p>
-<div class="section level3">
-<h3 id="what-is-clustering">What is clustering?<a class="anchor" aria-label="anchor" href="#what-is-clustering"></a></h3>
-<p>Clustering is OpenRefine’s way of grouping together text values that
-<em>look</em> or <em>sound</em> similar.<br>
-It does this by reducing each value to a <strong>“key”</strong> based on
-a transformation.</p>
-<p>For example:</p>
-<ul><li><p>You might remove vowels and make everything uppercase:<br>
-“Color” → “CLR”, “Colour” → “CLR” → <strong>match</strong></p></li>
-<li><p>Or you might use phonetic rules:<br>
-“Smith” → “SM0”, “Smyth” → “SM0” → <strong>match</strong></p></li>
-</ul><p>A “keying function” transforms two strings that <em>should</em> be
-the same into the <strong>same key</strong>, even if their spellings
-differ slightly. There are many more clustering methods, all of which
-can recognise different patterns. It helps to understand these in order
-to find the right method, but often it is enough to try them out and
-proceed step by step.</p>
-<p>OpenRefine uses this idea to suggest groups of values you may want to
-merge.</p>
-<ol style="list-style-type: decimal"><li>Open: ArtistBio 2 → <code>Edit cells → Cluster and edit…</code>
-</li>
-<li>Method: <code>Key collision</code>
-</li>
-<li>Keying function: <code>Metaphone 3</code>
-</li>
-</ol></div>
-<div class="section level3">
-<h3 id="what-youll-see">What you’ll see<a class="anchor" aria-label="anchor" href="#what-youll-see"></a></h3>
-<p>The clustering window shows one line per suggested cluster:</p>
-<ul><li>On the left: variations of a similar value<br></li>
-<li>On the right: a field where you choose the unified form</li>
-</ul><p>You can then decide:</p>
-<ul><li>
-<strong>Merge and reformat them</strong> into a consistent
-style<br></li>
-<li>
-<strong>Ignore</strong> clusters if the variations are
-meaningful<br></li>
-<li><strong>Edit only some entries</strong></li>
-</ul><p>Clustering never changes anything automatically. <strong>You are in
-control</strong>—OpenRefine simply helps you notice patterns you would
-otherwise miss.</p>
-<p>This makes clustering extremely effective for cleaning humanities
-datasets, where controlled vocabulary is uncommon and metadata comes
-from diverse sources.</p>
-<div id="section" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<code>Edit cells → Split multi-valued cells...</code></p></li>
+<li><p>Enter: <code>|</code>.</p></li>
+<li><p>Confirm with <code>OK</code>.</p></li>
+</ol><p>You will notice that some artists have only partial information,
+while others have much more detailed entries. Most complete entries
+follow a pattern similar to:
+<code>Nationality, Place Year–Year Place</code>.</p>
 </div>
-<span class="callout-header">Discussion</span>
-<div id="section" class="callout-inner">
-<h3 class="callout-title"></h3>
+<div class="section level3">
+<h3 id="creating-a-new-column">Creating a New Column<a class="anchor" aria-label="anchor" href="#creating-a-new-column"></a></h3>
+<p>Now we can begin extracting specific pieces of information. To
+preserve the original data, we will create a new column rather than
+modifying the existing one. This is an important distinction: unlike the
+previous operation, which changed the structure of the dataset by
+creating new rows, we are now creating an additional column while
+keeping the original values unchanged.</p>
+<div id="how-to-extract-the-nationality" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="how-to-extract-the-nationality" class="callout-inner">
+<h3 class="callout-title">How to extract the Nationality?</h3>
 <div class="callout-content">
+<p>Look at the column <code>ArtistDisplayBio</code>. How could you
+separate the nationality from the remaining information?</p>
+</div>
+</div>
+</div>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>Most values contain a comma immediately after the nationality. We can
+therefore split the text at the comma and keep only the first
+element.</p>
+</div>
+</div>
+</div>
+</div>
+<ol style="list-style-type: decimal"><li><p>Open the column menu for <code>ArtistDisplayBio</code> .</p></li>
+<li><p>Choose
+<code>Edit column  → Add column based on this column...</code></p></li>
+<li><p>A new window appears.</p></li>
+</ol><ol start="4" style="list-style-type: decimal"><li>Name the new column <code>Nationality</code>.</li>
+<li>Enter the GREL expression and check what happens in the
+<code>Preview</code> tab below</li>
+</ol><pre class="grel"><code><span><span class="fu">value.split</span><span class="op">(</span><span class="st">","</span><span class="op">)</span></span></code></pre>
+<p>The cell content is transformed into an array with three elements in
+it:
+<code>American (born Germany), Frankfurt-am-Main 1863–1962 Staten Island, New York</code>
+→<br><code>[ "American (born Germany)", " Frankfurt-am-Main 1863–1962 Staten Island", " New York" ]</code>
+An array is simply a list of values stored in a specific order. In
+OpenRefine arrays are displayed unsing square brackets with elements
+separated by commas. Since we are only interested in the nationality, we
+want the first element of the array. Array positions begin at 0, so the
+first element is accessed using:</p>
+<ol start="6" style="list-style-type: decimal"><li><p>Add <code>[0]</code> to the GREL funtion.</p></li>
+<li><p>Click <code>OK</code> to create the new column.</p></li>
+</ol><p>What happens if you replace [0] with [1]?</p>
+<div id="additional-cleaning" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div id="additional-cleaning" class="callout-inner">
+<h3 class="callout-title">Additional cleaning</h3>
+<div class="callout-content">
+<p>Look at the new <code>Nationality</code> column. Do all values
+contain only nationalities? Discuss the following questions:</p>
+<ul><li>Which additional information is still present?</li>
+<li>Can you identify recurring patterns?</li>
+<li>How might these patterns be removed?</li>
+</ul><p>You do not need to propose a GREL expression. A description in
+natural language is sufficient.</p>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<p>Common issues include:</p>
+<ul><li>birth information in parentheses, such as (born Germany)</li>
+<li>dates that were not completely separated</li>
+<li>inconsistent formatting</li>
+</ul><p>Data cleaning is rarely finished after a single transformation.
+Manual review is still necessary, but transformations can greatly reduce
+the amount of work required.</p>
+<p>if(value.contains(/[0-9]/), ““, value) value.replace(”(?)“,”“)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="extracting-the-death-city-of-an-artist" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="extracting-the-death-city-of-an-artist" class="callout-inner">
+<h3 class="callout-title">Extracting the Death City of an Artist</h3>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 
 </div>
 </div>
 </div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="clustering">Clustering<a class="anchor" aria-label="anchor" href="#clustering"></a></h2>
+<hr class="half-width"><p>Clustering identifies values that may represent the same concept,
+even when they are written differently. It identifies and normalizes
+variations — especially when different inconsistencies appear similar
+but not identical. We will demonstrate clustering on the column
+<code>Object Name</code>.</p>
+<ol style="list-style-type: decimal"><li><p>Open the column menu for <code>Object Name</code>.</p></li>
+<li><p>Choose <code>Edit cells  → Cluster and edit...</code>.</p></li>
+<li><p>A new window appears. Click <code>Cluster</code>.</p></li>
+</ol><figure><img src="fig/05_openrefine_clustering.png" alt="Screenshot of the Cluster and edit column …" class="figure mx-auto d-block"><div class="figcaption">Screenshot of the Cluster and edit column
+…</div>
+</figure><p>The clustering window displays one suggested cluster per row. For
+each cluster the variations of a similar value with the count of rows
+they appear are shown on the left; a field on the right allows you to
+select or edit a preferred value.</p>
+<p>For every suggested cluster you can decide to merge the values into a
+standardized form, to ignore the cluster if the variations are
+meaningful or to edit only some entries of the cluster. Clustering never
+changes anything automatically. OpenRefine simply helps you notice
+patterns you would otherwise miss.</p>
+<p>Different clustering methods and keying functions identify different
+kinds of similarities. You do not need to understand the underlying
+algorithms. In practice, it is often sufficient to experiment with
+several methods and compare the results.</p>
+<div id="cluster-the-classification" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="cluster-the-classification" class="callout-inner">
+<h3 class="callout-title">Cluster the Classification</h3>
+<div class="callout-content">
+<p>Look at the column <code>Classification</code> and cluster the
+values. Try out different methods and keying functions. Which one works?
+And what could make clustering easier?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
+</button>
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div class="accordion-body">
+<p>Clustering method and keying function that works best: Splitting the
+values with the pipe helps.</p>
 </div>
 </div>
 </div>
@@ -518,12 +597,15 @@ from diverse sources.</p>
 <div class="callout-content">
 <ul><li>Transformations modify the <em>content</em> of cells, while column
 operations reshape the <em>structure</em> of the dataset.</li>
-<li>Literal GREL replacements help remove unwanted characters and
-prepare text for further processing.</li>
-<li>Splitting columns separates different types of information, making
-the data easier to analyze and clean.</li>
-<li>Clustering identifies similar but inconsistently written values and
-supports manual standardization.</li>
+<li>The <code>split()</code> function creates arrays that can be
+accessed using positions such as <code>[0]</code> and
+<code>[1]</code>.</li>
+<li>Structured information can be extracted from text using GREL
+expressions and pattern matching.</li>
+<li>Data cleaning often requires multiple transformation steps and
+manual review.</li>
+<li>Clustering helps identify potentially equivalent values and supports
+manual standardization.</li>
 </ul></div>
 </div>
 </div>
@@ -531,7 +613,6 @@ supports manual standardization.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter Bottom"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="04-custom-facets-and-grel.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
@@ -592,8 +673,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/open-refine-humanities/05-transformation.html",
   "identifier": "https://HERMES-DKZ.github.io/open-refine-humanities/05-transformation.html",
   "dateCreated": "2026-05-26",
-  "dateModified": "2026-06-16",
-  "datePublished": "2026-06-16"
+  "dateModified": "2026-06-17",
+  "datePublished": "2026-06-17"
 }
 
   </script><script>
