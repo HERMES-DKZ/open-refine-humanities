@@ -145,8 +145,8 @@ In this expression, we chain two operations together. First, `split()` creates a
 :::::::::: instructor
 
  Go to the window and type `value.split("|")`. Show the group that this creates an array with a varying number of elements. Then add `.length()` to it and demonstrate that this now displays the number of elements in the array.
- 
- :::::::::
+
+:::::::::
 
 Working with GREL always starts with a question about the data.
 That’s why we’re going to take a look at the most common GREL functions and what they do.
