@@ -129,7 +129,7 @@ There are 1009 long titles in the dataset. Looking at these entries shows that m
 :::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::instructor
+:::::::::: instructor
 
 This challenge illustrates an important idea about custom facets. They do not have to group by the original cell content; they can group by **computed values** that you define using GREL.
 
@@ -142,7 +142,7 @@ value.split("|").length()
 ```
 In this expression, we chain two operations together. First, `split()` creates a list of names. Then `.length()` counts how many elements are in that list. In the window where you enter your GREL function, you can see the result it produces as you type.
 
-::::::::::instructor
+:::::::::: instructor
  Go to the window and type `value.split("|")`. Show the group that this creates an array with a varying number of elements. Then add `.length()` to it and demonstrate that this now displays the number of elements in the array.
  :::::::::
 
