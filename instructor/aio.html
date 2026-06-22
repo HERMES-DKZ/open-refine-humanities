@@ -387,7 +387,7 @@
         
 <section id="aio-01-introduction"><p>Content from <a href="01-introduction.html">Introduction to OpenRefine</a></p>
 <hr>
-<p>Last updated on 2026-05-26 |
+<p>Last updated on 2026-06-22 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/01-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 15 minutes</p>
@@ -451,26 +451,26 @@ messy data. Think of OpenRefine as a workbench for your data, a place
 where you can clean, organize, and explore information, even if you have
 no technical background. OpenRefine runs locally on your computer and
 opens in your web browser, providing a user-friendly interface that
-guides you through each step. Working in your web browser might be
-confusing, but nothing from your dataset is sent to the internet —
-everything runs locally on your computer.</p>
+guides you through each step. Although OpenRefine runs in your web
+browser, nothing from your dataset is sent to the internet — everything
+runs locally on your computer.</p>
 <section><h2 class="section-heading" id="our-dataset">Our Dataset<a class="anchor" aria-label="anchor" href="#our-dataset"></a>
 </h2>
 <hr class="half-width">
 <p>Throughout this lesson, you will use a sample dataset from the
-Metropolitan Museum of Art’s (The Met) Open Access Initiative. The
-dataset includes artwork titles, creators, production dates, materials,
-and locations — fields that are typical for cultural heritage
-collections. Even if you have never worked with data before, you will
-see how OpenRefine can make your research easier.</p>
+Metropolitan Museum of Art (The Met) Open Access Initiative. The dataset
+includes artwork titles, creators, production dates, materials, and
+locations — fields that are typical for cultural heritage collections.
+Even if you have never worked with data before, you will see how
+OpenRefine can make your research easier.</p>
 <p>In many digital humanities projects, a significant amount of time is
 spent preparing and cleaning data before analysis. It’s not always the
 most exciting part, but it is essential. With OpenRefine, you will learn
 how to think about data organization and develop practices for more
-effective data cleaning. By the end of this lesson, participants will be
-able to clean, explore, and analyze structured cultural heritage data.
-You don’t need to be a technical expert, just curious and willing to try
-something new.</p>
+effective data cleaning. By the end of this lesson, you will be able to
+clean, explore, and analyze structured cultural heritage data. You don’t
+need to be a technical expert, just curious and willing to try something
+new.</p>
 <div id="challenge-spot-the-messy-data" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -575,11 +575,12 @@ analysis?<br>
 0.</li>
 <li>Is the title the same as the object name? In some rows they differ
 in others they are the same.</li>
-<li>The Artist Display Name sometimes contains more people.</li>
-<li>Object dates are often not given as a specific year.</li>
+<li>The <code>Artist Display Name</code>column sometimes contains more
+people.</li>
+<li>Object dates are often not recorded as a specific year.</li>
 <li>The cities in the table could be ambiguous, is it Chelsea in the UK
-or Chelsea in the US? Maybe you can derive a unique location from
-information about the artist.</li>
+or Chelsea in the US? Additional information about the artist might help
+identify the correct location.</li>
 <li>Paris and Paris, France refer to the same place, but are recorded
 differently.</li>
 <li>Some titles are enclosed in quotation marks, while others are
@@ -643,7 +644,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-02-import-data"><p>Content from <a href="02-import-data.html">Importing Data and Getting to Know the OpenRefine User Interface</a></p>
 <hr>
-<p>Last updated on 2026-05-26 |
+<p>Last updated on 2026-06-22 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/02-import-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
@@ -687,8 +688,8 @@ functions</li>
 <hr class="half-width">
 <p>In this episode, you will import the Metropolitan Museum dataset used
 throughout the lesson. To begin, open OpenRefine. When you start
-OpenRefine, a window in your web browser (at the address <a href="http://127.0.0.1:3333/" class="external-link">http://127.0.0.1:3333/</a>) will open and
-you are greeted by the start page.</p>
+OpenRefine, a window in your web browser (at the address <a href="http://127.0.0.1:3333/" class="external-link">http://127.0.0.1:3333/</a>) opens
+displaying the start page.</p>
 <figure><img src="../fig/01_data_import.png" alt="Screenshot of the Import Data Window" class="figure mx-auto d-block"><div class="figcaption">Screenshot of the Import Data Window</div>
 </figure><p>There are various options in the left-hand bar. You can:</p>
 <ul>
@@ -703,7 +704,7 @@ you are greeted by the start page.</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>If you have a non-English-speaking audience, you can point out the
 option to change the language of the user interface. However, this is
@@ -727,7 +728,7 @@ project, you can import it under <code>Import project</code>.</p>
 <ol style="list-style-type: decimal">
 <li>Click on <code>Create Project</code> and then on <em>Get data
 from</em> <code>This Computer</code>.</li>
-<li>Here click on <code>Browse</code>, locate the dataset
+<li>Here click<code>Browse</code>, locate the dataset
 <code>met_dataset_oa.csv</code> on your computer and select it.</li>
 <li>Click on <code>Next</code> and upload the data into OpenRefine.</li>
 <li>On the next page OpenRefine will show you a preview of your data,
@@ -736,10 +737,10 @@ proceed.</li>
 </ol>
 <p>Below the data preview, you find various import settings for how the
 data should be loaded. These settings have a direct effect on the
-preview above, allowing us to check immediately whether the settings
-have been selected correctly. This is especially important when files
-use non-standard formats, as incorrect settings may result in a
-distorted table structure.</p>
+preview above, allowing us to immediately check whether the settings are
+correct. This is especially important when files use non-standard
+formats, as incorrect settings may result in a distorted table
+structure.</p>
 <div id="what-kinds-of-data-files-can-i-import" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -793,7 +794,7 @@ setting?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>The table structure collapses.</li>
@@ -852,7 +853,7 @@ can scroll through the columns within the table.</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
   <h3 class="accordion-header" id="headingInstructor2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor2" class="accordion-collapse collapse" aria-labelledby="headingInstructor2" data-bs-parent="#accordionInstructor2">
+<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
 <div class="accordion-body">
 <p>The row/record distinction will be shown in the next <a href="https://hermes-dkz.github.io/OpenRefine-humanities/aio.html#rows-records-and-multi-valued-cells" class="external-link">chapter</a>.
 For now, you can treat one row as one record.</p>
@@ -871,7 +872,7 @@ records every change you applied to the data. From here, you can step
 backward or forward through your changes. <em>Note: All changes are
 stored within the OpenRefine project; the original file remains
 unchanged.</em> You will use both tabs a lot in the following
-chapters.</p>
+episodes.</p>
 <p>Lastly, in the right corner of the <strong>project bar</strong>, the
 menu provides access to project-level actions. When you click on
 <code>Open...</code>, you return to the start page. The
@@ -906,7 +907,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-03-exploring-data"><p>Content from <a href="03-exploring-data.html">Exploring Data</a></p>
 <hr>
-<p>Last updated on 2026-06-16 |
+<p>Last updated on 2026-06-22 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/03-exploring-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 40 minutes</p>
@@ -969,12 +970,12 @@ facet</strong>. This facet type applies to all string values. We will
 create our first text facet together for the column
 <code>Department</code>. Open the column menu with the small arrow next
 to the column name and choose <code>Facet → Text facet</code>. A new
-panel will appear on the left side of the screen with the unique values
-inside the column and the count how often they appear. You can sort the
-values alphabetically or by frequency. You can also hover over values to
-edit them directly. This simple step immediately transforms a
-spreadsheet with hundreds of rows into a clear summary of categories and
-also helps to detect first inconsistencies.</p>
+panel will appear on the left side of the screen showing the unique
+values in the column and how often they occur. You can sort the values
+alphabetically or by frequency. You can also hover over values to edit
+them directly. This simple step immediately transforms a spreadsheet
+with hundreds of rows into a clear summary of categories and helps
+identify initial inconsistencies.</p>
 <p>Both “Arts of Africa Oceania and the Americas” and “Arts of Africa,
 Oceania and the Americas” appear in the panel. Since these values most
 likely refer to the same department, the version without the comma is
@@ -986,16 +987,16 @@ table, or select multiple values to combine them by clicking
 <strong>include</strong>. Ensure that you undo your selection by
 pressing <strong>exclude</strong>, otherwise you will only continue
 working with a small subset of the data.</p>
-<div id="exercise-first-insights-to-your-dataset-correct-errors" class="callout challenge">
+<div id="exercise-first-insights-into-your-dataset-correct-errors" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="exercise-first-insights-to-your-dataset-correct-errors" class="callout-inner">
-<h3 class="callout-title">Exercise: First insights to your dataset &amp;
-correct errors</h3>
+<div id="exercise-first-insights-into-your-dataset-correct-errors" class="callout-inner">
+<h3 class="callout-title">Exercise: First Insights into Your Dataset
+&amp; Correct Errors</h3>
 <div class="callout-content">
-<p>Create a <code>text facet</code> on the columns:</p>
+<p>Create a text facet on the columns:</p>
 <ul>
 <li><p><code>Is Public Domain</code></p></li>
 <li><p><code>Object Name</code></p></li>
@@ -1005,8 +1006,8 @@ correct errors</h3>
 <li>How many unique values are listed in each column?</li>
 <li>What is the most common value in <code>Object Name</code> and how
 often does it appear?</li>
-<li>Can you spot problems in the <code>Is Public Domain</code> column
-and can you fix them?</li>
+<li>Can you spot and fix the problems in the
+<code>Is Public Domain</code> column?</li>
 </ol>
 </div>
 </div>
@@ -1021,36 +1022,36 @@ and can you fix them?</li>
 <ol style="list-style-type: decimal">
 <li>4 / 389 / 321 different values.</li>
 <li>The most frequent value is Book with 493 counts.</li>
-<li>There are different spellings: “False”, “false” and “true”, “True”.
-You can decide for one spelling and edit the others with the edit
-button.</li>
+<li>There are inconsistent capitalizations: “False”, “false” and “true”,
+“True”. You can decide for one spelling and edit the others with the
+edit button.</li>
 </ol>
 </div>
 </div>
 </div>
 </div>
 <div class="section level3">
-<h3 id="the-difference-between-facet-and-filters">The difference between Facet and Filters<a class="anchor" aria-label="anchor" href="#the-difference-between-facet-and-filters"></a>
+<h3 id="the-difference-between-facets-and-filters">The difference between Facets and Filters<a class="anchor" aria-label="anchor" href="#the-difference-between-facets-and-filters"></a>
 </h3>
 <p>It is useful to distinguish between <strong>facets</strong> and
 <strong>filters</strong>. Both are ways of focusing on a subset of the
 data, but they work differently. A filter is like a search box: you type
 in a word or part of a word, and OpenRefine hides all rows that do not
 match. A facet, by contrast, gives you an overview of <em>all</em> the
-distinct values in a column (as you seen in the Challenge above) and
-lets you select them interactively.</p>
+distinct values in a column (as you saw in the Challenge above) and lets
+you select them interactively.</p>
 <p>For example, in the Met dataset, the column <code>Department</code>
 might contain categories such as “Medieval Art”, “Islamic Arts,” or
 “Drawings &amp; Prints.” A <strong>text facet</strong> on this column
 will immediately show you how many artworks belong to each department.
 By clicking on one or several values in the facet, you can quickly
 restrict your view to only those artworks, and then easily switch back
-to the full dataset. So with this functionality you can filter your data
-with the help of facet.</p>
-<p>Another way of filtering in a distint column is a text filter. When
-you choose <code>Filter → Text filter</code>, a search field appears on
-the left side. You can type a term to restrict the dataset to matching
-rows.</p>
+to the full dataset. Using this functionality, you can filter your data
+through the facet interface.</p>
+<p>Another way to filter values in a column is to use a text filter.
+When you choose <code>Filter → Text filter</code>, a search field
+appears on the left side. You can type a term to restrict the dataset to
+matching rows.</p>
 <div id="exercise-combining-facets-and-text-filters" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1073,12 +1074,12 @@ of the facet?</p>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
-<p>First, you use a text facet on the column <code>Departments</code>
-and filter for the department “Drawings and Prints” via include. Then
-you can use a text facet on the column <code>Object Name</code>. When
-you include the facet “Print”, you find 281 matching records. However,
-as you can see, there are not only “Print”, but also entries such as
-“Album Print Ornament”, etc.</p>
+<p>First, create a text facet on the column <code>Department</code> and
+filter for the department “Drawings and Prints” via include. Then you
+can use a text facet on the column <code>Object Name</code>. When you
+include the facet “Print”, you find 281 matching records. However, the
+results include not only “Print” but also values such as “Album Print
+Ornament”.</p>
 <p>To filter for all prints in the department, you can use a text filter
 and type “print”. There are 665 prints in the department.</p>
 </div>
@@ -1100,20 +1101,19 @@ That’s because if we apply a text facet to the
 <code>Artist Display Name</code> column as it stands, OpenRefine will
 treat the entire string as one value. The facet will then list the
 artists as if it were a single artist, which is clearly not what we
-want. What we need instead is to treat every artist as separate values:
+want. What we need instead is to treat each artist as a separate value:
 <code>Horace Harral</code> and <code>Joseph Wolf</code>.</p>
 <p>To understand what happens when we correct this, it helps to know
-about the distinction between <strong>Rows</strong> and
-<strong>Records</strong> in OpenRefine. By default, data is displayed as
+about the distinction between <strong>rows</strong> and
+<strong>records</strong> in OpenRefine. By default, data is displayed as
 rows, one after the other. But OpenRefine can also treat a group of rows
 as belonging to the same record. When we split a cell that contains
 multiple values, OpenRefine creates additional rows within the same
-record. That means the number of rows goes up, but the number of records
-stays the same.</p>
+record. This means that the number of rows increases, while the number
+of records remains unchanged.</p>
 <ol style="list-style-type: decimal">
-<li>Switch to <strong>Records view</strong> (at the top left of the
-grid, choose “Show as: Records”). This makes it easier to see what
-happens after the split.</li>
+<li>Switch to <code>records</code> at the top left of the grid. This
+makes it easier to see what happens after the split.</li>
 <li>Open the column menu for <code>Artist Display Name</code>, choose
 <code>Edit cells → Split multi-valued cells…</code>. Enter the separator
 <code>|</code> in the box, and click <code>OK</code>.</li>
@@ -1122,7 +1122,7 @@ time you will see the names of individual artists listed separately.
 Each can now be counted and selected on its own.</li>
 </ol>
 <p>If you now switch back to the <code>rows</code> view you will see
-that the number of rows rose to 4,644.</p>
+that the number of rows increased to 4,644.</p>
 <div id="exercise-split-multi-valued-cells" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -1149,8 +1149,8 @@ cells. Split the cells for this column and create a text facet.</p>
 <div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <ul>
-<li><p>When splitting the cells, you should use “|” as the
-separator.</p></li>
+<li><p>When splitting the cells, you should use a pipe (<code>|</code>)
+as the separator.</p></li>
 <li><p>After splitting the values and creating a text facet, the most
 frequent tag in the dataset is “Men”.</p></li>
 <li><p>The facet may show duplicate values. These appear as separate
@@ -1183,8 +1183,8 @@ that help explore numeric values like creation year of an artwork.</p>
 <p>Let us try this out with the <code>Object Begin Date</code> column
 from the Met dataset which contains the year an artwork was created.
 Open the column menu and choose <code>Facet → Numeric facet</code>. You
-might expect to see the different values, but instead, OpenRefine shows
-only a message such as “No numeric values.” This tells us that the
+might expect to see the different values, but instead, OpenRefine
+displays a message such as “No numeric values.” This tells us that the
 values in the column are not actually recognized as numbers, even though
 they look like numbers in the table.</p>
 <p>This situation is common when importing data: numbers are often
@@ -1202,8 +1202,8 @@ are now right-aligned, which is OpenRefine’s way of indicating that they
 are numeric rather than text.</p>
 <p>With the column properly converted, repeat the earlier step:<br><code>Facet → Numeric facet</code>.</p>
 <p>This time, OpenRefine shows a histogram with a slider to explore
-ranges of values from year 0 up to year 2100. The histogram groups all
-the year values into ranges of “100”, giving you an overview of how
+ranges of values from year 0 up to year 2100. The histogram groups the
+year values into intervals of 100 years, giving you an overview of how
 artworks are distributed by year of their creation.</p>
 <p>By dragging the slider handles, you can focus on particular ranges.
 For example, you might restrict the view to artworks before 1,500. You
@@ -1220,11 +1220,10 @@ cleaning.</p>
 <span class="callout-header">Callout</span>
 <div class="callout-inner">
 <div class="callout-content">
-<p>OpenRefine also offers other facet types such as a
-<code>timeline facet</code> for date values or a
-<code>scatterplot facet</code> for exploring the relationship between
-two numeric columns. In addition there is a facet type that helps you
-identfy duplicate in a column
+<p>OpenRefine also offers other facet types such as a timeline facet for
+date values or a scatterplot facet for exploring the relationship
+between two numeric columns. In addition, OpenRefine provides a facet
+type that helps you identify duplicate values in a column:
 <code>Facet → Customized facets → Duplicate facet</code>. Duplicate
 facets can be useful, for example, when working with columns that are
 expected to contain unique identifiers.</p>
@@ -1269,8 +1268,9 @@ is incomplete. Knowing how incomplete the data is can often be important
 for planning a later analysis. We can quickly identify the gaps by
 selecting <code>Facet → Customised facets → Facet by blank</code>. This
 gives us an output with “true” and “false” on the left. By selecting
-“false”, we exclude empty data series from the subset. If we do this for
-all columns, we only get the data records that are complete.</p>
+“false”, we exclude rows with missing values from the subset. If we do
+this for all columns, we only get the data records that are
+complete.</p>
 <div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
@@ -1278,9 +1278,9 @@ all columns, we only get the data records that are complete.</p>
 </button>
 <div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
-<p>There are often diffent way to do things in OpenRefine. In this case
-its also possible to create a text facet and then search for
-“blank”.</p>
+<p>There are often different ways to accomplish the same task in
+OpenRefine. In this case its also possible to create a text facet and
+then search for “blank”.</p>
 </div>
 </div>
 </div>
@@ -1307,9 +1307,9 @@ its also possible to create a text facet and then search for
 <div class="accordion-body">
 <p>First apply <code>Facet by blank</code> to <code>Culture</code> and
 select “false”. Then apply <code>Facet by blank</code> to
-<code>Tags</code> and select “false”. Only the remaining 175 record
-contain values in both columns. This are quite few keeping in mind, that
-our whole dataset encompass 2076 records.</p>
+<code>Tags</code> and select “false”. Only the remaining 175 records
+contain values in both columns. This is quite a small number,
+considering that the dataset contains 2,076 records.</p>
 </div>
 </div>
 </div>
@@ -1338,7 +1338,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-04-custom-facets-and-grel"><p>Content from <a href="04-custom-facets-and-grel.html">Custom Facets and GREL</a></p>
 <hr>
-<p>Last updated on 2026-06-17 |
+<p>Last updated on 2026-06-22 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/04-custom-facets-and-grel.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 35 minutes</p>
@@ -1392,7 +1392,7 @@ data in new ways.</li>
 artist or several artists?</h3>
 <div class="callout-content">
 <p>How can we check the column <code>Artist Display Name</code> to find
-out whether one or more people were involved in creating a artwork
+out whether one or more people were involved in creating an artwork
 without splitting it? Look carefully at a few cells. What character
 consistently separates multiple names?</p>
 </div>
@@ -1400,11 +1400,11 @@ consistently separates multiple names?</p>
 </div>
 <p>So far, we have explored facets that you can create by clicking
 through the menu—text, numeric, and timeline facets. These are powerful,
-but sometimes our exploration or cleaning task needs a rule that isn’t
-built in. In those cases, OpenRefine lets us define our own facets using
-small expressions written in GREL. Don’t worry if these terms are new.
-We will introduce them through a practical example based on the dataset
-you already explored in the previous episode.</p>
+but sometimes an exploration or cleaning task requires a rule that is
+not built in. In those cases, OpenRefine lets us define our own facets
+using small expressions written in GREL. Don’t worry if these terms are
+new to you. We will demponstrate them with an example based on the
+dataset you already explored in the previous episode.</p>
 <ol style="list-style-type: decimal">
 <li><p>Open the column menu for
 <code>Artist Display Name</code>.</p></li>
@@ -1460,8 +1460,8 @@ Marks</h3>
 <p>Create a custom text facet on the <code>Title</code> column and
 determine how many titles contain quotation marks. Then inspect a few
 examples and discuss why quotation marks might have been used.</p>
-<p>Tip: You need to escape the quotation mark with a backslash
-(<code>\</code>).</p>
+<p>Tip: You need to escape the quotation mark in the expression using a
+backslash (<code>\</code>).</p>
 </div>
 </div>
 </div>
@@ -1676,10 +1676,10 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-05-transformation"><p>Content from <a href="05-transformation.html">Transforming Data</a></p>
 <hr>
-<p>Last updated on 2026-06-17 |
+<p>Last updated on 2026-06-22 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/05-transformation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 40 minutes</p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 45 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -1757,7 +1757,7 @@ standardize our data.</p>
 </ul>
 <p>Emphasize that the column currently contains several different types
 of information. In the documentation of the dataset it states that
-<code>ArtistDisplayBio</code> contains information about “Nationality
+<code>Artist Display Bio</code> contains information about “Nationality
 and life dates of an artist, also includes birth and death city when
 known”.</p>
 </div>
@@ -1776,7 +1776,8 @@ is used to separate information about multiple artists within a single
 cell.</p>
 <p>To separate these artists into individual rows:</p>
 <ol style="list-style-type: decimal">
-<li><p>Open the column menu for <code>ArtistDisplayBio</code>.</p></li>
+<li><p>Open the column menu for
+<code>Artist Display Bio</code>.</p></li>
 <li><p>Choose
 <code>Edit cells → Split multi-valued cells...</code></p></li>
 <li><p>Enter: <code>|</code>.</p></li>
@@ -1804,7 +1805,7 @@ keeping the original values unchanged.</p>
 <div id="how-to-extract-the-nationality" class="callout-inner">
 <h3 class="callout-title">How to extract the Nationality?</h3>
 <div class="callout-content">
-<p>Look at the column <code>ArtistDisplayBio</code>. How could you
+<p>Look at the column <code>Artist Display Bio</code>. How could you
 separate the nationality from the remaining information?</p>
 </div>
 </div>
@@ -1824,7 +1825,8 @@ element.</p>
 </div>
 </div>
 <ol style="list-style-type: decimal">
-<li><p>Open the column menu for <code>ArtistDisplayBio</code> .</p></li>
+<li><p>Open the column menu for <code>Artist Display Bio</code>
+.</p></li>
 <li><p>Choose
 <code>Edit column  → Add column based on this column...</code></p></li>
 <li><p>A new window appears.</p></li>
@@ -1869,6 +1871,30 @@ first element is accessed using:</p>
 <li><p>Click <code>OK</code> to create the new column.</p></li>
 </ol>
 <p>What happens if you replace [0] with [1]?</p>
+<div id="extracting-the-death-city-of-an-artist" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="extracting-the-death-city-of-an-artist" class="callout-inner">
+<h3 class="callout-title">Extracting the Death City of an Artist</h3>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+
+</div>
+</div>
+</div>
+</div>
 <div id="additional-cleaning" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -1886,12 +1912,12 @@ contain only nationalities? Discuss the following questions:</p>
 </ul>
 <p>You do not need to propose a GREL expression. A description in
 natural language is sufficient.</p>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Common issues include:</p>
 <ul>
@@ -1906,30 +1932,6 @@ the amount of work required.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div id="extracting-the-death-city-of-an-artist" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="extracting-the-death-city-of-an-artist" class="callout-inner">
-<h3 class="callout-title">Extracting the Death City of an Artist</h3>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
-</button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
-<div class="accordion-body">
-
 </div>
 </div>
 </div>
@@ -2031,7 +2033,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-06-reconciling-data"><p>Content from <a href="06-reconciling-data.html">Reconciling Data with External Data Sources</a></p>
 <hr>
-<p>Last updated on 2026-05-26 |
+<p>Last updated on 2026-06-22 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/06-reconciling-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 35 minutes</p>
@@ -2085,7 +2087,8 @@ Jean Lepautre).</p>
 Instead of working only with the name written in the dataset, we link
 the value to a stable identifier in an authority database.</p>
 <p>For example, the artists in our dataset can be linked to the Union
-List of Artist Names (ULAN): <a href="http://vocab.getty.edu/page/ulan/500020307" class="external-link uri">http://vocab.getty.edu/page/ulan/500020307</a> or <a href="http://vocab.getty.edu/page/ulan/500000036" class="external-link uri">http://vocab.getty.edu/page/ulan/500000036</a>.</p>
+List of Artist Names (ULAN): Frank Lloyd Wright (<a href="http://vocab.getty.edu/page/ulan/500020307" class="external-link uri">http://vocab.getty.edu/page/ulan/500020307</a> or Jean le
+Pautre (<a href="http://vocab.getty.edu/page/ulan/500000036" class="external-link uri">http://vocab.getty.edu/page/ulan/500000036</a>).</p>
 <p>When a name in our dataset is reconciled with an authority record, we
 are essentially answering the question: &gt; Which exact person in this
 authority database corresponds to the name written in our dataset?</p>
@@ -2112,7 +2115,7 @@ in our dataset?</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>There are several search results for both. You have to check exactly
 which result is the right. ULAN records often contains additional
@@ -2144,9 +2147,8 @@ and copy the URL “<a href="https://services.getty.edu/vocab/reconcile/" class=
 <code>Add standard service...</code> and paste the copied URL into the
 appearing field. Select <code>Add service</code>.</p></li>
 <li><p>Select the service and click on <code>Next</code>.</p></li>
-<li><p>Select <code>ULAN search</code> this is the part of getty where
-we find right data. And click
-<code>Start reconciling...</code>.</p></li>
+<li><p>Select <code>ULAN search</code>, which provides access to artist
+authority records. And click <code>Start reconciling...</code>.</p></li>
 </ol>
 <p>OpenRefine now sends each name in the column to the Getty database
 and suggests possible matches.</p>
@@ -2168,7 +2170,7 @@ service</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 
 </div>
@@ -2208,7 +2210,7 @@ OpenRefine suggests multiple matches.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Helpful clues include life dates, nationality, occupations, or
 alternative spellings.<br>
@@ -2258,10 +2260,10 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-07-exporting-data-and-cleaning-steps"><p>Content from <a href="07-exporting-data-and-cleaning-steps.html">Exporting and Importing Data and Workflows</a></p>
 <hr>
-<p>Last updated on 2026-05-26 |
+<p>Last updated on 2026-06-22 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/07-exporting-data-and-cleaning-steps.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 10 minutes</p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -2278,7 +2280,7 @@ mistake?<br>
 </li>
 <li>How can we save our cleaning process to repeat it later or share it
 with colleagues?</li>
-<li>How can we export the cleaned data.</li>
+<li>How can we export the cleaned data?</li>
 </ul>
 </div>
 </div>
@@ -2323,11 +2325,12 @@ test transformations freely without the fear of making permanent
 mistakes. And if you change your mind, you can always jump back to any
 earlier state. When cleaning messy data, we rarely get everything right
 on the first try.</p>
-<p><strong>Example:</strong> After splitting the ArtistBio column into
-multiple parts, you might notice that the country information was
-separated cleanly, but the century data became fragmented and less
-useful. Using Undo/Redo, you can jump back to the step <em>before</em>
-the split and try a different approach.</p>
+<p><strong>Example:</strong> After splitting the
+<code>Artist Display Bio</code> column into multiple parts, you might
+notice that the country information was separated cleanly, but the
+century data became fragmented and less useful. Using Undo/Redo, you can
+jump back to the step <em>before</em> the split and try a different
+approach.</p>
 </section><section><h2 class="section-heading" id="exporting-and-importing-workflows">Exporting and Importing Workflows<a class="anchor" aria-label="anchor" href="#exporting-and-importing-workflows"></a>
 </h2>
 <hr class="half-width">
@@ -2335,7 +2338,7 @@ the split and try a different approach.</p>
 of your entire cleaning process as a set of instructions. OpenRefine can
 export these instructions as a <strong>JSON file</strong>. This file
 does not contain the cleaned data itself, but only the cleaning steps
-wich were applied to the data.</p>
+which were applied to the data.</p>
 <ol style="list-style-type: decimal">
 <li>Go to the <code>Undo/Redo</code> tab.<br>
 </li>
@@ -2346,7 +2349,7 @@ right side. You can select which steps to include into the JSON by
 selecting the checkboxes on the left side.<br>
 </li>
 <li>Save the processing steps to a JSON file by clicking
-<code>Export</code> or copy it manually to your clipbord and paste it
+<code>Export</code> or copy it manually to your clipboard and paste it
 into a file on your computer.</li>
 </ol>
 <p>Later, you or someone else can <strong>import</strong> this workflow
@@ -2420,9 +2423,9 @@ Dataset</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<p>You can separate the data at the string <code>) (</code>.</p>
+
 </div>
 </div>
 </div>
@@ -2545,8 +2548,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/open-refine-humanities/instructor/aio.html",
   "identifier": "https://HERMES-DKZ.github.io/open-refine-humanities/instructor/aio.html",
   "dateCreated": "2026-05-26",
-  "dateModified": "2026-06-17",
-  "datePublished": "2026-06-17"
+  "dateModified": "2026-06-22",
+  "datePublished": "2026-06-22"
 }
 
   </script><script>

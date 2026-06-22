@@ -118,7 +118,7 @@
     <a id="search-button" class="btn btn-primary" href="aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
   </div><!--/div.container-fluid -->
 </nav><aside class="col-md-12 lesson-progress"><div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 77%" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">77%</div>
+    <div class="progress-bar incubator" role="progressbar" style="width: 74%" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">74%</div>
   </div>
 </aside><div class="container">
       <div class="row">
@@ -338,7 +338,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Reconciling Data with External Data Sources</h1>
-        <p>Last updated on 2026-05-26 |
+        <p>Last updated on 2026-06-22 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/06-reconciling-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -391,7 +391,8 @@ Jean Lepautre).</p>
 Instead of working only with the name written in the dataset, we link
 the value to a stable identifier in an authority database.</p>
 <p>For example, the artists in our dataset can be linked to the Union
-List of Artist Names (ULAN): <a href="http://vocab.getty.edu/page/ulan/500020307" class="external-link uri">http://vocab.getty.edu/page/ulan/500020307</a> or <a href="http://vocab.getty.edu/page/ulan/500000036" class="external-link uri">http://vocab.getty.edu/page/ulan/500000036</a>.</p>
+List of Artist Names (ULAN): Frank Lloyd Wright (<a href="http://vocab.getty.edu/page/ulan/500020307" class="external-link uri">http://vocab.getty.edu/page/ulan/500020307</a> or Jean le
+Pautre (<a href="http://vocab.getty.edu/page/ulan/500000036" class="external-link uri">http://vocab.getty.edu/page/ulan/500000036</a>).</p>
 <p>When a name in our dataset is reconciled with an authority record, we
 are essentially answering the question: &gt; Which exact person in this
 authority database corresponds to the name written in our dataset?</p>
@@ -416,7 +417,7 @@ in our dataset?</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>There are several search results for both. You have to check exactly
 which result is the right. ULAN records often contains additional
@@ -445,9 +446,8 @@ and copy the URL “<a href="https://services.getty.edu/vocab/reconcile/" class=
 <code>Add standard service...</code> and paste the copied URL into the
 appearing field. Select <code>Add service</code>.</p></li>
 <li><p>Select the service and click on <code>Next</code>.</p></li>
-<li><p>Select <code>ULAN search</code> this is the part of getty where
-we find right data. And click
-<code>Start reconciling...</code>.</p></li>
+<li><p>Select <code>ULAN search</code>, which provides access to artist
+authority records. And click <code>Start reconciling...</code>.</p></li>
 </ol><p>OpenRefine now sends each name in the column to the Getty database
 and suggests possible matches.</p>
 <div id="challenge-add-another-reconciliation-service" class="callout challenge">
@@ -468,7 +468,7 @@ service</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 
 </div>
@@ -505,7 +505,7 @@ OpenRefine suggests multiple matches.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Helpful clues include life dates, nationality, occupations, or
 alternative spellings.<br>
@@ -608,8 +608,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/open-refine-humanities/06-reconciling-data.html",
   "identifier": "https://HERMES-DKZ.github.io/open-refine-humanities/06-reconciling-data.html",
   "dateCreated": "2026-05-26",
-  "dateModified": "2026-05-26",
-  "datePublished": "2026-06-17"
+  "dateModified": "2026-06-22",
+  "datePublished": "2026-06-22"
 }
 
   </script><script>

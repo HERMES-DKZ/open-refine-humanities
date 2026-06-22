@@ -118,7 +118,7 @@
     <a id="search-button" class="btn btn-primary" href="../instructor/aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
   </div><!--/div.container-fluid -->
 </nav><aside class="col-md-12 lesson-progress"><div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 56%" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">56%</div>
+    <div class="progress-bar incubator" role="progressbar" style="width: 52%" aria-valuenow="52" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">52%</div>
   </div>
 </aside><div class="container">
       <div class="row">
@@ -338,13 +338,13 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Transforming Data</h1>
-        <p>Last updated on 2026-06-17 |
+        <p>Last updated on 2026-06-22 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/05-transformation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
 
 
-        <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 40 minutes</p>
+        <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 45 minutes</p>
 
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -416,7 +416,7 @@ standardize our data.</p>
 <li>information on multiple artists</li>
 </ul><p>Emphasize that the column currently contains several different types
 of information. In the documentation of the dataset it states that
-<code>ArtistDisplayBio</code> contains information about “Nationality
+<code>Artist Display Bio</code> contains information about “Nationality
 and life dates of an artist, also includes birth and death city when
 known”.</p>
 </div>
@@ -433,7 +433,8 @@ As you learned in previous episodes, the pipe character (<code>|</code>)
 is used to separate information about multiple artists within a single
 cell.</p>
 <p>To separate these artists into individual rows:</p>
-<ol style="list-style-type: decimal"><li><p>Open the column menu for <code>ArtistDisplayBio</code>.</p></li>
+<ol style="list-style-type: decimal"><li><p>Open the column menu for
+<code>Artist Display Bio</code>.</p></li>
 <li><p>Choose
 <code>Edit cells → Split multi-valued cells...</code></p></li>
 <li><p>Enter: <code>|</code>.</p></li>
@@ -459,7 +460,7 @@ keeping the original values unchanged.</p>
 <div id="how-to-extract-the-nationality" class="callout-inner">
 <h3 class="callout-title">How to extract the Nationality?</h3>
 <div class="callout-content">
-<p>Look at the column <code>ArtistDisplayBio</code>. How could you
+<p>Look at the column <code>Artist Display Bio</code>. How could you
 separate the nationality from the remaining information?</p>
 </div>
 </div>
@@ -478,7 +479,8 @@ element.</p>
 </div>
 </div>
 </div>
-<ol style="list-style-type: decimal"><li><p>Open the column menu for <code>ArtistDisplayBio</code> .</p></li>
+<ol style="list-style-type: decimal"><li><p>Open the column menu for <code>Artist Display Bio</code>
+.</p></li>
 <li><p>Choose
 <code>Edit column  → Add column based on this column...</code></p></li>
 <li><p>A new window appears.</p></li>
@@ -518,6 +520,30 @@ first element is accessed using:</p>
 <ol start="6" style="list-style-type: decimal"><li><p>Add <code>[0]</code> to the GREL funtion.</p></li>
 <li><p>Click <code>OK</code> to create the new column.</p></li>
 </ol><p>What happens if you replace [0] with [1]?</p>
+<div id="extracting-the-death-city-of-an-artist" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="extracting-the-death-city-of-an-artist" class="callout-inner">
+<h3 class="callout-title">Extracting the Death City of an Artist</h3>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+
+</div>
+</div>
+</div>
+</div>
 <div id="additional-cleaning" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -533,12 +559,12 @@ contain only nationalities? Discuss the following questions:</p>
 <li>How might these patterns be removed?</li>
 </ul><p>You do not need to propose a GREL expression. A description in
 natural language is sufficient.</p>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>Common issues include:</p>
 <ul><li>birth information in parentheses, such as (born Germany)</li>
@@ -551,30 +577,6 @@ the amount of work required.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div id="extracting-the-death-city-of-an-artist" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="extracting-the-death-city-of-an-artist" class="callout-inner">
-<h3 class="callout-title">Extracting the Death City of an Artist</h3>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
-</button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
-<div class="accordion-body">
-
 </div>
 </div>
 </div>
@@ -727,8 +729,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/open-refine-humanities/instructor/05-transformation.html",
   "identifier": "https://HERMES-DKZ.github.io/open-refine-humanities/instructor/05-transformation.html",
   "dateCreated": "2026-05-26",
-  "dateModified": "2026-06-17",
-  "datePublished": "2026-06-17"
+  "dateModified": "2026-06-22",
+  "datePublished": "2026-06-22"
 }
 
   </script><script>
