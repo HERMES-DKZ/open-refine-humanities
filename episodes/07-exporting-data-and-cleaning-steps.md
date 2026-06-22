@@ -1,14 +1,14 @@
 ---
 title: "Exporting and Importing Data and Workflows"
 teaching: 10
-exercises: 0
+exercises: 10
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
 - How can we go back to an earlier step if we realize we made a mistake?  
 - How can we save our cleaning process to repeat it later or share it with colleagues?
-- How can we export the cleaned data. 
+- How can we export the cleaned data?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -32,17 +32,17 @@ On the left-hand side of the OpenRefine interface, you will find the `Undo/Redo`
 
 This is like having a *time machine* for your dataset: you can test transformations freely without the fear of making permanent mistakes. And if you change your mind, you can always jump back to any earlier state. When cleaning messy data, we rarely get everything right on the first try.
 
-**Example:** After splitting the ArtistBio column into multiple parts, you might notice that the country information was separated cleanly, but the century data became fragmented and less useful. Using Undo/Redo, you can jump back to the step *before* the split and try a different approach.
+**Example:** After splitting the `Artist Display Bio` column into multiple parts, you might notice that the country information was separated cleanly, but the century data became fragmented and less useful. Using Undo/Redo, you can jump back to the step *before* the split and try a different approach.
 
 
 ## Exporting and Importing Workflows
 
-Undo/Redo does more than let you move backwards. It also keeps track of your entire cleaning process as a set of instructions. OpenRefine can export these instructions as a **JSON file**. This file does not contain the cleaned data itself, but only the cleaning steps wich were applied to the data. 
+Undo/Redo does more than let you move backwards. It also keeps track of your entire cleaning process as a set of instructions. OpenRefine can export these instructions as a **JSON file**. This file does not contain the cleaned data itself, but only the cleaning steps which were applied to the data. 
 
 1. Go to the `Undo/Redo` tab.  
 2. Click on the button `Extract...`.  
 3. A dialog will open showing all the processing steps in JSON on the right side. You can select which steps to include into the JSON by selecting the checkboxes on the left side.  
-4. Save the processing steps to a JSON file by clicking `Export` or copy it manually to your clipbord and paste it into a file on your computer. 
+4. Save the processing steps to a JSON file by clicking `Export` or copy it manually to your clipboard and paste it into a file on your computer. 
 
 Later, you or someone else can **import** this workflow into another OpenRefine project by clicking `Apply...` in the `Undo/Redo` tab in the other project. OpenRefine will replay the exact same steps on the new dataset.
 
@@ -80,7 +80,7 @@ Start a new OpenRefine Project with the csv data
 
 ### Solution
 
-You can separate the data at the string `) (`.
+
 
 ::::::::::::::::::::::::::
 
