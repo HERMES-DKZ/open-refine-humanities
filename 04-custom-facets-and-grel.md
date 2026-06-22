@@ -27,11 +27,11 @@ exercises: 15
 
 ### How can we tell whether a cell contains one artist or several artists?
 
-How can we check the column `Artist Display Name` to find out whether one or more people were involved in creating a artwork without splitting it? Look carefully at a few cells. What character consistently separates multiple names?
+How can we check the column `Artist Display Name` to find out whether one or more people were involved in creating an artwork without splitting it? Look carefully at a few cells. What character consistently separates multiple names?
 
 ::::::::::::::::::::
  
-So far, we have explored facets that you can create by clicking through the menu—text, numeric, and timeline facets. These are powerful, but sometimes our exploration or cleaning task needs a rule that isn’t built in. In those cases, OpenRefine lets us define our own facets using small expressions written in GREL. Don't worry if these terms are new. We will introduce them through a practical example based on the dataset you already explored in the previous episode.
+So far, we have explored facets that you can create by clicking through the menu—text, numeric, and timeline facets. These are powerful, but sometimes an exploration or cleaning task requires a rule that is not built in. In those cases, OpenRefine lets us define our own facets using small expressions written in GREL. Don't worry if these terms are new to you. We will demponstrate them with an example based on the dataset you already explored in the previous episode.
 
 
 1. Open the column menu for `Artist Display Name`.
@@ -64,7 +64,7 @@ This small expression creates a logic-based facet that is not available as a bui
 
 Create a custom text facet on the `Title` column and determine how many titles contain quotation marks. Then inspect a few examples and discuss why quotation marks might have been used.
 
-Tip: You need to escape the quotation mark with a backslash (`\`).
+Tip: You need to escape the quotation mark in the expression using a backslash (`\`).
 
 ::::::::::::::::::: solution
 

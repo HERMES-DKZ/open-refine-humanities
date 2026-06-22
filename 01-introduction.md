@@ -32,15 +32,15 @@ Do you have an idea what problems could arise when working with data, especially
 
 Before you can answer research questions, you first need to understand and clean your data. In the humanities, you might work with lists of artworks, artists, historical events, or other information collected from museums, archives, or fieldwork. Often, this data is stored in spreadsheets or tables, and at first glance, it may seem tidy. But as you look closer, you may notice small issues: names spelled in different ways, missing details, or dates written in various formats. These challenges are common and can make it difficult to analyze or share your data.
 
-OpenRefine is a free, open-source tool designed to help you work with messy data. Think of OpenRefine as a workbench for your data, a place where you can clean, organize, and explore information, even if you have no technical background. OpenRefine runs locally on your computer and opens in your web browser, providing a user-friendly interface that guides you through each step. Working in your web browser might be confusing, but nothing from your dataset is sent to the internet — everything runs locally on your computer.
+OpenRefine is a free, open-source tool designed to help you work with messy data. Think of OpenRefine as a workbench for your data, a place where you can clean, organize, and explore information, even if you have no technical background. OpenRefine runs locally on your computer and opens in your web browser, providing a user-friendly interface that guides you through each step. Although OpenRefine runs in your web browser, nothing from your dataset is sent to the internet — everything runs locally on your computer.
 
 
 
 ## Our Dataset
 
-Throughout this lesson, you will use a sample dataset from the Metropolitan Museum of Art's (The Met) Open Access Initiative. The dataset includes artwork titles, creators, production dates, materials, and locations — fields that are typical for cultural heritage collections. Even if you have never worked with data before, you will see how OpenRefine can make your research easier.
+Throughout this lesson, you will use a sample dataset from the Metropolitan Museum of Art (The Met) Open Access Initiative. The dataset includes artwork titles, creators, production dates, materials, and locations — fields that are typical for cultural heritage collections. Even if you have never worked with data before, you will see how OpenRefine can make your research easier.
 
-In many digital humanities projects, a significant amount of time is spent preparing and cleaning data before analysis. It’s not always the most exciting part, but it is essential. With OpenRefine, you will learn how to think about data organization and develop practices for more effective data cleaning. By the end of this lesson, participants will be able to clean, explore, and analyze structured cultural heritage data. You don’t need to be a technical expert, just curious and willing to try something new.
+In many digital humanities projects, a significant amount of time is spent preparing and cleaning data before analysis. It’s not always the most exciting part, but it is essential. With OpenRefine, you will learn how to think about data organization and develop practices for more effective data cleaning. By the end of this lesson, you will be able to clean, explore, and analyze structured cultural heritage data. You don’t need to be a technical expert, just curious and willing to try something new.
 
 
 
@@ -71,9 +71,9 @@ Identify anything that might cause problems during analysis.
 
 * Missing data are sometimes represented by blank cells, N/A or 0. 
 * Is the title the same as the object name? In some rows they differ in others they are the same.
-* The Artist Display Name sometimes contains more people.
-* Object dates are often not given as a specific year.
-* The cities in the table could be ambiguous, is it Chelsea in the UK or Chelsea in the US? Maybe you can derive a unique location from information about the artist.
+* The `Artist Display Name`column sometimes contains more people.
+* Object dates are often not recorded as a specific year.
+* The cities in the table could be ambiguous, is it Chelsea in the UK or Chelsea in the US? Additional information about the artist might help identify the correct location.
 * Paris and Paris, France refer to the same place, but are recorded differently.
 * Some titles are enclosed in quotation marks, while others are not.
 

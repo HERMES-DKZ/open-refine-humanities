@@ -1,7 +1,7 @@
 ---
 title: "Transforming Data"
 teaching: 20
-exercises: 20
+exercises: 25
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -49,7 +49,7 @@ Guide learners toward recognizing:
 - dates
 - information on multiple artists
 
-Emphasize that the column currently contains several different types of information. In the documentation of the dataset it states that `ArtistDisplayBio` contains information about "Nationality and life dates of an artist, also includes birth and death city when known".
+Emphasize that the column currently contains several different types of information. In the documentation of the dataset it states that `Artist Display Bio` contains information about "Nationality and life dates of an artist, also includes birth and death city when known".
 
 ::::::::::::
 
@@ -61,7 +61,7 @@ The first step is to separate information about individual artists. As you learn
 
 To separate these artists into individual rows:
 
-1. Open the column menu for `ArtistDisplayBio`.
+1. Open the column menu for `Artist Display Bio`.
 
 2. Choose `Edit cells → Split multi-valued cells...`
 
@@ -81,7 +81,7 @@ Now we can begin extracting specific pieces of information. To preserve the orig
 :::::: challenge
 ### How to extract the Nationality?
 
-Look at the column `ArtistDisplayBio`. How could you separate the nationality from the remaining information?
+Look at the column `Artist Display Bio`. How could you separate the nationality from the remaining information?
 
 ::::: solution
 
@@ -90,7 +90,7 @@ Most values contain a comma immediately after the nationality. We can therefore 
 :::::::::
 :::::::::
 
-1. Open the column menu for `ArtistDisplayBio` .
+1. Open the column menu for `Artist Display Bio` .
 
 2. Choose `Edit column  → Add column based on this column...`
 
@@ -122,6 +122,16 @@ The cell content is transformed into an array with three elements in it:
  
 What happens if you replace [0] with [1]?
 
+:::::: challenge
+### Extracting the Death City of an Artist
+
+
+::::: solution
+
+:::::::::
+
+:::::::::
+
 :::::: discussion
 ### Additional cleaning
 
@@ -149,15 +159,6 @@ value.replace("(?)", "")
 
 :::::::::
 
-:::::::::
-
-:::::: challenge
-### Extracting the Death City of an Artist
-
-
-::::: solution
-
-:::::::::
 
 :::::::::
 

@@ -28,7 +28,7 @@ For a human reader these values clearly represent names. For a computer they are
 
 Reconciliation connects these text labels to authority records. Instead of working only with the name written in the dataset, we link the value to a stable identifier in an authority database.
 
-For example, the artists in our dataset can be linked to the Union List of Artist Names (ULAN): http://vocab.getty.edu/page/ulan/500020307 or http://vocab.getty.edu/page/ulan/500000036.
+For example, the artists in our dataset can be linked to the Union List of Artist Names (ULAN): Frank Lloyd Wright (http://vocab.getty.edu/page/ulan/500020307 or Jean le Pautre (http://vocab.getty.edu/page/ulan/500000036).
 
 When a name in our dataset is reconciled with an authority record, we are essentially answering the question:
 > Which exact person in this authority database corresponds to the name written in our dataset?
@@ -63,7 +63,7 @@ Make a text facet in the column `Department`and form a subset from the departmen
 3. Now return to your other browser tab, select `Add standard service...` and paste the copied URL into the appearing field. Select `Add service`.
 
 4. Select the service and click on `Next`.
-5. Select `ULAN search` this is the part of getty where we find right data. And click `Start reconciling...`.
+5. Select `ULAN search`, which provides access to artist authority records. And click `Start reconciling...`.
 
 OpenRefine now sends each name in the column to the Getty database and suggests possible matches.
 
