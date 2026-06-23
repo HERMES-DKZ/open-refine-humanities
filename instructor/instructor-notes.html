@@ -486,6 +486,19 @@ and under <code>Help</code> you will find a detailed explanation.</p>
 <br><h3 id="05-transformation-headingInstructor3">
 <a href="05-transformation.html#headingInstructor3">Instructor Note</a><a class="anchor" aria-label="anchor" href="#05-transformation-headingInstructor3"></a>
 </h3>
+<p>If the learners are eager to try more transformation and depending on
+their depending on their familiarity with regular expressions and
+programming concepts you can give them the grel functions and let them
+describe them in their own words and push them to try them out.</p>
+<pre class="grel"><code>if(value.contains(/[0-9]/), "", value)
+value.replace(" (?)", "")
+value.replace(/ \(born[^)]*\)/, "")
+if(value.contains("active"), "", value)
+value.trim()</code></pre>
+<hr>
+<br><h3 id="05-transformation-headingInstructor4">
+<a href="05-transformation.html#headingInstructor4">Instructor Note</a><a class="anchor" aria-label="anchor" href="#05-transformation-headingInstructor4"></a>
+</h3>
 <figure><img src="../fig/05_openrefine_clustering.png" alt="Screenshot of the Cluster and edit column …" class="figure mx-auto d-block"><div class="figcaption">Screenshot of the Cluster and edit column
 …</div>
 </figure><hr>

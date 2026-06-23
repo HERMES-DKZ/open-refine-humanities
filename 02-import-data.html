@@ -338,7 +338,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Importing Data and Getting to Know the OpenRefine User Interface</h1>
-        <p>Last updated on 2026-06-22 |
+        <p>Last updated on 2026-06-23 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/02-import-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -442,13 +442,15 @@ a project by importing data</a> page in the OpenRefine manual.</p>
 <h3 class="callout-title">Challenge: Import as Interpretation</h3>
 <div class="callout-content">
 <p>Let’s test how sensitive the import process is to incorrect settings.
-Try changing the separator to a semicolon.</p>
+Try changing the separator and the character encoding.</p>
 <p>In the import preview, change the column separator from comma to
-semicolon and observe the preview carefully.</p>
-<p><strong>Questions:</strong></p>
+semicolon and the character encoding to <code>US-ASCII</code> and
+<code>UTF-8</code>. Observe the preview carefully.</p>
 <ol style="list-style-type: decimal"><li>How does the table structure change?</li>
 <li>How many columns are displayed now?</li>
 <li>Why does this happen?</li>
+<li>Regarding the character encoding, what difference can be
+identified?</li>
 <li>What would happen if you created the project without correcting this
 setting?</li>
 </ol></div>
@@ -466,6 +468,9 @@ setting?</li>
 <li>This happens because the dataset is comma-separated. When the
 separator does not match the file structure, OpenRefine cannot divide
 the data into columns correctly.</li>
+<li>With the character emcodiung <code>US-ASCII</code> umlauts, accents
+and dashes are not displayed correctly. In contrast everything looks
+fine using <code>UTF-8</code>.</li>
 <li>The dataset would be imported incorrectly, making further analysis
 difficult or impossible.</li>
 </ol></div>
@@ -611,7 +616,7 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/open-refine-humanities/02-import-data.html",
   "identifier": "https://HERMES-DKZ.github.io/open-refine-humanities/02-import-data.html",
   "dateCreated": "2026-05-26",
-  "dateModified": "2026-06-22",
+  "dateModified": "2026-06-23",
   "datePublished": "2026-06-23"
 }
 

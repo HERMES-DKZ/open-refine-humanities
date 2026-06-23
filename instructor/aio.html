@@ -568,7 +568,7 @@ analysis?<br>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ul>
 <li>Missing data are sometimes represented by blank cells, N/A or
@@ -644,7 +644,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-02-import-data"><p>Content from <a href="02-import-data.html">Importing Data and Getting to Know the OpenRefine User Interface</a></p>
 <hr>
-<p>Last updated on 2026-06-22 |
+<p>Last updated on 2026-06-23 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/02-import-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
@@ -775,14 +775,16 @@ a project by importing data</a> page in the OpenRefine manual.</p>
 <h3 class="callout-title">Challenge: Import as Interpretation</h3>
 <div class="callout-content">
 <p>Let’s test how sensitive the import process is to incorrect settings.
-Try changing the separator to a semicolon.</p>
+Try changing the separator and the character encoding.</p>
 <p>In the import preview, change the column separator from comma to
-semicolon and observe the preview carefully.</p>
-<p><strong>Questions:</strong></p>
+semicolon and the character encoding to <code>US-ASCII</code> and
+<code>UTF-8</code>. Observe the preview carefully.</p>
 <ol style="list-style-type: decimal">
 <li>How does the table structure change?</li>
 <li>How many columns are displayed now?</li>
 <li>Why does this happen?</li>
+<li>Regarding the character encoding, what difference can be
+identified?</li>
 <li>What would happen if you created the project without correcting this
 setting?</li>
 </ol>
@@ -802,6 +804,9 @@ setting?</li>
 <li>This happens because the dataset is comma-separated. When the
 separator does not match the file structure, OpenRefine cannot divide
 the data into columns correctly.</li>
+<li>With the character emcodiung <code>US-ASCII</code> umlauts, accents
+and dashes are not displayed correctly. In contrast everything looks
+fine using <code>UTF-8</code>.</li>
 <li>The dataset would be imported incorrectly, making further analysis
 difficult or impossible.</li>
 </ol>
@@ -907,7 +912,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-03-exploring-data"><p>Content from <a href="03-exploring-data.html">Exploring Data</a></p>
 <hr>
-<p>Last updated on 2026-06-22 |
+<p>Last updated on 2026-06-23 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/03-exploring-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 40 minutes</p>
@@ -1004,8 +1009,8 @@ working with a small subset of the data.</p>
 </ul>
 <ol style="list-style-type: decimal">
 <li>How many unique values are listed in each column?</li>
-<li>What is the most common value in <code>Object Name</code> and how
-often does it appear?</li>
+<li>What is the most common value in <code>Object Name</code> /
+<code>City</code> and how often does it appear?</li>
 <li>Can you spot and fix the problems in the
 <code>Is Public Domain</code> column?</li>
 </ol>
@@ -1021,7 +1026,8 @@ often does it appear?</li>
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>4 / 389 / 321 different values.</li>
-<li>The most frequent value is Book with 493 counts.</li>
+<li>The most frequent value is Book with 493 counts and Paris with 439
+counts.</li>
 <li>There are inconsistent capitalizations: “False”, “false” and “true”,
 “True”. You can decide for one spelling and edit the others with the
 edit button.</li>
@@ -1078,8 +1084,9 @@ of the facet?</p>
 filter for the department “Drawings and Prints” via include. Then you
 can use a text facet on the column <code>Object Name</code>. When you
 include the facet “Print”, you find 281 matching records. However, the
-results include not only “Print” but also values such as “Album Print
-Ornament”.</p>
+results only include exact matches with “Print” not simliar values such
+as “Print collection ornament &amp; architecture” and other similar
+ones.</p>
 <p>To filter for all prints in the department, you can use a text filter
 and type “print”. There are 665 prints in the department.</p>
 </div>
@@ -1253,7 +1260,7 @@ artworks? Why are there non-numeric values? Can you spot the error?</p>
 </button>
 <div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
-<p>In the 1940s. There are X non-numeric values. You can take a look at
+<p>In the 1940s. There are 5 non-numeric values. You can take a look at
 them by ticking Non-numeric. It looks like someone wrote an “O” instead
 of a “0”.</p>
 </div>
@@ -1676,7 +1683,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-05-transformation"><p>Content from <a href="05-transformation.html">Transforming Data</a></p>
 <hr>
-<p>Last updated on 2026-06-22 |
+<p>Last updated on 2026-06-23 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/05-transformation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 45 minutes</p>
@@ -1789,7 +1796,7 @@ follow a pattern similar to:
 <code>Nationality, Place Year–Year Place</code>.</p>
 </div>
 <div class="section level3">
-<h3 id="creating-a-new-column">Creating a New Column<a class="anchor" aria-label="anchor" href="#creating-a-new-column"></a>
+<h3 id="creating-new-columns-and-extracting-information">Creating New Columns and Extracting Information<a class="anchor" aria-label="anchor" href="#creating-new-columns-and-extracting-information"></a>
 </h3>
 <p>Now we can begin extracting specific pieces of information. To
 preserve the original data, we will create a new column rather than
@@ -1817,9 +1824,10 @@ separate the nationality from the remaining information?</p>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<p>Most values contain a comma immediately after the nationality. We can
-therefore split the text at the comma and keep only the first
-element.</p>
+<p>Most values follow the pattern:
+<code>Nationality, additional biographical information</code></p>
+<p>We can therefore split the text at the first comma and keep only the
+first element.</p>
 </div>
 </div>
 </div>
@@ -1857,29 +1865,41 @@ and under <code>Help</code> you will find a detailed explanation.</p>
 <code>Preview</code> tab below</li>
 </ol>
 <pre class="grel"><code><span><span class="fu">value.split</span><span class="op">(</span><span class="st">","</span><span class="op">)</span></span></code></pre>
-<p>The cell content is transformed into an array with three elements in
-it:
-<code>American (born Germany), Frankfurt-am-Main 1863–1962 Staten Island, New York</code>
-→<br><code>[ "American (born Germany)", " Frankfurt-am-Main 1863–1962 Staten Island", " New York" ]</code>
-An array is simply a list of values stored in a specific order. In
-OpenRefine arrays are displayed unsing square brackets with elements
-separated by commas. Since we are only interested in the nationality, we
-want the first element of the array. Array positions begin at 0, so the
-first element is accessed using:</p>
+<p>The cell content is transformed from text into an array with three
+elements:</p>
+<p><code>American (born Germany), Frankfurt-am-Main 1863–1962 Staten Island, New York</code></p>
+<p>→</p>
+<p><code>[ "American (born Germany)", " Frankfurt-am-Main 1863–1962 Staten Island", " New York" ]</code></p>
+<p>The list is called an array and stores the elements or values in a
+specific order. In OpenRefine, arrays are displayed unsing square
+brackets with elements separated by commas:
+<code>[value1, value2, value3]</code>. Each element has a position,
+called an index. Counting starts at 0, so the first element is accessed
+with <code>[0]</code>, the second with <code>[1]</code>, and so on.
+Since we are interested in the nationality, we only want the first
+element of the array.</p>
 <ol start="6" style="list-style-type: decimal">
-<li><p>Add <code>[0]</code> to the GREL funtion.</p></li>
+<li><p>Add <code>[0]</code> to the end of the GREL expression.</p></li>
 <li><p>Click <code>OK</code> to create the new column.</p></li>
 </ol>
-<p>What happens if you replace [0] with [1]?</p>
-<div id="extracting-the-death-city-of-an-artist" class="callout challenge">
+<div id="additional-cleaning" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="extracting-the-death-city-of-an-artist" class="callout-inner">
-<h3 class="callout-title">Extracting the Death City of an Artist</h3>
+<div id="additional-cleaning" class="callout-inner">
+<h3 class="callout-title">Additional cleaning</h3>
 <div class="callout-content">
-
+<p>Look at the new <code>Nationality</code> column. It seems that the
+cells contain more than just nationalities. Discuss the following
+questions:</p>
+<ul>
+<li>Which additional information is still present?</li>
+<li>Can you identify recurring patterns?</li>
+<li>How might these patterns be removed?</li>
+</ul>
+<p>You do not need to propose a GREL expression. A description in
+natural language is sufficient.</p>
 </div>
 </div>
 </div>
@@ -1890,28 +1910,64 @@ first element is accessed using:</p>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
-
-</div>
-</div>
-</div>
-</div>
-<div id="additional-cleaning" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<span class="callout-header">Discussion</span>
-<div id="additional-cleaning" class="callout-inner">
-<h3 class="callout-title">Additional cleaning</h3>
-<div class="callout-content">
-<p>Look at the new <code>Nationality</code> column. Do all values
-contain only nationalities? Discuss the following questions:</p>
+<p>Common issues include:</p>
 <ul>
-<li>Which additional information is still present?</li>
-<li>Can you identify recurring patterns?</li>
-<li>How might these patterns be removed?</li>
+<li>Birth information in parentheses, such as
+<code>(born Germany)</code>.</li>
+<li>Uncertainty is marked with <code>(?)</code>
+</li>
+<li>Entries containing dates instead of nationalities.</li>
+<li>Entries containing place names where no nationality was
+recorded.</li>
+<li>Leading or trailing whitespace introduced during splitting.</li>
+<li>Information about active periods, such as
+<code>active 16th century</code>.</li>
 </ul>
-<p>You do not need to propose a GREL expression. A description in
-natural language is sufficient.</p>
+</div>
+</div>
+</div>
+</div>
+<p>Data cleaning is rarely finished after a single transformation.
+Manual review is still necessary, but transformations can greatly reduce
+the amount of work required.</p>
+<div id="accordionInstructor3" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor3" aria-expanded="false" aria-controls="collapseInstructor3">
+  <h3 class="accordion-header" id="headingInstructor3">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
+</button>
+<div id="collapseInstructor3" class="accordion-collapse collapse" aria-labelledby="headingInstructor3" data-bs-parent="#accordionInstructor3">
+<div class="accordion-body">
+<p>If the learners are eager to try more transformation and depending on
+their depending on their familiarity with regular expressions and
+programming concepts you can give them the grel functions and let them
+describe them in their own words and push them to try them out.</p>
+<pre class="grel"><code>if(value.contains(/[0-9]/), "", value)
+value.replace(" (?)", "")
+value.replace(/ \(born[^)]*\)/, "")
+if(value.contains("active"), "", value)
+value.trim()</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="extracting-life-dates" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="extracting-life-dates" class="callout-inner">
+<h3 class="callout-title">Extracting Life Dates</h3>
+<div class="callout-content">
+<p>Once we have extracted the nationality, we can use a similar strategy
+to isolate other information stored in the same field. Life dates are
+another important piece of information that may be useful for later
+analysis.</p>
+<p>Create a new column containing only the life dates of the artists.
+Look again at the values in <code>Artist Display Bio</code>. Can you
+create a new column that contains only the birth and death years?</p>
+</div>
+</div>
+</div>
 <div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
@@ -1919,19 +1975,29 @@ natural language is sufficient.</p>
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
-<p>Common issues include:</p>
+<p>Most life dates contain digits and a dash separating birth and death
+year.</p>
+<p>One possible solution is:</p>
+<pre class="grel"><code>value.replace(/[^0-9–-]/,"")</code></pre>
+<p>Explanation: <code>value.replace(pattern, replacement)</code>
+replaces all parts of a value that match a given pattern.</p>
+<p>In this example:</p>
 <ul>
-<li>birth information in parentheses, such as (born Germany)</li>
-<li>dates that were not completely separated</li>
-<li>inconsistent formatting</li>
+<li>
+<code>/ ... /</code> indicates that the pattern is written as a
+regular expression.</li>
+<li>
+<code>[0-9–-]</code> matches any digit
+(<code>0</code>–<code>9</code>) as well as dashes (<code>-</code> and
+<code>–</code>).</li>
+<li>
+<code>^</code> inside the square brackets reverses the selection. It
+means <em>“anything except”</em> the listed characters.</li>
 </ul>
-<p>Data cleaning is rarely finished after a single transformation.
-Manual review is still necessary, but transformations can greatly reduce
-the amount of work required.</p>
-<p>if(value.contains(/[0-9]/), ““, value) value.replace(”(?)“,”“)</p>
-</div>
-</div>
-</div>
+<p>Therefore: <code>[^0-9–-]</code> means: match every character that is
+not a number or a dash.</p>
+<p>The replacement string is empty (<code>""</code>), so all matching
+characters are removed.</p>
 </div>
 </div>
 </div>
@@ -1940,8 +2006,11 @@ the amount of work required.</p>
 </section><section><h2 class="section-heading" id="clustering">Clustering<a class="anchor" aria-label="anchor" href="#clustering"></a>
 </h2>
 <hr class="half-width">
-<p>Clustering identifies values that may represent the same concept,
-even when they are written differently. It identifies and normalizes
+<p>Even after applying transformations, some inconsistencies remain. Not
+all problems can be solved with rules or regular expressions. Sometimes
+values differ only slightly because of spelling variations,
+abbreviations, or typing mistakes. In these cases, clustering can help
+identify potentially equivalent values. It identifies and normalizes
 variations — especially when different inconsistencies appear similar
 but not identical. We will demonstrate clustering on the column
 <code>Object Name</code>.</p>
@@ -1950,12 +2019,12 @@ but not identical. We will demonstrate clustering on the column
 <li><p>Choose <code>Edit cells  → Cluster and edit...</code>.</p></li>
 <li><p>A new window appears. Click <code>Cluster</code>.</p></li>
 </ol>
-<div id="accordionInstructor3" class="accordion instructor-note accordion-flush">
+<div id="accordionInstructor4" class="accordion instructor-note accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor3" aria-expanded="false" aria-controls="collapseInstructor3">
-  <h3 class="accordion-header" id="headingInstructor3">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor4" aria-expanded="false" aria-controls="collapseInstructor4">
+  <h3 class="accordion-header" id="headingInstructor4">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor3" class="accordion-collapse collapse" aria-labelledby="headingInstructor3" data-bs-parent="#accordionInstructor3">
+<div id="collapseInstructor4" class="accordion-collapse collapse" aria-labelledby="headingInstructor4" data-bs-parent="#accordionInstructor4">
 <div class="accordion-body">
 <figure><img src="../fig/05_openrefine_clustering.png" alt="Screenshot of the Cluster and edit column …" class="figure mx-auto d-block"><div class="figcaption">Screenshot of the Cluster and edit column
 …</div>
@@ -1985,9 +2054,13 @@ several methods and compare the results.</p>
 <div id="cluster-the-classification" class="callout-inner">
 <h3 class="callout-title">Cluster the Classification</h3>
 <div class="callout-content">
-<p>Look at the column <code>Classification</code> and cluster the
-values. Try out different methods and keying functions. Which one works?
-And what could make clustering easier?</p>
+<p>Look at the column <code>Classification</code> and try clustering the
+values by using different clustering methods and keying functions</p>
+<ul>
+<li>Which method produces the most useful suggestions?</li>
+<li>Which values are grouped together?</li>
+<li>What preprocessing step could improve the clustering results?</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1998,8 +2071,12 @@ And what could make clustering easier?</p>
 </button>
 <div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
-<p>Clustering method and keying function that works best: Splitting the
-values with the pipe helps.</p>
+<p>There is no single correct answer. Different clustering methods
+produce different suggestions.</p>
+<p>One useful preprocessing step is to split multi-valued cells before
+clustering. If several classifications are stored together in one cell,
+clustering has difficulty identifying similarities between individual
+values.</p>
 </div>
 </div>
 </div>
@@ -2012,8 +2089,10 @@ values with the pipe helps.</p>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>Transformations modify the <em>content</em> of cells, while column
-operations reshape the <em>structure</em> of the dataset.</li>
+<li>GREL expressions can be used to extract, modify, and standardize
+information.</li>
+<li>Creating new columns preserves the original data and makes
+transformations easier to review.</li>
 <li>The <code>split()</code> function creates arrays that can be
 accessed using positions such as <code>[0]</code> and
 <code>[1]</code>.</li>
@@ -2423,7 +2502,7 @@ Dataset</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 
 </div>
