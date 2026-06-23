@@ -52,12 +52,12 @@ Create  a text facet on the columns:
 - `City`.
 
 1. How many unique values are listed in each column?
-2. What is the most common value in `Object Name` and how often does it appear?
+2. What is the most common value in `Object Name` / `City`  and how often does it appear?
 3. Can you spot and fix the problems in the `Is Public Domain` column?
 
 :::::::::::::::: solution
 1. 4 / 389 / 321 different values. 
-2. The most frequent value is Book with 493 counts.
+2. The most frequent value is Book with 493 counts and Paris with 439 counts.
 3. There are inconsistent capitalizations: "False", "false" and "true", "True". You can decide for one spelling and edit the others with the edit button.
 
 ::::::::::::::::
@@ -85,7 +85,7 @@ What difficulties arise when you only use filtering via the include function of 
 
 :::::::::::::::: solution
 
-First, create a text facet on the column `Department` and filter for the department "Drawings and Prints" via include. Then you can use a text facet on the column `Object Name`. When you include the facet "Print", you find 281 matching records. However, the results include not only "Print" but also values such as "Album Print Ornament".
+First, create a text facet on the column `Department` and filter for the department "Drawings and Prints" via include. Then you can use a text facet on the column `Object Name`. When you include the facet "Print", you find 281 matching records. However, the results only include exact matches with "Print" not simliar values such as "Print collection ornament & architecture" and other similar ones.
 
 To filter for all prints in the department, you can use a text filter and type "print". There are 665 prints in the department.
 ::::::::::::::::
@@ -150,7 +150,7 @@ Sometimes you may want to put the data back into its original form. After cleani
 So far we have used text facets to explore categorical values such as departments or object types. OpenRefine also offers other facet types that help explore numeric values like creation year of an artwork.
 
 
-Let us try this out with the  `Object Begin Date` column from the Met dataset which contains the year an artwork was created. Open the column menu and choose `Facet → Numeric facet`. You might expect to see the different values, but instead, OpenRefine displays a message such as “No numeric values.” This tells us that the values in the column are not actually recognized as numbers, even though they look like numbers in the table.  
+Let us try this out with the `Object Begin Date` column from the Met dataset which contains the year an artwork was created. Open the column menu and choose `Facet → Numeric facet`. You might expect to see the different values, but instead, OpenRefine displays a message such as “No numeric values.” This tells us that the values in the column are not actually recognized as numbers, even though they look like numbers in the table.  
 
 This situation is common when importing data: numbers are often stored as **strings** (that is, as text), so OpenRefine does not treat them as numeric values. We need to transform them first.
 
@@ -189,7 +189,7 @@ Turn the values in the column `Accession Year` into a numeric facet. In which de
 
 ### Solution
 
-In the 1940s. There are X non-numeric values. You can take a look at them by ticking Non-numeric. It looks like someone wrote an “O” instead of a “0”.
+In the 1940s. There are 5 non-numeric values. You can take a look at them by ticking Non-numeric. It looks like someone wrote an “O” instead of a “0”.
 
 ::::::::::::::::
 

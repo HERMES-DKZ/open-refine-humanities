@@ -74,7 +74,7 @@ You will notice that some artists have only partial information, while others ha
 
 
 
-### Creating a New Column
+### Creating New Columns and Extracting Information
 
 Now we can begin extracting specific pieces of information. To preserve the original data, we will create a new column rather than modifying the existing one. This is an important distinction: unlike the previous operation, which changed the structure of the dataset by creating new rows, we are now creating an additional column while keeping the original values unchanged.
 
@@ -85,7 +85,9 @@ Look at the column `Artist Display Bio`. How could you separate the nationality 
 
 ::::: solution
 
-Most values contain a comma immediately after the nationality. We can therefore split the text at the comma and keep only the first element.
+Most values follow the pattern: `Nationality, additional biographical information`
+
+We can therefore split the text at the first comma and keep only the first element.
 
 :::::::::
 :::::::::
@@ -110,32 +112,28 @@ On top you enter the name of the new column. At the bottom, there is a `Preview`
 value.split(",")
 ```
 
-The cell content is transformed into an array with three elements in it:
-`American (born Germany), Frankfurt-am-Main 1863–1962 Staten Island, New York`
-→  
- `[ "American (born Germany)", " Frankfurt-am-Main 1863–1962 Staten Island", " New York" ]` 
- An array is simply a list of values stored in a specific order. In OpenRefine arrays are displayed unsing square brackets with elements separated by commas. Since we are only interested in the nationality, we want the first element of the array. Array positions begin at 0, so the first element is accessed using:
+The cell content is transformed from text into an array with three elements:
 
- 6. Add `[0]` to the GREL funtion.
+`American (born Germany), Frankfurt-am-Main 1863–1962 Staten Island, New York`
+
+→
+
+ `[ "American (born Germany)", " Frankfurt-am-Main 1863–1962 Staten Island", " New York" ]` 
+
+ The list is called an array and stores the elements or values in a specific order. In OpenRefine, arrays are displayed unsing square brackets with elements separated by commas: `[value1, value2, value3]`. Each element has a position, called an index. Counting starts at 0, so the first element is accessed with `[0]`, the second with `[1]`, and so on. Since we are interested in the nationality, we only want the first element of the array.
+
+ 6. Add `[0]` to the end of the GREL expression.
+
 
  7. Click `OK` to create the new column.
  
-What happens if you replace [0] with [1]?
+
 
 :::::: challenge
-### Extracting the Death City of an Artist
 
-
-::::: solution
-
-:::::::::
-
-:::::::::
-
-:::::: discussion
 ### Additional cleaning
 
-Look at the new `Nationality` column. Do all values contain only nationalities?
+Look at the new `Nationality` column. It seems that the cells contain more than just nationalities.
 Discuss the following questions:
 
 - Which additional information is still present?
@@ -148,25 +146,71 @@ You do not need to propose a GREL expression. A description in natural language 
 
 Common issues include:
 
-- birth information in parentheses, such as (born Germany)
-- dates that were not completely separated
-- inconsistent formatting
+- Birth information in parentheses, such as `(born Germany)`.
+- Uncertainty is marked with `(?)`
+- Entries containing dates instead of nationalities.
+- Entries containing place names where no nationality was recorded.
+- Leading or trailing whitespace introduced during splitting.
+- Information about active periods, such as `active 16th century`.
+
+:::::::::
+:::::::::
+
 
 Data cleaning is rarely finished after a single transformation. Manual review is still necessary, but transformations can greatly reduce the amount of work required.
 
+::: instructor
+
+If the learners are eager to try more transformation and depending on their depending on their familiarity with regular expressions and programming concepts you can give them the grel functions and let them describe them in their own words and push them to try them out.
+
+```grel
 if(value.contains(/[0-9]/), "", value)
-value.replace("(?)", "")
+value.replace(" (?)", "")
+value.replace(/ \(born[^)]*\)/, "")
+if(value.contains("active"), "", value)
+value.trim()
+```
 
+:::
+
+:::::: challenge
+### Extracting Life Dates
+
+Once we have extracted the nationality, we can use a similar strategy to isolate other information stored in the same field. Life dates are another important piece of information that may be useful for later analysis.
+
+Create a new column containing only the life dates of the artists.
+Look again at the values in `Artist Display Bio`.
+Can you create a new column that contains only the birth and death years?
+
+::::: solution
+
+Most life dates contain digits and a dash separating birth and death year.
+
+One possible solution is:
+
+```grel
+value.replace(/[^0-9–-]/,"")
+```
+
+Explanation:
+`value.replace(pattern, replacement)` replaces all parts of a value that match a given pattern.
+
+In this example:
+
+- `/ ... /` indicates that the pattern is written as a regular expression.
+- `[0-9–-]` matches any digit (`0`–`9`) as well as dashes (`-` and `–`).
+- `^` inside the square brackets reverses the selection. It means *"anything except"* the listed characters.
+
+Therefore: `[^0-9–-]` means: match every character that is not a number or a dash.
+
+The replacement string is empty (`""`), so all matching characters are removed.
 :::::::::
 
-
 :::::::::
-
-
 
 ## Clustering
 
-Clustering identifies values that may represent the same concept, even when they are written differently. It identifies and normalizes variations — especially when different inconsistencies appear similar but not identical. We will demonstrate clustering on the column `Object Name`.
+Even after applying transformations, some inconsistencies remain. Not all problems can be solved with rules or regular expressions. Sometimes values differ only slightly because of spelling variations, abbreviations, or typing mistakes. In these cases, clustering can help identify potentially equivalent values. It identifies and normalizes variations — especially when different inconsistencies appear similar but not identical. We will demonstrate clustering on the column `Object Name`.
 
 1. Open the column menu for `Object Name`.
 
@@ -190,14 +234,19 @@ Different clustering methods and keying functions identify different kinds of si
 :::::::::::::::::::::::::::::::::::::::::::: challenge
 
 ## Cluster the Classification
- Look at the column `Classification` and cluster the values.  Try out different methods and keying functions. Which one works? And what could make clustering easier?
+ Look at the column `Classification` and try clustering the values by using different clustering methods and keying functions
+
+- Which method produces the most useful suggestions?
+- Which values are grouped together?
+- What preprocessing step could improve the clustering results?
 
 ::::::::::::::::::: solution
 
 ### Solution
 
-Clustering method and keying function that works best:
-Splitting the values with the pipe helps.
+There is no single correct answer. Different clustering methods produce different suggestions.
+
+One useful preprocessing step is to split multi-valued cells before clustering. If several classifications are stored together in one cell, clustering has difficulty identifying similarities between individual values.
 
 :::::::::::::::::
 
@@ -205,7 +254,8 @@ Splitting the values with the pipe helps.
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- Transformations modify the *content* of cells, while column operations reshape the *structure* of the dataset.
+- GREL expressions can be used to extract, modify, and standardize information.
+- Creating new columns preserves the original data and makes transformations easier to review.
 - The `split()` function creates arrays that can be accessed using positions such as `[0]` and `[1]`.
 - Structured information can be extracted from text using GREL expressions and pattern matching.
 - Data cleaning often requires multiple transformation steps and manual review.
