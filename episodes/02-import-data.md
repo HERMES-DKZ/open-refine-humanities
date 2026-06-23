@@ -77,16 +77,15 @@ For more information see the [Create a project by importing data](https://docs.o
 
 :::::::::::::::::::::::::::::::::::::::::::: challenge
 ## Challenge: Import as Interpretation
-Let’s test how sensitive the import process is to incorrect settings. Try changing the separator to a semicolon.
+Let’s test how sensitive the import process is to incorrect settings. Try changing the separator and the character encoding.
 
-In the import preview, change the column separator from comma to semicolon and observe the preview carefully.
-
-**Questions:**
+In the import preview, change the column separator from comma to semicolon and the character encoding to `US-ASCII` and `UTF-8`. Observe the preview carefully.
 
 1. How does the table structure change?
 2. How many columns are displayed now?
 3. Why does this happen?
-4. What would happen if you created the project without correcting this setting?
+4. Regarding the character encoding, what difference can be identified?
+5. What would happen if you created the project without correcting this setting?
 
 ::::::::::::::::::: solution
 
@@ -94,7 +93,8 @@ In the import preview, change the column separator from comma to semicolon and o
 1. The table structure collapses.
 2. Most or all values appear in a single column.
 3. This happens because the dataset is comma-separated. When the separator does not match the file structure, OpenRefine cannot divide the data into columns correctly.
-4. The dataset would be imported incorrectly, making further analysis difficult or impossible.
+4. With the character emcodiung `US-ASCII` umlauts, accents and dashes are not displayed correctly. In contrast everything looks fine using `UTF-8`.
+5. The dataset would be imported incorrectly, making further analysis difficult or impossible.
 
 :::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::
