@@ -28,20 +28,20 @@ exercises: 20
 
 When we work with data in OpenRefine, one of the first challenges is to make sense of the information that has been imported. Looking at rows of raw data rarely gives us much insight, especially if the dataset is large. What we need is a way of quickly summarizing values, spotting patterns, and finding potential problems such as inconsistent spellings or unexpected categories. 
 
-OpenRefine provides a set of tools for this under the name **facets**. Faceting allows us to group together all of the different values that appear in a **column** and to see how often they occur. A facet creates a kind of “interactive summary” of the data: it lists all unique values in a column and shows how many times each one appears. 
+OpenRefine provides a set of tools for this under the name facets. Faceting allows us to group together all of the different values that appear in a column and to see how often they occur. A facet creates a kind of “interactive summary” of the data: it lists all unique values in a column and shows how many times each one appears. 
 
 ## Text Facet
 
-The most commonly used facet type is called **text facet**. This facet type applies to all string values. We will create our first text facet together for the column `Department`. Open the column menu with the small arrow next to the column name and choose `Facet → Text facet`. A new panel will appear on the left side of the screen showing the unique values in the column and how often they occur. You can sort the values alphabetically or by frequency. You can also hover over values to edit them directly. This simple step immediately transforms a spreadsheet with hundreds of rows into a clear summary of categories and helps identify initial inconsistencies.
+The most commonly used facet type is called text facet. This facet type applies to all string values. We create our first text facet together for the column `Department`. Open the column menu with the small arrow next to the column name and choose `Facet → Text facet`. A new panel appeara on the left side of the screen showing the unique values in the column and how often they occur. You can sort the values alphabetically or by frequency. You can also hover over values to edit them directly. This simple step immediately transforms a spreadsheet with hundreds of rows into a clear summary of categories and helps identify initial inconsistencies.
 
 Both “Arts of Africa Oceania and the Americas” and “Arts of Africa, Oceania and the Americas” appear in the panel. Since these values most likely refer to the same department, the version without the comma is probably a data entry error. To correct this, identify the incorrect value in the facet list, hover over it, click edit, and change it. This merges all records under the correct spelling by just one action.
 
-You can also click on one department to see only those rows in the table, or select multiple values to combine them by clicking **include**. Ensure that you undo your selection by pressing **exclude**, otherwise you will only continue working with a small subset of the data.
+You can also click on one department to see only those rows in the table, or select multiple values to combine them by clicking include. Ensure that you undo your selection by pressing exclude, otherwise you only continue working with a small subset of the data.
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-### Exercise: First Insights into Your Dataset & Correct Errors 
+## First Insights into Your Dataset & Correct Errors 
 
 Create  a text facet on the columns:
 
@@ -69,16 +69,16 @@ Create  a text facet on the columns:
 ### The difference between Facets and Filters
 
 
-It is useful to distinguish between **facets** and **filters**. Both are ways of focusing on a subset of the data, but they work differently. A filter is like a search box: you type in a word or part of a word, and OpenRefine hides all rows that do not match. A facet, by contrast, gives you an overview of *all* the distinct values in a column (as you saw in the Challenge above) and lets you select them interactively. 
+It is useful to distinguish between facets and filters. Both are ways of focusing on a subset of the data, but they work differently. A filter is like a search box: you type in a word or part of a word, and OpenRefine hides all rows that do not match. A facet, by contrast, gives you an overview of *all* the distinct values in a column (as you saw in the Challenge above) and lets you select them interactively. 
 
-For example, in the Met dataset, the column `Department` might contain categories such as “Medieval Art”, “Islamic Arts,” or “Drawings & Prints.” A **text facet** on this column will immediately show you how many artworks belong to each department. By clicking on one or several values in the facet, you can quickly restrict your view to only those artworks, and then easily switch back to the full dataset. Using this functionality, you can filter your data through the facet interface.
+For example, in the Met dataset, the column `Department` might contain categories such as “Medieval Art”, “Islamic Arts,” or “Drawings & Prints.” A text facet on this column immediately shows you how many artworks belong to each department. By clicking on one or several values in the facet, you can quickly restrict your view to only those artworks, and then easily switch back to the full dataset. Using this functionality, you can filter your data through the facet interface.
 
 Another way to filter values in a column is to use a text filter. When you choose `Filter → Text filter`, a search field appears on the left side. You can type a term to restrict the dataset to matching rows.
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-### Exercise: Combining Facets and Text Filters
+### Combining Facets and Text Filters
 
 How many prints are in the department "Drawings and Prints"?
 What difficulties arise when you only use filtering via the include function of the facet?
@@ -96,21 +96,21 @@ To filter for all prints in the department, you can use a text filter and type "
 
 Up to this point, we have assumed that every cell in a column contains only a single value. In real-world data, however, that is often not the case. In the Met dataset, the `Artist Display Name` column sometimes contains two or more names, separated by a `|` like
 `Horace Harral|Joseph Wolf`.
-This is problematic for faceting. If we want to find out which artist appears most frequently in the dataset, this structure makes it difficult. That's because if we apply a text facet to the `Artist Display Name` column as it stands, OpenRefine will treat the entire string as one value. The facet will then list the artists as if it were a single artist, which is clearly not what we want. What we need instead is to treat each artist as a separate value: `Horace Harral` and `Joseph Wolf`.
+This is problematic for faceting. If we want to find out which artist appears most frequently in the dataset, this structure makes it difficult. That's because if we apply a text facet to the `Artist Display Name` column as it stands, OpenRefine treats the entire string as one value. The facet then lists the artists as if it were a single artist, which is clearly not what we want. What we need instead is to treat each artist as a separate value: `Horace Harral` and `Joseph Wolf`.
 
-To understand what happens when we correct this, it helps to know about the distinction between **rows** and **records** in OpenRefine. By default, data is displayed as rows, one after the other. But OpenRefine can also treat a group of rows as belonging to the same record. When we split a cell that contains multiple values, OpenRefine creates additional rows within the same record. This means that the number of rows increases, while the number of records remains unchanged.
+To understand what happens when we correct this, it helps to know about the distinction between rows and records in OpenRefine. By default, data is displayed as rows, one after the other. But OpenRefine can also treat a group of rows as belonging to the same record. When we split a cell that contains multiple values, OpenRefine creates additional rows within the same record. This means that the number of rows increases, while the number of records remains unchanged.
 
 
 
 1. Switch to `records` at the top left of the grid. This makes it easier to see what happens after the split.
 2. Open the column menu for `Artist Display Name`, choose `Edit cells → Split multi-valued cells…`. Enter the separator `|` in the box, and click `OK`.
-3. Create a text facet on `Artist Display Name` again. This time you will see the names of individual artists listed separately. Each can now be counted and selected on its own.
+3. Create a text facet on `Artist Display Name` again. This time you see the names of individual artists listed separately. Each can now be counted and selected on its own.
 
 If you now switch back to the `rows` view you will see that the number of rows increased to 4,644.
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-### Exercise: Split multi-valued cells
+### Split multi-valued cells
 
 The column `Tags` also contains multiple values in some cells. 
 Split the cells for this column and create a text facet.
@@ -143,7 +143,13 @@ To fix this you can `Edit cells → Common transforms → Trim leading and trail
 
 Sometimes you may want to put the data back into its original form. After cleaning or analyzing, OpenRefine allows you to join split rows back into a single cell. To do this, return to the column menu, select `Edit cells → Join multi-valued cells…`, and specify a separator again. This is useful if you need to export the data in a more compact form later.
 
+::: instructor
+If learners used the wrong separator or made a mistake during the exercise, remind them that they can always return to a previous state using the `Undo/Redo` tab. OpenRefine records every action, making it safe to experiment and explore different approaches.
 
+We will introduce this functionality in more detail in the [last episode](episodes/07-exporting-data-and-cleaning-steps.md), but it is reassuring for learners to know that they can try things out without the risk of permanently damaging their project.
+
+
+:::
 
 ## Other Facet Types
 
@@ -152,21 +158,21 @@ So far we have used text facets to explore categorical values such as department
 
 Let us try this out with the `Object Begin Date` column from the Met dataset which contains the year an artwork was created. Open the column menu and choose `Facet → Numeric facet`. You might expect to see the different values, but instead, OpenRefine displays a message such as “No numeric values.” This tells us that the values in the column are not actually recognized as numbers, even though they look like numbers in the table.  
 
-This situation is common when importing data: numbers are often stored as **strings** (that is, as text), so OpenRefine does not treat them as numeric values. We need to transform them first.
+This situation is common when importing data: numbers are often stored as strings (that is, as text), so OpenRefine does not treat them as numeric values. We need to transform them first.
 
 To fix this, open the column menu for `Object Begin Date` again and choose:  
 `Edit cells → Common transforms → To number`.  
 
 OpenRefine now attempts to parse each cell in that column as a number. If the value is a valid number, the cell is converted; if not (for example, if the cell is empty or contains text like “unknown”), it becomes a blank cell.  
 
-You will see a small change in the formatting of the numbers: they are now right-aligned, which is OpenRefine’s way of indicating that they are numeric rather than text.
+You see a small change in the formatting of the numbers: they are now right-aligned, which is OpenRefine’s way of indicating that they are numeric rather than text.
 
 With the column properly converted, repeat the earlier step:  
 `Facet → Numeric facet`.  
 
 This time, OpenRefine shows a histogram with a slider to explore ranges of values from year 0 up to year 2100. The histogram groups the year values into intervals of 100 years, giving you an overview of how artworks are distributed by year of their creation.  
 
-By dragging the slider handles, you can focus on particular ranges. For example, you might restrict the view to artworks before 1,500. You will see that the dataset contains only 42 matching objects. Most artworks therefore date from after the 15th century; this is evident at a glance. 
+By dragging the slider handles, you can focus on particular ranges. For example, you might restrict the view to artworks before 1,500. You see that the dataset contains only 42 matching objects. Most artworks therefore date from after the 15th century; this is evident at a glance. 
 
 Numeric facets therefore serve two purposes at once: they help you explore distributions, and they highlight anomalies that need cleaning.
 
@@ -181,7 +187,7 @@ The best way to understand these facets is simply to experiment with them.
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-### Exercise: Numeric Facet
+### Numeric Facet
 
 Turn the values in the column `Accession Year` into a numeric facet. In which decade did the Met collection acquire the most artworks? Why are there non-numeric values? Can you spot the error?
 
@@ -206,7 +212,7 @@ There are often different ways to accomplish the same task in OpenRefine. In thi
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-### Exercise: Identify complete records
+### Identify complete records
 How many records in the dataset contain information on both `Culture` and `Tags`?
 
 :::::::::::::::: solution

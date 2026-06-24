@@ -28,11 +28,11 @@ exercises: 25
 
 In the previous episodes, we used built-in and custom facets to explore our dataset and identify potential issues. Facets help us find patterns and problems, but they do not change the data itself. For further analysis, it is often useful to reorganize and standardize the data.
 
-In this episode, we move from exploration to cleaning. We will use transformations, column operations, and clustering to modify and standardize our data.
+In this episode, we move from exploration to cleaning. We use transformations, column operations, and clustering to modify and standardize our data.
 
 ::::::::::::: discussion
 
-### Discussion: What information is stored in `Artist Display Bio`?
+### What information is stored in `Artist Display Bio`?
 
 Look at several values in the column.
 
@@ -69,14 +69,14 @@ To separate these artists into individual rows:
 
 4. Confirm with `OK`.
 
-You will notice that some artists have only partial information, while others have much more detailed entries. Most complete entries follow a pattern similar to: 
+You notice that some artists have only partial information, while others have much more detailed entries. Most complete entries follow a pattern similar to: 
 `Nationality, Place Year–Year Place`.
 
 
 
 ### Creating New Columns and Extracting Information
 
-Now we can begin extracting specific pieces of information. To preserve the original data, we will create a new column rather than modifying the existing one. This is an important distinction: unlike the previous operation, which changed the structure of the dataset by creating new rows, we are now creating an additional column while keeping the original values unchanged.
+Now we can begin extracting specific pieces of information. To preserve the original data, we create a new column rather than modifying the existing one. This is an important distinction: unlike the previous operation, which changed the structure of the dataset by creating new rows, we are now creating an additional column while keeping the original values unchanged.
 
 :::::: challenge
 ### How to extract the Nationality?
@@ -102,7 +102,7 @@ We can therefore split the text at the first comma and keep only the first eleme
 ![Screenshot of the Add column based on column ...](fig/04_openrefine_grelfunction.png)
 
 Describe the new window to the learners and remind them of the similarities from window in the prevoius episode.
-On top you enter the name of the new column. At the bottom, there is a `Preview` section where you can see the value (i.e. the value in the table) and, to the right of that, the new value produced by the function. Under the `History` tab, you can view the commands that have been used, and under `Help` you will find a detailed explanation.
+On top you enter the name of the new column. At the bottom, there is a `Preview` section where you can see the value (i.e. the value in the table) and, to the right of that, the new value produced by the function. Under the `History` tab, you can view the commands that have been used, and under `Help` you find a detailed explanation.
 
 ::::
 
@@ -210,7 +210,7 @@ The replacement string is empty (`""`), so all matching characters are removed.
 
 ## Clustering
 
-Even after applying transformations, some inconsistencies remain. Not all problems can be solved with rules or regular expressions. Sometimes values differ only slightly because of spelling variations, abbreviations, or typing mistakes. In these cases, clustering can help identify potentially equivalent values. It identifies and normalizes variations — especially when different inconsistencies appear similar but not identical. We will demonstrate clustering on the column `Object Name`.
+Even after applying transformations, some inconsistencies remain. Not all problems can be solved with rules or regular expressions. Sometimes values differ only slightly because of spelling variations, abbreviations, or typing mistakes. In these cases, clustering can help identify potentially equivalent values. It identifies and normalizes variations — especially when different inconsistencies appear similar but not identical. We demonstrate clustering on the column `Object Name`.
 
 1. Open the column menu for `Object Name`.
 
