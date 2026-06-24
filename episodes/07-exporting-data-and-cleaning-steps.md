@@ -42,6 +42,8 @@ Undo/Redo does more than let you move backwards. It also keeps track of your ent
 1. Go to the `Undo/Redo` tab.  
 2. Click on the button `Extract...`.  
 3. A dialog opens showing all the processing steps in JSON on the right side. You can select which steps to include into the JSON by selecting the checkboxes on the left side.  
+
+![Screenshot of the Workflow Window](fig/09_export-workflow.png)
 4. Save the processing steps to a JSON file by clicking `Export` or copy it manually to your clipboard and paste it into a file on your computer. 
 
 Later, you or someone else can import this workflow into another OpenRefine project by clicking `Apply...` in the `Undo/Redo` tab in the other project. OpenRefine replays the exact same steps on the new dataset.
@@ -81,14 +83,6 @@ Open the `Undo/Redo` tab and apply the workflow JSON file you exported earlier. 
 - Did the workflow recreate the same columns, transformations, and cleaning steps?
 - Why is this useful when working with larger datasets or collaborating with other researchers?
 
-
-::::::::::::::::: solution
-
-### Solution
-
-
-
-::::::::::::::::::::::::::
 
 :::::::::::::::::::
 

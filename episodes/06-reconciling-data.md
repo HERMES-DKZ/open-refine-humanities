@@ -74,6 +74,9 @@ Make a text facet in the column `Department`and form a subset from the departmen
 4. Select the service and click on `Next`.
 5. Select `ULAN search`, then click `Start reconciling...`.
 
+![Screenshot of the Reconciliation Service Window](fig/06_reconcile-services.png)
+![Screenshot of the Getty Reconciliation Service](fig/07_reconcile-getty.png)
+
 OpenRefine now sends each name in the column to the Getty database and suggests possible matches.
 
 

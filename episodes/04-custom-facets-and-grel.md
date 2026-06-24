@@ -43,6 +43,7 @@ So far, we have explored facets that you can create by clicking through the menu
 
 A new window appears. You see a text field where you can enter the GREL function. At the bottom, there is a `Preview` section where you can see the value (i.e. the value in the table) and, to the right of that, the new value produced by the function. Under the `History` tab, you can view the commands that have been used, and under `Help` you find a detailed explanation.
 
+
 ::::::::
 
 3. Enter the following expression:
