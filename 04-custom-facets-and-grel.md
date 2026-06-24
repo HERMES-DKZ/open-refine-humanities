@@ -31,7 +31,7 @@ How can we check the column `Artist Display Name` to find out whether one or mor
 
 ::::::::::::::::::::
  
-So far, we have explored facets that you can create by clicking through the menu—text, numeric, and timeline facets. These are powerful, but sometimes an exploration or cleaning task requires a rule that is not built in. In those cases, OpenRefine lets us define our own facets using small expressions written in GREL. Don't worry if these terms are new to you. We will demponstrate them with an example based on the dataset you already explored in the previous episode.
+So far, we have explored facets that you can create by clicking through the menu—text, numeric, and timeline facets. These are powerful, but sometimes an exploration or cleaning task requires a rule that is not built in. In those cases, OpenRefine lets us define our own facets using small expressions written in GREL. Don't worry if these terms are new to you. We demonstrate them with an example based on the dataset you already explored in the previous episode.
 
 
 1. Open the column menu for `Artist Display Name`.
@@ -41,7 +41,7 @@ So far, we have explored facets that you can create by clicking through the menu
 :::instructor
 ![Screenshot of the Custom facet on column ... ](fig/03_openrefine_grelfunction.png)
 
-A new window appears. You will see a text field where you can enter the GREL function. At the bottom, there is a `Preview` section where you can see the value (i.e. the value in the table) and, to the right of that, the new value produced by the function. Under the `History` tab, you can view the commands that have been used, and under `Help` you will find a detailed explanation.
+A new window appears. You see a text field where you can enter the GREL function. At the bottom, there is a `Preview` section where you can see the value (i.e. the value in the table) and, to the right of that, the new value produced by the function. Under the `History` tab, you can view the commands that have been used, and under `Help` you find a detailed explanation.
 
 ::::::::
 
@@ -55,12 +55,12 @@ A new window appears. You will see a text field where you can enter the GREL fun
 
 This small expression creates a logic-based facet that is not available as a built-in facet. It does not modify the data. It simply checks whether the condition is true or false for each row.
 
-**Why this works:** A Custom facet runs your expression on every row, groups the results, and lets you filter by the outcome. You can write tests that return booleans (`true`/`false`), strings (e.g., normalized categories), or even numbers — OpenRefine will facet whatever the expression returns.
+Why this works: A Custom facet runs your expression on every row, groups the results, and lets you filter by the outcome. You can write tests that return booleans (`true`/`false`), strings (e.g., normalized categories), or even numbers — OpenRefine facets whatever the expression returns.
 
 
 :::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge: Finding Titles with Quotation Marks
+## Finding Titles with Quotation Marks
 
 Create a custom text facet on the `Title` column and determine how many titles contain quotation marks. Then inspect a few examples and discuss why quotation marks might have been used.
 
@@ -83,7 +83,7 @@ It returns 79 rows with the value `true`, meaning that 79 titles contain quotati
 
 ## What Is GREL?
 
-GREL stands for **General Refine Expression Language**.  It is a small, specialized language used inside OpenRefine to:
+GREL stands for General Refine Expression Language.  It is a small, specialized language used inside OpenRefine to:
 
 - inspect cell values  
 - transform text and numbers  
@@ -96,7 +96,7 @@ GREL looks like code, but many useful expressions are short and readable. You ca
 
 :::::::::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge: Detecting unusually long titles
+## Detecting unusually long titles
 
 Very long artwork titles may indicate data issues, such as multiple titles stored in one cell or comments included in the title field, but they can also reflect descriptive cataloguing practices.
 
@@ -117,11 +117,11 @@ if(value.length() > 40, "long title", "short title")
 
 The expression works as follows:
 
-1. **Inspect the cell** with `value.length()`, which calculates the number of characters in the title.
+1. Inspect the cell with `value.length()`, which calculates the number of characters in the title.
 
 2. The `if()` function checks whether the title has more than 40 characters (`value.length() > 40`). 
 
-3. **Produce a new output**. If the condition is true, the expression returns "long title", otherwise it returns "short title". OpenRefine then groups rows according to these generated values.
+3. Produce a new output. If the condition is true, the expression returns "long title", otherwise it returns "short title". OpenRefine then groups rows according to these generated values.
 
 This means the facet does not group by the original cell content, but by values that are generated by the expression.
 
@@ -131,7 +131,7 @@ There are 1009 long titles in the dataset. Looking at these entries shows that m
 
 :::::::::: instructor
 
-This challenge illustrates an important idea about custom facets. They do not have to group by the original cell content; they can group by **computed values** that you define using GREL.
+This challenge illustrates an important idea about custom facets. They do not have to group by the original cell content; they can group by computed values that you define using GREL.
 
 ::::::::::::::::::::
 
@@ -180,7 +180,7 @@ Some useful functions include:
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- Custom facets group data using **computed results** from a GREL expression, not only the original cell values.  
+- Custom facets group data using computed results from a GREL expression, not only the original cell values.  
 - GREL is a lightweight language that allows you to inspect, classify, and analyse data inside OpenRefine. 
 - Custom facets let you ask flexible questions about your data, such as identifying multiple creators or unusually long titles.
 - With conditional expressions like `if()`, you can define new categories that support deeper exploration and data-quality checks.

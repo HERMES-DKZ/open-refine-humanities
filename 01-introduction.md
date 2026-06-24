@@ -22,7 +22,7 @@ exercises: 5
 
 ::::::::::::: discussion
 
-### Discussion: Do you often work with digital data in your research, your studies or your work?
+### Do you often work with digital data in your research, your studies or your work?
 
 For example, cleaning it, processing it, converting it or analyzing it?
 Do you have an idea what problems could arise when working with data, especially external data?
@@ -38,18 +38,18 @@ OpenRefine is a free, open-source tool designed to help you work with messy data
 
 ## Our Dataset
 
-Throughout this lesson, you will use a sample dataset from the Metropolitan Museum of Art (The Met) Open Access Initiative. The dataset includes artwork titles, creators, production dates, materials, and locations — fields that are typical for cultural heritage collections. Even if you have never worked with data before, you will see how OpenRefine can make your research easier.
+Throughout this lesson, you use a sample dataset from the Metropolitan Museum of Art (The Met) Open Access Initiative. The dataset includes artwork titles, creators, production dates, materials, and locations — fields that are typical for cultural heritage collections. Even if you have never worked with data before, you see how OpenRefine can make your research easier.
 
-In many digital humanities projects, a significant amount of time is spent preparing and cleaning data before analysis. It’s not always the most exciting part, but it is essential. With OpenRefine, you will learn how to think about data organization and develop practices for more effective data cleaning. By the end of this lesson, you will be able to clean, explore, and analyze structured cultural heritage data. You don’t need to be a technical expert, just curious and willing to try something new.
+In many digital humanities projects, a significant amount of time is spent preparing and cleaning data before analysis. It’s not always the most exciting part, but it is essential. With OpenRefine, you learn how to think about data organization and develop practices for more effective data cleaning. By the end of this lesson, you will be able to clean, explore, and analyze structured cultural heritage data. You don’t need to be a technical expert, just curious and willing to try something new.
 
 
 
 
 ::::::::::::::::::::::::::::::::::::: discussion
 
-### Challenge: Spot the Messy Data
+### Spot the Messy Data
 
-Look at the small sample below. It contains only a few records from The Met dataset you will work with later.  
+Look at the small sample below. It contains only a few records from The Met dataset you work with later.  
 Identify anything that might cause problems during analysis.
 
 | Title   | Artist Display Name | Object Date | Object Name | City | Tags | Medium                          |
@@ -60,7 +60,7 @@ Identify anything that might cause problems during analysis.
 | 	Design for a shawl with scrolling paisley leaves and Indian flowers   | Fleury Chavant; Georges Schlatter; J.E.G.; Herault             | [after 1844]    | Book Print Ornament, Architectur     | Paris   |     | Lithograph              |
 | Nouveau Cayer de Paysages à l'usage des personnes qui apprennent le Dessin     | J. B. Crépy | 1781     | Book      | Paris, France    |      | Etching, printed in red          |
 
-**Questions to discuss:**
+Questions to discuss:
 
 1. What inconsistencies or formatting issues can you spot?  
 2. Which values might make filtering or sorting difficult?  

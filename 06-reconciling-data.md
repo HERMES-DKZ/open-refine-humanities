@@ -24,14 +24,15 @@ exercises: 15
 
 Up to this point we have cleaned and explored our dataset. We standardized values, split columns, and corrected inconsistencies. However, the values in the table are still plain text labels. For example in the column `Artist Display Name` we find values such as "Frank Lloyd Wright" and "Jean Le Pautre".
 
-For a human reader these values clearly represent names. For a computer they are simply character strings. The name alone does not tell us which exact person is meant, and the same person might appear under slightly different spellings in other datasets, like (F. L. Wright or Jean Lepautre).
+For a human reader these values clearly represent people. A computer, however, only sees text. It cannot know whether "Frank Lloyd Wright" refers to the famous architect, another person with the same name, or a variant spelling used in another dataset.
+
+This becomes a problem when we want to combine datasets, search across collections, or enrich our data with additional information. Computers need stable identifiers, not just names.
 
 Reconciliation connects these text labels to authority records. Instead of working only with the name written in the dataset, we link the value to a stable identifier in an authority database.
 
-For example, the artists in our dataset can be linked to the Union List of Artist Names (ULAN): Frank Lloyd Wright (http://vocab.getty.edu/page/ulan/500020307 or Jean le Pautre (http://vocab.getty.edu/page/ulan/500000036).
+For example, artists in our dataset can be linked to records in the Getty Union List of Artist Names (ULAN). Each person in ULAN has a unique identifier that distinguishes them from every other individual in the database: Frank Lloyd Wright ([ULAN 500020307](http://vocab.getty.edu/page/ulan/500020307)) or Jean le Pautre ([ULAN 500000036](http://vocab.getty.edu/page/ulan/500000036)).
 
-When a name in our dataset is reconciled with an authority record, we are essentially answering the question:
-> Which exact person in this authority database corresponds to the name written in our dataset?
+When a name in our dataset is reconciled with an authority record, we are essentially answering the question: Which exact person in this authority database corresponds to the name written in our dataset?
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
@@ -39,9 +40,11 @@ When a name in our dataset is reconciled with an authority record, we are essent
 
 Open the Union List of Artist Names (https://www.getty.edu/research/tools/vocabularies/ulan/) and search for "Frank Lloyd Wright" and "Jean Le Pautre".
 
-* What problem do you run into?
+- Why is it not always obvious which authority record is the correct one?
 
-* What kinds of information do you find there that are not included in our dataset?
+- What information in the authority record helps you decide?
+
+- What kinds of information are available in ULAN that are not present in our dataset?
 
 :::::::::::::::: solution
 
@@ -51,6 +54,12 @@ ULAN records often contains additional structured information such as birth and 
 Authority searches may return multiple results like in these cases. To identify the correct person you need to compare additional information such as life dates, occupations, or alternative spellings in the authority data and your dataset.
 ::::::::::::::::
 
+::: instructor
+
+Learners often assume that authority records provide a single "correct" answer. Emphasize that authority databases also contain ambiguity and that reconciliation always requires human judgement.
+
+:::
+
 ::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Reconciling with OpenRefine
@@ -59,38 +68,53 @@ Because reconciliation can be computationally expensive, we will first work with
 Make a text facet in the column `Department`and form a subset from the department "Drawings and Prints".
 
 1. Open the menu on the column `Artist Display Name` and select `Reconcile → Start reconciling…`
-2. It appears a new window, where you select `Discover services...` and a new browser tab opens with all the possible reconciliation services in OpenRefine. Search for "Getty" and copy the URL "https://services.getty.edu/vocab/reconcile/".
+2. A new window appears, where you select `Discover services...` and a new browser tab opens with all the possible reconciliation services in OpenRefine. Search for "Getty ULAN" and copy the URL "https://services.getty.edu/vocab/reconcile/".
 3. Now return to your other browser tab, select `Add standard service...` and paste the copied URL into the appearing field. Select `Add service`.
 
 4. Select the service and click on `Next`.
-5. Select `ULAN search`, which provides access to artist authority records. And click `Start reconciling...`.
+5. Select `ULAN search`, then click `Start reconciling...`.
 
 OpenRefine now sends each name in the column to the Getty database and suggests possible matches.
 
 
 ::::::::::::: challenge
 
-### Challenge: Add another reconciliation service
+### Compare Reconciliation Services
 
-Wikidata, VIAF or the Integrated Authority File
+So far, you have reconciled artist names against Getty ULAN. OpenRefine can also connect to many other authority databases – like Wikidata, VIAF (Virtual Authority File) or GND (Integrated Authority File).
+Add a second reconciliation service, such as Wikidata, VIAF or the Integrated Authority File (GND) and reconcile the column `Artist Display Name` again.
+
+- Which reconciliation service did you choose?
+- Does it return the same matches as ULAN?
+- What additional information is available in the new authority database?
 
 ::::::::::::::::: solution
 
 ### Solution
 
+To add another service:
 
+1. Open `Reconcile → Start reconciling…`
+2. Select `Discover services...`
+3. Search for a reconciliation service.
+4. Copy the service URL and add it via `Add standard service....`
+5. Start a new reconciliation process.
+
+Different services may return different matches and provide different metadata. For example, Wikidata often includes links to many external databases, images, and biographical information, while VIAF and GND focus on authority control in libraries and archives.
+
+The most useful service depends on your research question and the type of information you want to add to your dataset.
 :::::::
 
 ::::::::::::::::::::::::::
 
 ### Reviewing the matches
 
-If OpenRefine finds a clear match, the reconciliation is applied automatically. If several possible matches exist, OpenRefine shows multiple candidates. Hovering over one of the names will display some information to help you decide which person is correct. You can also go directly to the entire database page to obtain even more information. Once you have found the correct person, you can either reconcile all cells with this name or just this one.
+If OpenRefine finds a clear match, the reconciliation is applied automatically. If several possible matches exist, OpenRefine shows multiple candidates. Hovering over one of the names displays some information to help you decide which person is correct. You can also go directly to the entire database page to obtain even more information. Once you have found the correct person, you can either reconcile all cells with this name or just this one. Notice that OpenRefine also displays a confidence score. While high-confidence matches are often correct, they should still be reviewed, especially when several people share the same name.
 
 
 ::::::::::::: challenge
 
-### Challenge: Matchmaking
+### Matchmaking
 
 Find names in the column `Artist Display Name` where OpenRefine suggests multiple matches.
 
@@ -119,7 +143,7 @@ Reconciliation links are stored inside OpenRefine but are not automatically incl
 1. Open the column menu `Artist Display Name` and choose `Reconcile → Add entity identifiers column`
 3. Name the column something like "Artist_ULAN_ID"
 
-
+The identifier column may not look very meaningful at first glance. However, identifiers are often more useful than names because they remain stable even when labels change. They allow different datasets to refer to the same person unambiguously.
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 

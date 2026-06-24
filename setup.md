@@ -11,10 +11,10 @@ To follow this lesson, you must have OpenRefine installed on your computer and d
 
 ## Dataset
 
-The dataset used in this lesson is a subset of the [Museum of Modern Art Collection](https://github.com/MuseumofModernArt/collection) dataset.
-It has been reduced in the number of columns and intentionally 'messed up' a little bit.
+The dataset used in this lesson is a subset of the [Metropolitan Museum of Art (The Met)](https://github.com/MuseumofModernArt/collection) open access dataset.
+The dataset has been reduced to a subset of columns and includes a number of intentional inconsistencies for teaching purposes.
 
-Download the csv [data file](../episodes/data/met_dataset_oa.csv) to your Computer.
+Download the [CSV file](../episodes/data/met_dataset_oa.csv) to your Computer.
 
 ::::::::::::::::::::
 
@@ -25,7 +25,7 @@ Download the csv [data file](../episodes/data/met_dataset_oa.csv) to your Comput
 For this lesson you will need OpenRefine and a web browser. 
 Note: OpenRefine is a Java program that runs on your machine (not in the cloud). It runs inside your browser, but no web connection is needed.
 
-1. Check that you have Firefox, Edge, Opera, Chrome, Chromium or Safari installed and set as your default browser. OpenRefine only runs in your default browser. It will not run correctly in Internet Explorer. Sometimes it even has some issues with Firefox.
+1. Check that you have Firefox, Edge, Opera, Chrome, Chromium or Safari installed and set as your default browser. OpenRefine only runs in your default browser. It will not run correctly in Internet Explorer. Some users occasionally report browser-specific issues. If OpenRefine does not open correctly, try another modern browser.
 2. Download the software from [openrefine.org/download](https://openrefine.org/download) and check below for further instructions depending on your operating system.
 
 
@@ -74,4 +74,5 @@ If you want to know more details about installation, upgrades and configuration 
 
 ### Exiting OpenRefine
 
+To stop OpenRefine, first close all browser tabs connected to OpenRefine. Then return to the terminal or command prompt window where OpenRefine is running and press [control] + [c]. This stops the OpenRefine server and saves the project state.
 To exit OpenRefine, close all the browser tabs or windows, then navigate to the command line window. To close this window and ensure OpenRefine exits properly, hold down [control] and press [c] on your keyboard. This will save all changes to your projects.

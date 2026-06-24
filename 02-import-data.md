@@ -24,7 +24,7 @@ exercises: 5
 
 ## Importing Data
 
-In this episode, you will import the Metropolitan Museum dataset used throughout the lesson. To begin, open OpenRefine.
+In this episode, you import the Metropolitan Museum of Art dataset used throughout the lesson. To begin, open OpenRefine.
 When you start OpenRefine, a window in your web browser (at the address [http://127.0.0.1:3333/](http://127.0.0.1:3333/)) opens displaying the start page. 
 
 
@@ -50,9 +50,9 @@ We will not be looking at extensions in this lesson, but they offer the possibil
 OpenRefine structures your work in *projects*. To begin working, you first need to create a new project and import The Met dataset. If you pause your work on the project (the data and the changes you made) and want to continue later on, you can choose `Open project`. If a colleague sends you an OpenRefine project, you can import it under `Import project`.
 
 1. Click on `Create Project` and then on *Get data from* `This Computer`. 
-2. Here click`Browse`, locate the dataset `met_dataset_oa.csv` on your computer and select it.
+2. Here click `Browse`, locate the dataset `met_dataset_oa.csv` on your computer and select it.
 3. Click on `Next` and upload the data into OpenRefine.
-4. On the next page OpenRefine will show you a preview of your data, allowing you to check that everything looks correct before you proceed.
+4. On the next page OpenRefine shows you a preview of your data, allowing you to check that everything looks correct before you proceed.
 
 Below the data preview, you find various import settings for how the data should be loaded. These settings have a direct effect on the preview above, allowing us to immediately check whether the settings are correct. This is especially important when files use non-standard formats, as incorrect settings may result in a distorted table structure.
 
@@ -76,7 +76,7 @@ For more information see the [Create a project by importing data](https://docs.o
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::: challenge
-## Challenge: Import as Interpretation
+## Import as Interpretation
 Let’s test how sensitive the import process is to incorrect settings. Try changing the separator and the character encoding.
 
 In the import preview, change the column separator from comma to semicolon and the character encoding to `US-ASCII` and `UTF-8`. Observe the preview carefully.
@@ -93,7 +93,7 @@ In the import preview, change the column separator from comma to semicolon and t
 1. The table structure collapses.
 2. Most or all values appear in a single column.
 3. This happens because the dataset is comma-separated. When the separator does not match the file structure, OpenRefine cannot divide the data into columns correctly.
-4. With the character emcodiung `US-ASCII` umlauts, accents and dashes are not displayed correctly. In contrast everything looks fine using `UTF-8`.
+4. With the character encodiung `US-ASCII` umlauts, accents and dashes are not displayed correctly. In contrast everything looks fine using `UTF-8`.
 5. The dataset would be imported incorrectly, making further analysis difficult or impossible.
 
 :::::::::::::::::::
@@ -113,7 +113,7 @@ If these settings are incorrect, data may be split into the wrong columns, rows 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 5. Once you are happy with the preview and settings, you can change your project name above the preview and click `Create Project`.
-6. OpenRefine will load your data into its workspace on the next page. 
+6. OpenRefine loads your data into its workspace on the next page. 
 
 ## Overview of the OpenRefine interface  
 ![Screenshot of the user interface](fig/02_start.png)
@@ -127,7 +127,7 @@ The row/record distinction will be shown in the next [chapter](https://hermes-dk
    
 :::::::::::::::::::::::::::::::::::::::::::::::::
 
-Each column header has a small `arrow`. Clicking this `arrow` opens a drop-down menu with actions that apply only to that column, such as sorting, faceting, and editing its values: These are the actions you will learn about in the following chapters
+Each column header has a small `arrow`. Clicking this `arrow` opens a drop-down menu with actions that apply only to that column, such as sorting, faceting, and editing its values: These are the actions you learn about in the following chapters
 
 On the left-hand side, the `Facet/Filter` tab shows all active filters and facets. These tools allow you to explore the dataset and to see how your actions affect it. The `Undo/Redo` tab records every change you applied to the data. From here, you can step backward or forward through your changes. *Note: All changes are stored within the OpenRefine project; the original file remains unchanged.* You will use both tabs a lot in the following episodes.
 
