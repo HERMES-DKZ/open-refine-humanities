@@ -54,10 +54,10 @@ Identify anything that might cause problems during analysis.
 
 | Title   | Artist Display Name | Object Date | Object Name | City | Tags | Medium                          |
 |---------|--------------------------|-------------|-------------|------|------|---------------------------------|
-| Tile    | J. and J. G. Low Art Tile Works        | ca. 1884     | Tile      | Chelsea   |       | Earthenware  |
+| Tile    | J. and J. G. Low Art Tile Works        | ca. 1884     | Tile      | Chelsea   |    0   | Earthenware  |
 | Cabrette | Joseph Bechonnet | 19th century  | Cabrette | Effiat, Puy-de-Dôme     | Animals     | 	various material   |
 | "A weaver of dreams"     | Margaret Neilson Armstrong; G.P. Putnam & Co., New York; Myrtle Reed  | 1911  |    | New York |     |    |
-| 	Design for a shawl with scrolling paisley leaves and Indian flowers   | Fleury Chavant; Georges Schlatter; J.E.G.; Herault             | [after 1844]    | Book Print Ornament, Architectur     | Paris   |     | Lithograph              |
+| 	Design for a shawl with scrolling paisley leaves and Indian flowers   | Fleury Chavant; Georges Schlatter; J.E.G.; Herault             | [after 1844]    | Book Print Ornament, Architectur     | Paris   |  N/A   | Lithograph              |
 | Nouveau Cayer de Paysages à l'usage des personnes qui apprennent le Dessin     | J. B. Crépy | 1781     | Book      | Paris, France    |      | Etching, printed in red          |
 
 Questions to discuss:
