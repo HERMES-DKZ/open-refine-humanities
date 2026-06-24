@@ -15,7 +15,9 @@
 carpentry: 'incubator'
 
 # Alt-text description of the lesson.
-carpentry_description: 'Lesson Description'
+carpentry_description: 'OpenRefine is a powerful free, open-source tool for working with messy data: cleaning it; 
+transforming it from one format to another; and extending it with web services and external data. This lesson is 
+being developed specifically for researchers in the humanities and cultural studies.'
 
 # Overall title for pages.
 title: 'OpenRefine for the Humanities' # FIXME
@@ -24,12 +26,12 @@ title: 'OpenRefine for the Humanities' # FIXME
 created: 2026-05-26
 
 # Comma-separated list of keywords for the lesson
-keywords: 'digital humanities, data, lesson, data cleaning, data-tranformation, pre-alpha, english ' # FIXME
+keywords: 'digital humanities, data, lesson, data cleaning, data-tranformation, alpha, english'
 
 # Life cycle stage of the lesson
 # refer to <https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html> for details
 # possible values: pre-alpha, alpha, beta, stable
-life_cycle: 'pre-alpha' # FIXME
+life_cycle: 'alpha' # FIXME
 
 # License of the lesson
 license: 'CC-BY 4.0'
@@ -74,7 +76,7 @@ episodes:
 - 05-transformation.md 
 - 06-reconciling-data.md
 - 07-exporting-data-and-cleaning-steps.md
-- 08-resources-for-self-study.md
+
 
 # Information for Learners
 learners: 
