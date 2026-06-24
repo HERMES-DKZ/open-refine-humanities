@@ -338,7 +338,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Custom Facets and GREL</h1>
-        <p>Last updated on 2026-06-22 |
+        <p>Last updated on 2026-06-24 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/04-custom-facets-and-grel.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -401,8 +401,8 @@ through the menu—text, numeric, and timeline facets. These are powerful,
 but sometimes an exploration or cleaning task requires a rule that is
 not built in. In those cases, OpenRefine lets us define our own facets
 using small expressions written in GREL. Don’t worry if these terms are
-new to you. We will demponstrate them with an example based on the
-dataset you already explored in the previous episode.</p>
+new to you. We demonstrate them with an example based on the dataset you
+already explored in the previous episode.</p>
 <ol style="list-style-type: decimal"><li><p>Open the column menu for
 <code>Artist Display Name</code>.</p></li>
 <li><p>Choose <code>Facet → Custom text facet…</code></p></li>
@@ -414,12 +414,12 @@ dataset you already explored in the previous episode.</p>
 <div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <figure><img src="../fig/03_openrefine_grelfunction.png" alt="Screenshot of the Custom facet on column …" class="figure mx-auto d-block"><div class="figcaption">Screenshot of the Custom facet on column …</div>
-</figure><p>A new window appears. You will see a text field where you can enter
-the GREL function. At the bottom, there is a <code>Preview</code>
-section where you can see the value (i.e. the value in the table) and,
-to the right of that, the new value produced by the function. Under the
+</figure><p>A new window appears. You see a text field where you can enter the
+GREL function. At the bottom, there is a <code>Preview</code> section
+where you can see the value (i.e. the value in the table) and, to the
+right of that, the new value produced by the function. Under the
 <code>History</code> tab, you can view the commands that have been used,
-and under <code>Help</code> you will find a detailed explanation.</p>
+and under <code>Help</code> you find a detailed explanation.</p>
 </div>
 </div>
 </div>
@@ -436,20 +436,18 @@ with two categories: <code>true</code> and <code>false</code>.</p></li>
 </ol><p>This small expression creates a logic-based facet that is not
 available as a built-in facet. It does not modify the data. It simply
 checks whether the condition is true or false for each row.</p>
-<p><strong>Why this works:</strong> A Custom facet runs your expression
-on every row, groups the results, and lets you filter by the outcome.
-You can write tests that return booleans
-(<code>true</code>/<code>false</code>), strings (e.g., normalized
-categories), or even numbers — OpenRefine will facet whatever the
-expression returns.</p>
-<div id="challenge-finding-titles-with-quotation-marks" class="callout challenge">
+<p>Why this works: A Custom facet runs your expression on every row,
+groups the results, and lets you filter by the outcome. You can write
+tests that return booleans (<code>true</code>/<code>false</code>),
+strings (e.g., normalized categories), or even numbers — OpenRefine
+facets whatever the expression returns.</p>
+<div id="finding-titles-with-quotation-marks" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-finding-titles-with-quotation-marks" class="callout-inner">
-<h3 class="callout-title">Challenge: Finding Titles with Quotation
-Marks</h3>
+<div id="finding-titles-with-quotation-marks" class="callout-inner">
+<h3 class="callout-title">Finding Titles with Quotation Marks</h3>
 <div class="callout-content">
 <p>Create a custom text facet on the <code>Title</code> column and
 determine how many titles contain quotation marks. Then inspect a few
@@ -478,8 +476,8 @@ could be important for a later analysis.</p>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="what-is-grel">What Is GREL?<a class="anchor" aria-label="anchor" href="#what-is-grel"></a></h2>
-<hr class="half-width"><p>GREL stands for <strong>General Refine Expression Language</strong>.
-It is a small, specialized language used inside OpenRefine to:</p>
+<hr class="half-width"><p>GREL stands for General Refine Expression Language. It is a small,
+specialized language used inside OpenRefine to:</p>
 <ul><li>inspect cell values<br></li>
 <li>transform text and numbers<br></li>
 <li>check conditions<br></li>
@@ -493,14 +491,13 @@ the actions we have already performed can also be expressed directly in
 GREL, but to make things easier the most common functions are already
 built in. The menu simply provides shortcuts for the most common
 actions.</p>
-<div id="challenge-detecting-unusually-long-titles" class="callout challenge">
+<div id="detecting-unusually-long-titles" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-detecting-unusually-long-titles" class="callout-inner">
-<h3 class="callout-title">Challenge: Detecting unusually long
-titles</h3>
+<div id="detecting-unusually-long-titles" class="callout-inner">
+<h3 class="callout-title">Detecting unusually long titles</h3>
 <div class="callout-content">
 <p>Very long artwork titles may indicate data issues, such as multiple
 titles stored in one cell or comments included in the title field, but
@@ -521,15 +518,13 @@ following GREL expression:</p>
 <div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The expression works as follows:</p>
-<ol style="list-style-type: decimal"><li><p><strong>Inspect the cell</strong> with
-<code>value.length()</code>, which calculates the number of characters
-in the title.</p></li>
+<ol style="list-style-type: decimal"><li><p>Inspect the cell with <code>value.length()</code>, which
+calculates the number of characters in the title.</p></li>
 <li><p>The <code>if()</code> function checks whether the title has more
 than 40 characters (<code>value.length() &gt; 40</code>).</p></li>
-<li><p><strong>Produce a new output</strong>. If the condition is true,
-the expression returns “long title”, otherwise it returns “short title”.
-OpenRefine then groups rows according to these generated
-values.</p></li>
+<li><p>Produce a new output. If the condition is true, the expression
+returns “long title”, otherwise it returns “short title”. OpenRefine
+then groups rows according to these generated values.</p></li>
 </ol><p>This means the facet does not group by the original cell content, but
 by values that are generated by the expression.</p>
 <p>There are 1009 long titles in the dataset. Looking at these entries
@@ -548,7 +543,7 @@ title.</p>
 <div class="accordion-body">
 <p>This challenge illustrates an important idea about custom facets.
 They do not have to group by the original cell content; they can group
-by <strong>computed values</strong> that you define using GREL.</p>
+by computed values that you define using GREL.</p>
 </div>
 </div>
 </div>
@@ -631,8 +626,8 @@ multiple spaces).</li>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>Custom facets group data using <strong>computed results</strong>
-from a GREL expression, not only the original cell values.<br></li>
+<ul><li>Custom facets group data using computed results from a GREL
+expression, not only the original cell values.<br></li>
 <li>GREL is a lightweight language that allows you to inspect, classify,
 and analyse data inside OpenRefine.</li>
 <li>Custom facets let you ask flexible questions about your data, such
@@ -709,8 +704,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/open-refine-humanities/instructor/04-custom-facets-and-grel.html",
   "identifier": "https://HERMES-DKZ.github.io/open-refine-humanities/instructor/04-custom-facets-and-grel.html",
   "dateCreated": "2026-05-26",
-  "dateModified": "2026-06-22",
-  "datePublished": "2026-06-23"
+  "dateModified": "2026-06-24",
+  "datePublished": "2026-06-24"
 }
 
   </script><script>

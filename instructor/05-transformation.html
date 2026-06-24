@@ -338,7 +338,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Transforming Data</h1>
-        <p>Last updated on 2026-06-23 |
+        <p>Last updated on 2026-06-24 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/05-transformation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -386,16 +386,16 @@ explore our dataset and identify potential issues. Facets help us find
 patterns and problems, but they do not change the data itself. For
 further analysis, it is often useful to reorganize and standardize the
 data.</p>
-<p>In this episode, we move from exploration to cleaning. We will use
+<p>In this episode, we move from exploration to cleaning. We use
 transformations, column operations, and clustering to modify and
 standardize our data.</p>
-<div id="discussion-what-information-is-stored-in-artist-display-bio" class="callout discussion">
+<div id="what-information-is-stored-in-artist-display-bio" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <span class="callout-header">Discussion</span>
-<div id="discussion-what-information-is-stored-in-artist-display-bio" class="callout-inner">
-<h3 class="callout-title">Discussion: What information is stored in
+<div id="what-information-is-stored-in-artist-display-bio" class="callout-inner">
+<h3 class="callout-title">What information is stored in
 <code>Artist Display Bio</code>?</h3>
 <div class="callout-content">
 <p>Look at several values in the column.</p>
@@ -407,7 +407,7 @@ standardize our data.</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <p>Guide learners toward recognizing:</p>
 <ul><li>nationality</li>
@@ -439,19 +439,18 @@ cell.</p>
 <code>Edit cells → Split multi-valued cells...</code></p></li>
 <li><p>Enter: <code>|</code>.</p></li>
 <li><p>Confirm with <code>OK</code>.</p></li>
-</ol><p>You will notice that some artists have only partial information,
-while others have much more detailed entries. Most complete entries
-follow a pattern similar to:
-<code>Nationality, Place Year–Year Place</code>.</p>
+</ol><p>You notice that some artists have only partial information, while
+others have much more detailed entries. Most complete entries follow a
+pattern similar to: <code>Nationality, Place Year–Year Place</code>.</p>
 </div>
 <div class="section level3">
 <h3 id="creating-new-columns-and-extracting-information">Creating New Columns and Extracting Information<a class="anchor" aria-label="anchor" href="#creating-new-columns-and-extracting-information"></a></h3>
 <p>Now we can begin extracting specific pieces of information. To
-preserve the original data, we will create a new column rather than
-modifying the existing one. This is an important distinction: unlike the
-previous operation, which changed the structure of the dataset by
-creating new rows, we are now creating an additional column while
-keeping the original values unchanged.</p>
+preserve the original data, we create a new column rather than modifying
+the existing one. This is an important distinction: unlike the previous
+operation, which changed the structure of the dataset by creating new
+rows, we are now creating an additional column while keeping the
+original values unchanged.</p>
 <div id="how-to-extract-the-nationality" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -470,7 +469,7 @@ separate the nationality from the remaining information?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Most values follow the pattern:
 <code>Nationality, additional biographical information</code></p>
@@ -490,7 +489,7 @@ first element.</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor2" aria-expanded="false" aria-controls="collapseInstructor2">
   <h3 class="accordion-header" id="headingInstructor2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor2" class="accordion-collapse collapse" aria-labelledby="headingInstructor2" data-bs-parent="#accordionInstructor2">
+<div id="collapseInstructor2" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor2" aria-labelledby="headingInstructor2">
 <div class="accordion-body">
 <figure><img src="../fig/04_openrefine_grelfunction.png" alt="Screenshot of the Add column based on column …" class="figure mx-auto d-block"><div class="figcaption">Screenshot of the Add column based on column
 …</div>
@@ -500,7 +499,7 @@ name of the new column. At the bottom, there is a <code>Preview</code>
 section where you can see the value (i.e. the value in the table) and,
 to the right of that, the new value produced by the function. Under the
 <code>History</code> tab, you can view the commands that have been used,
-and under <code>Help</code> you will find a detailed explanation.</p>
+and under <code>Help</code> you find a detailed explanation.</p>
 </div>
 </div>
 </div>
@@ -548,7 +547,7 @@ natural language is sufficient.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Common issues include:</p>
 <ul><li>Birth information in parentheses, such as
@@ -573,7 +572,7 @@ the amount of work required.</p>
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor3" aria-expanded="false" aria-controls="collapseInstructor3">
   <h3 class="accordion-header" id="headingInstructor3">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor3" class="accordion-collapse collapse" aria-labelledby="headingInstructor3" data-bs-parent="#accordionInstructor3">
+<div id="collapseInstructor3" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor3" aria-labelledby="headingInstructor3">
 <div class="accordion-body">
 <p>If the learners are eager to try more transformation and depending on
 their depending on their familiarity with regular expressions and
@@ -611,7 +610,7 @@ create a new column that contains only the birth and death years?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>Most life dates contain digits and a dash separating birth and death
 year.</p>
@@ -646,7 +645,7 @@ values differ only slightly because of spelling variations,
 abbreviations, or typing mistakes. In these cases, clustering can help
 identify potentially equivalent values. It identifies and normalizes
 variations — especially when different inconsistencies appear similar
-but not identical. We will demonstrate clustering on the column
+but not identical. We demonstrate clustering on the column
 <code>Object Name</code>.</p>
 <ol style="list-style-type: decimal"><li><p>Open the column menu for <code>Object Name</code>.</p></li>
 <li><p>Choose <code>Edit cells  → Cluster and edit...</code>.</p></li>
@@ -656,7 +655,7 @@ but not identical. We will demonstrate clustering on the column
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor4" aria-expanded="false" aria-controls="collapseInstructor4">
   <h3 class="accordion-header" id="headingInstructor4">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor Note </h3>
 </button>
-<div id="collapseInstructor4" class="accordion-collapse collapse" aria-labelledby="headingInstructor4" data-bs-parent="#accordionInstructor4">
+<div id="collapseInstructor4" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor4" aria-labelledby="headingInstructor4">
 <div class="accordion-body">
 <figure><img src="../fig/05_openrefine_clustering.png" alt="Screenshot of the Cluster and edit column …" class="figure mx-auto d-block"><div class="figcaption">Screenshot of the Cluster and edit column
 …</div>
@@ -698,7 +697,7 @@ values by using different clustering methods and keying functions</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>There is no single correct answer. Different clustering methods
 produce different suggestions.</p>
@@ -797,8 +796,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/open-refine-humanities/instructor/05-transformation.html",
   "identifier": "https://HERMES-DKZ.github.io/open-refine-humanities/instructor/05-transformation.html",
   "dateCreated": "2026-05-26",
-  "dateModified": "2026-06-23",
-  "datePublished": "2026-06-23"
+  "dateModified": "2026-06-24",
+  "datePublished": "2026-06-24"
 }
 
   </script><script>

@@ -338,7 +338,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Reconciling Data with External Data Sources</h1>
-        <p>Last updated on 2026-06-22 |
+        <p>Last updated on 2026-06-24 |
 
         <a href="https://github.com/HERMES-DKZ/open-refine-humanities/edit/main/episodes/06-reconciling-data.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -382,19 +382,24 @@ standardized values, split columns, and corrected inconsistencies.
 However, the values in the table are still plain text labels. For
 example in the column <code>Artist Display Name</code> we find values
 such as “Frank Lloyd Wright” and “Jean Le Pautre”.</p>
-<p>For a human reader these values clearly represent names. For a
-computer they are simply character strings. The name alone does not tell
-us which exact person is meant, and the same person might appear under
-slightly different spellings in other datasets, like (F. L. Wright or
-Jean Lepautre).</p>
+<p>For a human reader these values clearly represent people. A computer,
+however, only sees text. It cannot know whether “Frank Lloyd Wright”
+refers to the famous architect, another person with the same name, or a
+variant spelling used in another dataset.</p>
+<p>This becomes a problem when we want to combine datasets, search
+across collections, or enrich our data with additional information.
+Computers need stable identifiers, not just names.</p>
 <p>Reconciliation connects these text labels to authority records.
 Instead of working only with the name written in the dataset, we link
 the value to a stable identifier in an authority database.</p>
-<p>For example, the artists in our dataset can be linked to the Union
-List of Artist Names (ULAN): Frank Lloyd Wright (<a href="http://vocab.getty.edu/page/ulan/500020307" class="external-link uri">http://vocab.getty.edu/page/ulan/500020307</a> or Jean le
-Pautre (<a href="http://vocab.getty.edu/page/ulan/500000036" class="external-link uri">http://vocab.getty.edu/page/ulan/500000036</a>).</p>
+<p>For example, artists in our dataset can be linked to records in the
+Getty Union List of Artist Names (ULAN). Each person in ULAN has a
+unique identifier that distinguishes them from every other individual in
+the database: Frank Lloyd Wright (<a href="http://vocab.getty.edu/page/ulan/500020307" class="external-link">ULAN 500020307</a>) or
+Jean le Pautre (<a href="http://vocab.getty.edu/page/ulan/500000036" class="external-link">ULAN
+500000036</a>).</p>
 <p>When a name in our dataset is reconciled with an authority record, we
-are essentially answering the question: &gt; Which exact person in this
+are essentially answering the question: Which exact person in this
 authority database corresponds to the name written in our dataset?</p>
 <div id="quick-check" class="callout challenge">
 <div class="callout-square">
@@ -406,9 +411,12 @@ authority database corresponds to the name written in our dataset?</p>
 <div class="callout-content">
 <p>Open the Union List of Artist Names (<a href="https://www.getty.edu/research/tools/vocabularies/ulan/" class="external-link uri">https://www.getty.edu/research/tools/vocabularies/ulan/</a>)
 and search for “Frank Lloyd Wright” and “Jean Le Pautre”.</p>
-<ul><li><p>What problem do you run into?</p></li>
-<li><p>What kinds of information do you find there that are not included
-in our dataset?</p></li>
+<ul><li><p>Why is it not always obvious which authority record is the
+correct one?</p></li>
+<li><p>What information in the authority record helps you
+decide?</p></li>
+<li><p>What kinds of information are available in ULAN that are not
+present in our dataset?</p></li>
 </ul></div>
 </div>
 </div>
@@ -431,6 +439,7 @@ the authority data and your dataset.</p>
 </div>
 </div>
 </div>
+
 </section><section><h2 class="section-heading" id="reconciling-with-openrefine">Reconciling with OpenRefine<a class="anchor" aria-label="anchor" href="#reconciling-with-openrefine"></a></h2>
 <hr class="half-width"><p>Because reconciliation can be computationally expensive, we will
 first work with a subset of the dataset. Make a text facet in the column
@@ -438,29 +447,37 @@ first work with a subset of the dataset. Make a text facet in the column
 and Prints”.</p>
 <ol style="list-style-type: decimal"><li><p>Open the menu on the column <code>Artist Display Name</code> and
 select <code>Reconcile → Start reconciling…</code></p></li>
-<li><p>It appears a new window, where you select
+<li><p>A new window appears, where you select
 <code>Discover services...</code> and a new browser tab opens with all
-the possible reconciliation services in OpenRefine. Search for “Getty”
-and copy the URL “<a href="https://services.getty.edu/vocab/reconcile/" class="external-link uri">https://services.getty.edu/vocab/reconcile/</a>”.</p></li>
+the possible reconciliation services in OpenRefine. Search for “Getty
+ULAN” and copy the URL “<a href="https://services.getty.edu/vocab/reconcile/" class="external-link uri">https://services.getty.edu/vocab/reconcile/</a>”.</p></li>
 <li><p>Now return to your other browser tab, select
 <code>Add standard service...</code> and paste the copied URL into the
 appearing field. Select <code>Add service</code>.</p></li>
 <li><p>Select the service and click on <code>Next</code>.</p></li>
-<li><p>Select <code>ULAN search</code>, which provides access to artist
-authority records. And click <code>Start reconciling...</code>.</p></li>
+<li><p>Select <code>ULAN search</code>, then click
+<code>Start reconciling...</code>.</p></li>
 </ol><p>OpenRefine now sends each name in the column to the Getty database
 and suggests possible matches.</p>
-<div id="challenge-add-another-reconciliation-service" class="callout challenge">
+<div id="compare-reconciliation-services" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-add-another-reconciliation-service" class="callout-inner">
-<h3 class="callout-title">Challenge: Add another reconciliation
-service</h3>
+<div id="compare-reconciliation-services" class="callout-inner">
+<h3 class="callout-title">Compare Reconciliation Services</h3>
 <div class="callout-content">
-<p>Wikidata, VIAF or the Integrated Authority File</p>
-</div>
+<p>So far, you have reconciled artist names against Getty ULAN.
+OpenRefine can also connect to many other authority databases – like
+Wikidata, VIAF (Virtual Authority File) or GND (Integrated Authority
+File). Add a second reconciliation service, such as Wikidata, VIAF or
+the Integrated Authority File (GND) and reconcile the column
+<code>Artist Display Name</code> again.</p>
+<ul><li>Which reconciliation service did you choose?</li>
+<li>Does it return the same matches as ULAN?</li>
+<li>What additional information is available in the new authority
+database?</li>
+</ul></div>
 </div>
 </div>
 <div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
@@ -470,7 +487,22 @@ service</h3>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
-
+<p>To add another service:</p>
+<ol style="list-style-type: decimal"><li>Open <code>Reconcile → Start reconciling…</code>
+</li>
+<li>Select <code>Discover services...</code>
+</li>
+<li>Search for a reconciliation service.</li>
+<li>Copy the service URL and add it via
+<code>Add standard service....</code>
+</li>
+<li>Start a new reconciliation process.</li>
+</ol><p>Different services may return different matches and provide different
+metadata. For example, Wikidata often includes links to many external
+databases, images, and biographical information, while VIAF and GND
+focus on authority control in libraries and archives.</p>
+<p>The most useful service depends on your research question and the
+type of information you want to add to your dataset.</p>
 </div>
 </div>
 </div>
@@ -479,18 +511,21 @@ service</h3>
 <h3 id="reviewing-the-matches">Reviewing the matches<a class="anchor" aria-label="anchor" href="#reviewing-the-matches"></a></h3>
 <p>If OpenRefine finds a clear match, the reconciliation is applied
 automatically. If several possible matches exist, OpenRefine shows
-multiple candidates. Hovering over one of the names will display some
+multiple candidates. Hovering over one of the names displays some
 information to help you decide which person is correct. You can also go
 directly to the entire database page to obtain even more information.
 Once you have found the correct person, you can either reconcile all
-cells with this name or just this one.</p>
-<div id="challenge-matchmaking" class="callout challenge">
+cells with this name or just this one. Notice that OpenRefine also
+displays a confidence score. While high-confidence matches are often
+correct, they should still be reviewed, especially when several people
+share the same name.</p>
+<div id="matchmaking" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-matchmaking" class="callout-inner">
-<h3 class="callout-title">Challenge: Matchmaking</h3>
+<div id="matchmaking" class="callout-inner">
+<h3 class="callout-title">Matchmaking</h3>
 <div class="callout-content">
 <p>Find names in the column <code>Artist Display Name</code> where
 OpenRefine suggests multiple matches.</p>
@@ -525,7 +560,11 @@ add an identifier column.</p>
 <code>Reconcile → Add entity identifiers column</code>
 </li>
 <li>Name the column something like “Artist_ULAN_ID”</li>
-</ol><div id="keypoints1" class="callout keypoints">
+</ol><p>The identifier column may not look very meaningful at first glance.
+However, identifiers are often more useful than names because they
+remain stable even when labels change. They allow different datasets to
+refer to the same person unambiguously.</p>
+<div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -608,8 +647,8 @@ any links that you are not going to use.
   "url": "https://HERMES-DKZ.github.io/open-refine-humanities/06-reconciling-data.html",
   "identifier": "https://HERMES-DKZ.github.io/open-refine-humanities/06-reconciling-data.html",
   "dateCreated": "2026-05-26",
-  "dateModified": "2026-06-22",
-  "datePublished": "2026-06-23"
+  "dateModified": "2026-06-24",
+  "datePublished": "2026-06-24"
 }
 
   </script><script>
