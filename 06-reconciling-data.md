@@ -74,6 +74,9 @@ Make a text facet in the column `Department`and form a subset from the departmen
 4. Select the service and click on `Next`.
 5. Select `ULAN search`, then click `Start reconciling...`.
 
+![Screenshot of the Reconciliation Service Window](fig/06_reconcile_services.png)
+![Screenshot of the Getty Reconciliation Service](fig/07_reconcile_getty.png)
+
 OpenRefine now sends each name in the column to the Getty database and suggests possible matches.
 
 
@@ -111,7 +114,7 @@ The most useful service depends on your research question and the type of inform
 
 If OpenRefine finds a clear match, the reconciliation is applied automatically. If several possible matches exist, OpenRefine shows multiple candidates. Hovering over one of the names displays some information to help you decide which person is correct. You can also go directly to the entire database page to obtain even more information. Once you have found the correct person, you can either reconcile all cells with this name or just this one. Notice that OpenRefine also displays a confidence score. While high-confidence matches are often correct, they should still be reviewed, especially when several people share the same name.
 
-
+![Screenshot of the Reconciliation Candidates Review](fig/08_reconcile_candidate_review.png)
 ::::::::::::: challenge
 
 ### Matchmaking
