@@ -5,18 +5,26 @@
 # ensuring that the author list and other fields remain accurate.
 
 cff-version: 1.2.0
-title: FIXME
+title: OpenRefine for the Humanities
 message: >-
   Please cite this lesson using the information in this file
   when you refer to it in publications, and/or if you
   re-use, adapt, or expand on the content in your own
   training material.
-type: dataset
+type: lesson
 authors:
-  - given-names: FIXME
-    family-names: FIXME
+  - given-names: Julia
+    family-names: Tolksdorf
+  - given-names: Robert
+    family-names: Zwick
 abstract: >-
-  FIXME Replace this with a short abstract describing the
-  lesson, e.g. its target audience and main intended
-  learning objectives.
+  This lesson introduces OpenRefine as a tool for exploring, cleaning, transforming, 
+  and enriching tabular data commonly used in the humanities and cultural heritage 
+  research. Using a subset of the Metropolitan Museum of Art Open Access dataset, 
+  learners gain hands-on experience with importing data, identifying data quality 
+  issues, creating facets and filters, using GREL expressions, transforming and 
+  restructuring data, clustering similar values, reconciling records with external 
+  authority sources, and exporting reproducible cleaning workflows.
+  Designed for beginners with little or no prior technical experience, the lesson 
+  follows a practical, example-driven approach.
 license: CC-BY-4.0
