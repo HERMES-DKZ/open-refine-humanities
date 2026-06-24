@@ -99,6 +99,7 @@ We can therefore split the text at the first comma and keep only the first eleme
 3. A new window appears.
 
 :::instructor
+
 ![Screenshot of the Add column based on column ...](fig/04_openrefine_grelfunction.png)
 
 Describe the new window to the learners and remind them of the similarities from window in the prevoius episode.
@@ -218,10 +219,10 @@ Even after applying transformations, some inconsistencies remain. Not all proble
 
 3. A new window appears. Click `Cluster`.
 
-::: instructor
+
+
 ![Screenshot of the Cluster and edit column ... ](fig/05_openrefine_clustering.png)
 
-::::
 
 The clustering window displays one suggested cluster per row. For each cluster the variations of a similar value with the count of rows they appear are shown on the left; a field on the right allows you to select or edit a preferred value.
 
