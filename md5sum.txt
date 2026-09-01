@@ -13,5 +13,5 @@
 "episodes/07-exporting-data-and-cleaning-steps.md" "5c5ad59a866f54e9286beea3d51ddc3b" "site/built/07-exporting-data-and-cleaning-steps.md" "2026-06-24"
 "instructors/instructor-notes.md" "cae72b6712578d74a49fea7513099f8c" "site/built/instructor-notes.md" "2023-03-16"
 "learners/reference.md" "d0b1e7af082d409576a6d0a70e800cb5" "site/built/reference.md" "2026-05-26"
-"learners/setup.md" "389a9b01adeb663f89956789a3247cf2" "site/built/setup.md" "2026-06-24"
+"learners/setup.md" "ace384753e525e39678df742a937490f" "site/built/setup.md" "2026-09-01"
 "profiles/learner-profiles.md" "60b93493cf1da06dfd63255d73854461" "site/built/learner-profiles.md" "2022-04-22"
